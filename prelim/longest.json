@@ -1,0 +1,152 @@
+{
+  "sample_id": "train_52031",
+  "program": [
+    {
+      "function": "Find",
+      "dependencies": [],
+      "inputs": [
+        "Colchester United F.C."
+      ]
+    },
+    {
+      "function": "Relate",
+      "dependencies": [
+        0
+      ],
+      "inputs": [
+        "member of sports team",
+        "backward"
+      ]
+    },
+    {
+      "function": "Find",
+      "dependencies": [],
+      "inputs": [
+        "Dean Martin"
+      ]
+    },
+    {
+      "function": "And",
+      "dependencies": [
+        1,
+        2
+      ],
+      "inputs": []
+    },
+    {
+      "function": "Relate",
+      "dependencies": [
+        3
+      ],
+      "inputs": [
+        "member of sports team",
+        "forward"
+      ]
+    },
+    {
+      "function": "FilterConcept",
+      "dependencies": [
+        4
+      ],
+      "inputs": [
+        "association football club"
+      ]
+    },
+    {
+      "function": "Find",
+      "dependencies": [],
+      "inputs": [
+        "association football"
+      ]
+    },
+    {
+      "function": "Relate",
+      "dependencies": [
+        6
+      ],
+      "inputs": [
+        "sport",
+        "backward"
+      ]
+    },
+    {
+      "function": "Find",
+      "dependencies": [],
+      "inputs": [
+        "Jason Lee"
+      ]
+    },
+    {
+      "function": "And",
+      "dependencies": [
+        7,
+        8
+      ],
+      "inputs": []
+    },
+    {
+      "function": "Relate",
+      "dependencies": [
+        9
+      ],
+      "inputs": [
+        "member of sports team",
+        "forward"
+      ]
+    },
+    {
+      "function": "QFilterNum",
+      "dependencies": [
+        10
+      ],
+      "inputs": [
+        "number of points/goals/set scored",
+        "1",
+        "="
+      ]
+    },
+    {
+      "function": "FilterConcept",
+      "dependencies": [
+        11
+      ],
+      "inputs": [
+        "association football club"
+      ]
+    },
+    {
+      "function": "And",
+      "dependencies": [
+        5,
+        12
+      ],
+      "inputs": []
+    },
+    {
+      "function": "What",
+      "dependencies": [
+        13
+      ],
+      "inputs": []
+    }
+  ],
+  "sparql": "SELECT DISTINCT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"association football club\" . ?e_1 <member_of_sports_team> ?e . ?e_1 <pred:name> \"Dean Martin\" . ?e_1 <member_of_sports_team> ?e_2 . ?e_2 <pred:name> \"Colchester United F.C.\" .  ?e_3 <member_of_sports_team> ?e . ?e_3 <pred:name> \"Jason Lee\" . ?e_3 <sport> ?e_4 . ?e_4 <pred:name> \"association football\" . [ <pred:fact_h> ?e_3 ; <pred:fact_r> <member_of_sports_team> ; <pred:fact_t> ?e ] <number_of_points/goals/set_scored> ?qpv . ?qpv <pred:unit> \"1\" . ?qpv <pred:value> \"1\"^^xsd:double .  }",
+  "answer": "Kettering Town F.C.",
+  "choices": [
+    "Kettering Town F.C.",
+    "Northampton Town F.C.",
+    "Stade Brestois 29",
+    "Zamalek SC",
+    "Middlesbrough F.C.",
+    "Roda JC Kerkrade",
+    "Brisbane Roar FC",
+    "Bohemian F.C.",
+    "Chesterfield F.C.",
+    "Hereford United F.C."
+  ],
+  "question": "What association football club count Dean Martin (the one that is a member of Colchester United F.C.)  and Jason Lee (the one that is related to association football and achieved 1 point with the club) as members ?",
+  "where_clause": "match (e)-[:instance_of]->(c:Resource) match (e_1:Resource)-[:member_of_sports_team]->(e) match (e_1:Resource)-[:member_of_sports_team]->(e_2:Resource) match (e_3:Resource)-[:member_of_sports_team]->(e) match (e_3:Resource)-[:sport]->(e_4:Resource),(e_3)<-[:fact_h]-(tmp)-[:fact_t]->(e), (tmp)-[:fact_r]-(qr:Relation{name:\"member_of_sports_team\"}),(tmp)-[:`number_of_points/goals/set_scored`]->(qpv:Resource) where c.name = \"association football club\" and e_1.name = \"Dean Martin\" and e_2.name = \"Colchester United F.C.\" and e_3.name = \"Jason Lee\" and e_4.name = \"association football\" and qpv.unit = \"1\" and qpv.value = 1.0 return distinct e",
+  "where_clause_type": "correct",
+  "match_clause": "match (e)-[:instance_of]->(c:Resource{name:\"association football club\"}) match (e_1:Resource{name:\"Dean Martin\"})-[:member_of_sports_team]->(e) match (e_1:Resource{name:\"Dean Martin\"})-[:member_of_sports_team]->(e_2:Resource{name:\"Colchester United F.C.\"}) match (e_3:Resource{name:\"Jason Lee\"})-[:member_of_sports_team]->(e) match (e_3:Resource{name:\"Jason Lee\"})-[:sport]->(e_4:Resource{name:\"association football\"}),(e_3)<-[:fact_h]-(tmp)-[:fact_t]->(e), (tmp)-[:fact_r]-(qr:Relation{name:\"member_of_sports_team\"}),(tmp)-[:`number_of_points/goals/set_scored`]->(qpv:Resource{unit:\"1\",value:1.0}) return distinct e",
+  "match_clause_type": "correct"
+}
