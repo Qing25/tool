@@ -37,13 +37,15 @@ def merge_sampled_data():
             sample_id = new['sample_id']
             s['program'] = program
             s['sample_id'] = sample_id
+            s['answer'] = new['answer']
 
             R.append(s)
-        save_json(R, file.replace(".json", "_new.json"))
+        # save_json(R, file.replace(".json", "_new.json"))
+        save_json(R, file)
 
 
     
 if __name__ == "__main__":
-    # merge_sampled_data()
+    merge_sampled_data()
 
     pass 

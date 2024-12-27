@@ -1,0 +1,4406 @@
+{
+  "name": "Dominican Republic",
+  "instanceOf": [
+    "Q3624078"
+  ],
+  "attributes": [
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.926,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1999
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.892,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2000
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.862,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2001
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.835,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2002
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.807,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2003
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.779,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2004
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.749,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2005
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.718,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2006
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.687,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2007
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.656,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2008
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.627,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2009
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.597,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2010
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.568,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2011
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.539,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2012
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.51,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2013
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total fertility rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.48,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2014
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "estimation process"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 1.7,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2016/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": -5.9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1980/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 7.4,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1981/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 7.2,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1982/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 6,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1983/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 38.6,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1984/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 30.9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1985/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 4.4,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1986/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 22.7,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1987/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 55.8,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1988/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 34.6,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1989/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 79.9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1990/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 7.9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1991/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 5.2,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1992/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.8,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1993/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 14.3,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1994/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 9.2,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1995/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 3.9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1996/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 8.4,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1997/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 7.8,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1998/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 5.1,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1999/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2000/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 4.4,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2001/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 10.5,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2002/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 42.7,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2003/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 28.7,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2004/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 7.4,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2005/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 5,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2006/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 8.9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2007/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 4.5,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2008/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 5.8,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2009/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 6.2,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2010/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 7.8,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2011/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 3.9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2012/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 3.9,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2013/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 1.6,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2014/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "inflation rate",
+      "value": {
+        "type": "quantity",
+        "value": 2.3,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2015/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "maritime identification digits",
+      "value": {
+        "type": "string",
+        "value": "327"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "CIVICUS Monitor country entry",
+      "value": {
+        "type": "string",
+        "value": "dominican-republic"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "marriageable age",
+      "value": {
+        "type": "quantity",
+        "value": 18,
+        "unit": "years old"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "both genders"
+          }
+        ]
+      }
+    },
+    {
+      "key": "short name",
+      "value": {
+        "type": "string",
+        "value": "🇩🇴"
+      },
+      "qualifiers": {
+        "instance of": [
+          {
+            "type": "string",
+            "value": "emoji flag sequence"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "Dominican"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominikai köztársasági"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominikaner"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "доминиканцы"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "plural"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominicani"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "plural"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominican"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "masculine"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominicană"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "feminine"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "Dominicano"
+      },
+      "qualifiers": {
+        "sex or gender": [
+          {
+            "type": "string",
+            "value": "masculine"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "Dominicana"
+      },
+      "qualifiers": {
+        "sex or gender": [
+          {
+            "type": "string",
+            "value": "feminine"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominicano"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "masculine singular"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominicana"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "feminine singular"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominicani"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "masculine plural"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominicane"
+      },
+      "qualifiers": {
+        "applies to part": [
+          {
+            "type": "string",
+            "value": "feminine plural"
+          }
+        ]
+      }
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominicanu"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "demonym",
+      "value": {
+        "type": "string",
+        "value": "dominicana"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "ISO 3166-1 numeric code",
+      "value": {
+        "type": "string",
+        "value": "214"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "ISO 3166-1 alpha-3 code",
+      "value": {
+        "type": "string",
+        "value": "DOM"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "ISO 3166-1 alpha-2 code",
+      "value": {
+        "type": "string",
+        "value": "DO"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "IOC country code",
+      "value": {
+        "type": "string",
+        "value": "DOM"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "area",
+      "value": {
+        "type": "quantity",
+        "value": 48670.82,
+        "unit": "square kilometre"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 523956,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2004/1/1"
+          }
+        ],
+        "determination method": [
+          {
+            "type": "string",
+            "value": "UIS estimation"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 339116,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2007/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 355283,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2015/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 357305,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2009/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 361218,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2010/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 374846,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2011/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 375518,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2013/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 385433,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2002/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 391811,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2014/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 393602,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2012/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 399000,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2008/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 480448,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2005/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 521687,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2000/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "number of out-of-school children",
+      "value": {
+        "type": "quantity",
+        "value": 562112,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1999/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "age of majority",
+      "value": {
+        "type": "quantity",
+        "value": 18,
+        "unit": "years old"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 3311788,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1960
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 3424702,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1961
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 3540319,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1962
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 3658264,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1963
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 3778110,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1964
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 3899504,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1965
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 4022212,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1966
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 4146104,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1967
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 4271065,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1968
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 4397027,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1969
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 4523917,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1970
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 4651703,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1971
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 4780283,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1972
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 4909454,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1973
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 5038976,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1974
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 5168720,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1975
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 5298530,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1976
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 5428547,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1977
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 5559298,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1978
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 5691517,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1979
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 5825715,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1980
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 5962066,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1981
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 6100385,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1982
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 6240380,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1983
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 6381602,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1984
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 6523696,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1985
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 6666429,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1986
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 6809797,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1987
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 6953918,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1988
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 7099011,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1989
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 7245127,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1990
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 7392389,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1991
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 7540421,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1992
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 7688196,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1993
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 7834359,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1994
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 7977966,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1995
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 8118570,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1996
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 8256496,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1997
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 8392534,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1998
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 8527881,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1999
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 8663421,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2000
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 8799298,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2001
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 8935261,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2002
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 9071318,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2003
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 9207389,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2004
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 9343362,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2005
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 9479269,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2006
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 9615015,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2007
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 9750195,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2008
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 9884265,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2009
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 10016797,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2010
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 10147598,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2011
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 10276621,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2012
+          }
+        ]
+      }
+    },
+    {
+      "key": "population",
+      "value": {
+        "type": "quantity",
+        "value": 10403761,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2013
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.57,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1985
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.596,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1990
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.627,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1995
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.655,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2000
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.676,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2005
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.701,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2010
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.704,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2011
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.708,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2012
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.711,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2013
+          }
+        ]
+      }
+    },
+    {
+      "key": "Human Development Index",
+      "value": {
+        "type": "quantity",
+        "value": 0.715,
+        "unit": "1"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2014
+          }
+        ]
+      }
+    },
+    {
+      "key": "PPP GDP per capita",
+      "value": {
+        "type": "quantity",
+        "value": 13262,
+        "unit": "Geary–Khamis dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2014/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "FIPS 10-4 (countries and regions)",
+      "value": {
+        "type": "string",
+        "value": "DR"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "country calling code",
+      "value": {
+        "type": "string",
+        "value": "+1809"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "country calling code",
+      "value": {
+        "type": "string",
+        "value": "+1829"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "country calling code",
+      "value": {
+        "type": "string",
+        "value": "+1849"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "Dewey Decimal Classification",
+      "value": {
+        "type": "string",
+        "value": "2--7293"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "inception",
+      "value": {
+        "type": "date",
+        "value": "1844/1/1"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "real gross domestic product growth rate",
+      "value": {
+        "type": "quantity",
+        "value": 6.6,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2016/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "motto text",
+      "value": {
+        "type": "string",
+        "value": "Dios, Patria, Libertad"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "motto text",
+      "value": {
+        "type": "string",
+        "value": "God, Homeland, Freedom"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "motto text",
+      "value": {
+        "type": "string",
+        "value": "Бог, Родина, свобода"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "motto text",
+      "value": {
+        "type": "string",
+        "value": "Dio, Patria e libertà"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "GDP (PPP)",
+      "value": {
+        "type": "quantity",
+        "value": 149893354989.62,
+        "unit": "Geary–Khamis dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2015/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "total reserves",
+      "value": {
+        "type": "quantity",
+        "value": 4861785596,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2014/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP per capita",
+      "value": {
+        "type": "quantity",
+        "value": 6468.47,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2015/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 672399700,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1960/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 654100200,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1961/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 824100000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1962/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 940799900,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1963/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 1025599900,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1964/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 888100000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1965/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 983900000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1966/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 1034800000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1967/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 1079100000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1968/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 1230500000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1969/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 1485400100,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1970/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 1666400000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1971/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 1987300000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1972/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 2344699900,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1973/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 2925600000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1974/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 3599300100,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1975/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 3951399900,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1976/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 4587100200,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1977/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 4774400000,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1978/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 5498800100,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1979/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 6631000100,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1980/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 7266999800,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1981/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 7964000300,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1982/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 8622000100,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1983/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 10330399700,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1984/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 5044592912.6775,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1985/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 6122197810.14358,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1986/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 5826987203.49563,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1987/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 5374315190.18405,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1988/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 6686592728.70663,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1989/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 7073674721.12418,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1990/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 9734321854.02288,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1991/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 11356271335.9741,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1992/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 13081042400,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1993/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 14664237666.6667,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1994/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 16598679279.0698,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1995/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 18241691857.3544,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1996/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 20017908829.3254,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1997/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 21672526562.7869,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1998/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 22137599986.1056,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "1999/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 24305116729.1851,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2000/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 25599311449.3848,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2001/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 27362875602.5011,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2002/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 21642882856.4247,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2003/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 22692574473.3467,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2004/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 36119047252.1794,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2005/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 38116351526.2862,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2006/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 44169678153.1566,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2007/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 48288967303.4896,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2008/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 48376555305.6902,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2009/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 53982886258.2205,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2010/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 57811180659.4545,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2011/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 60657780260.6792,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2012/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 62661773591.7203,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2013/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 66065015410.0468,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2014/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 68802092020.9448,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2015/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 72342967648.3354,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2016/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "nominal GDP",
+      "value": {
+        "type": "quantity",
+        "value": 75931656814.657,
+        "unit": "United States dollar"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2017/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "mains voltage",
+      "value": {
+        "type": "quantity",
+        "value": 110,
+        "unit": "volt"
+      },
+      "qualifiers": {
+        "frequency": [
+          {
+            "type": "quantity",
+            "value": 60,
+            "unit": "hertz"
+          }
+        ]
+      }
+    },
+    {
+      "key": "licence plate code",
+      "value": {
+        "type": "string",
+        "value": "DOM"
+      },
+      "qualifiers": {
+        "start time": [
+          {
+            "type": "date",
+            "value": "1952/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "INSEE countries and foreign territories code",
+      "value": {
+        "type": "string",
+        "value": "99408"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "mobile country code",
+      "value": {
+        "type": "string",
+        "value": "370"
+      },
+      "qualifiers": {}
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 70.374,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 1999
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 70.568,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2000
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 70.775,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2001
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 70.99,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2002
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 71.207,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2003
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 71.425,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2004
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 71.644,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2005
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 71.862,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2006
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 72.078,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2007
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 72.29,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2008
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 72.498,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2009
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 72.702,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2010
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 72.901,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2011
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 73.098,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2012
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 73.292,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2013
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 73.483,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2014
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 73.673,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2015
+          }
+        ]
+      }
+    },
+    {
+      "key": "life expectancy",
+      "value": {
+        "type": "quantity",
+        "value": 73.861,
+        "unit": "year"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "year",
+            "value": 2016
+          }
+        ]
+      }
+    },
+    {
+      "key": "unemployment rate",
+      "value": {
+        "type": "quantity",
+        "value": 15,
+        "unit": "percentage"
+      },
+      "qualifiers": {
+        "point in time": [
+          {
+            "type": "date",
+            "value": "2014/1/1"
+          }
+        ]
+      }
+    },
+    {
+      "key": "ITU letter code",
+      "value": {
+        "type": "string",
+        "value": "DOM"
+      },
+      "qualifiers": {}
+    }
+  ],
+  "relations": [
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q183",
+      "direction": "backward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Germany–Dominican Republic relations"
+          }
+        ],
+        "diplomatic mission sent": [
+          {
+            "type": "string",
+            "value": "Embassy of Germany, Santo Domingo"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q30",
+      "direction": "backward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–United States relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "shares border with",
+      "object": "Q30",
+      "direction": "backward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–United States border"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "shares border with",
+      "object": "Q717",
+      "direction": "backward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Venezuela border"
+          }
+        ],
+        "nature of statement": [
+          {
+            "type": "string",
+            "value": "maritime boundary"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q408",
+      "direction": "backward",
+      "qualifiers": {
+        "diplomatic mission sent": [
+          {
+            "type": "string",
+            "value": "Australian Consulate in Santo Domingo, Dominican Republic"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q183",
+      "direction": "forward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Germany–Dominican Republic relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q408",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q77",
+      "direction": "forward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Uruguay relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q865",
+      "direction": "forward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Taiwan relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q96",
+      "direction": "forward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Mexico relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q30",
+      "direction": "forward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–United States relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q230",
+      "direction": "forward",
+      "qualifiers": {
+        "start time": [
+          {
+            "type": "date",
+            "value": "2010/1/22"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "country",
+      "object": "Q786",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "country",
+      "object": "Q786",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "member of",
+      "object": "Q1065",
+      "direction": "forward",
+      "qualifiers": {
+        "start time": [
+          {
+            "type": "date",
+            "value": "1945/10/24"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "member of",
+      "object": "Q7825",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "member of",
+      "object": "Q294278",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "named after",
+      "object": "Q34820",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "named after",
+      "object": "Q2868",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "continent",
+      "object": "Q49",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "capital",
+      "object": "Q34820",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "part of",
+      "object": "Q12585",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "official language",
+      "object": "Q1321",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "shares border with",
+      "object": "Q790",
+      "direction": "forward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Haiti border"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "shares border with",
+      "object": "Q717",
+      "direction": "forward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Venezuela border"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "shares border with",
+      "object": "Q30",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "contains administrative territorial entity",
+      "object": "Q34820",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "located on terrain feature",
+      "object": "Q664609",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "basin country",
+      "object": "Q1247",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "place of birth",
+      "object": "Q190162",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "country of citizenship",
+      "object": "Q558664",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q77",
+      "direction": "backward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Uruguay relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q96",
+      "direction": "backward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Mexico relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q865",
+      "direction": "backward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Taiwan relations"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "country",
+      "object": "Q545449",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "diplomatic relation",
+      "object": "Q230",
+      "direction": "backward",
+      "qualifiers": {
+        "start time": [
+          {
+            "type": "date",
+            "value": "2010/1/22"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "shares border with",
+      "object": "Q790",
+      "direction": "backward",
+      "qualifiers": {
+        "statement is subject of": [
+          {
+            "type": "string",
+            "value": "Dominican Republic–Haiti border"
+          }
+        ]
+      }
+    },
+    {
+      "predicate": "has part",
+      "object": "Q12585",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "capital of",
+      "object": "Q34820",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "country",
+      "object": "Q34820",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q182218",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q4941",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q164963",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q830295",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q514416",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q587707",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q35951",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "office held by head of government",
+      "object": "Q30461",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "located in the administrative territorial entity",
+      "object": "Q7825",
+      "direction": "forward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q152780",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q474033",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "film release region",
+      "object": "Q748851",
+      "direction": "backward",
+      "qualifiers": {}
+    },
+    {
+      "predicate": "country of citizenship",
+      "object": "Q2367902",
+      "direction": "backward",
+      "qualifiers": {}
+    }
+  ]
+}

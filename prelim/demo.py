@@ -17,7 +17,7 @@ chattool.api_key = API_KEY
 
 from kopl.kopl import KoPLEngine
 
-engine = KoPLEngine(load_json("/home/qing/raid/paperwork/kgtool/data/kqa/kb.json"))
+engine = KoPLEngine(load_json("/home/qing/raid/paperwork/kgtool/data/kqa/kb_fixed.json"))
 
 def test_demo():
     # 问题 "Is there less area in DeKalb County (the one whose PermID is 5037043580) or Boulder County ?"
@@ -35,4 +35,5 @@ def test_demo():
 
 
 if __name__ == '__main__':
-    pass 
+    # pass 
+    test_demo()

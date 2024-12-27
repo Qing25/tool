@@ -45,7 +45,8 @@
         ]
       }
     ],
-    "sample_id": "train_52457"
+    "sample_id": "train_52457",
+    "answer": "Raleigh"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <E> San Francisco Bay Area </E> or <E> Seattle metropolitan area </E> </ES>",
@@ -82,7 +83,8 @@
         ]
       }
     ],
-    "sample_id": "train_76485"
+    "sample_id": "train_76485",
+    "answer": "San Francisco Bay Area"
   },
   {
     "graphq_ir": "what is the attribute <A> area </A> of <E> North Island </E>",
@@ -110,7 +112,8 @@
         ]
       }
     ],
-    "sample_id": "train_84842"
+    "sample_id": "train_84842",
+    "answer": "113729 square kilometre"
   },
   {
     "graphq_ir": "what is the qualifier <Q> number of subscribers </Q> of <ES> <C> human </C> whose <A> birth name </A> is text <V> Richard Melville Hall </V> </ES> whose <A> Twitter username </A> is <V> thelittleidiot </V>",
@@ -157,7 +160,8 @@
         ]
       }
     ],
-    "sample_id": "train_83443"
+    "sample_id": "train_83443",
+    "answer": "1349252"
   },
   {
     "graphq_ir": "what is the relation from <E> Lille </E> to <ES> <E> Leeds </E> (<ES> ones that <R> located in the administrative territorial entity </R> backward to <E> University of Leeds </E> </ES>) </ES>",
@@ -216,7 +220,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_19317"
+    "sample_id": "train_19317",
+    "answer": "twinned administrative body"
   },
   {
     "graphq_ir": "what is the attribute <A> inception </A> of <ES> <C> human settlement </C> whose <A> local dialing code </A> is text <V> 603 </V> </ES>",
@@ -261,7 +266,8 @@
         ]
       }
     ],
-    "sample_id": "train_37401"
+    "sample_id": "train_37401",
+    "answer": "1638"
   },
   {
     "graphq_ir": "what is the qualifier <Q> located in the administrative territorial entity </Q> of <E> Katie Holmes </E> that <R> place of birth </R> to <ES> <E> Toledo </E> (<ES> ones that <R> place of birth </R> backward to <E> Alyson Stoner </E> </ES>) </ES>",
@@ -323,7 +329,8 @@
         ]
       }
     ],
-    "sample_id": "train_47329"
+    "sample_id": "train_47329",
+    "answer": "Ohio"
   },
   {
     "graphq_ir": "what is <ES> <C> city of the United States </C> whose <A> local dialing code </A> is text <V> 480 602 </V> </ES>",
@@ -366,7 +373,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_32553"
+    "sample_id": "train_32553",
+    "answer": "Mesa"
   },
   {
     "graphq_ir": "what is <ES> <C> war </C> that <R> participant </R> forward to <ES> <E> India </E> (<ES> ones that <R> diplomatic relation </R> backward to <E> European Union </E> </ES>) </ES> </ES>",
@@ -436,7 +444,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_46477"
+    "sample_id": "train_46477",
+    "answer": "Indo-Pakistani War of 1971"
   },
   {
     "graphq_ir": "what is the attribute <A> Twitter username </A> of <E> New York Islanders </E>",
@@ -464,7 +473,8 @@
         ]
       }
     ],
-    "sample_id": "train_2830"
+    "sample_id": "train_2830",
+    "answer": "NYIslanders"
   },
   {
     "graphq_ir": "what is <ES> <C> visual artwork </C> that <R> producer </R> forward to <E> Werner Herzog </E> </ES>",
@@ -509,7 +519,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_56711"
+    "sample_id": "train_56711",
+    "answer": "Invincible"
   },
   {
     "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <C> visual artwork </C> whose <A> official website </A> is text <V> https://www.warnerbros.com/matrix </V> </ES> whose <A> publication date </A> is <V> 1999-07-14 </V>",
@@ -556,7 +567,8 @@
         ]
       }
     ],
-    "sample_id": "train_17101"
+    "sample_id": "train_17101",
+    "answer": "Sweden"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> MTV Movie Award for Most Desirable Female </E> that <R> winner </R> to <E> Janet Jackson </E>",
@@ -593,7 +605,8 @@
         ]
       }
     ],
-    "sample_id": "train_20686"
+    "sample_id": "train_20686",
+    "answer": "1994"
   },
   {
     "graphq_ir": "whether <E> Ingrid Bergman </E> <A> Munzinger IBA </A> is text <V> 00000027205 </V>",
@@ -630,7 +643,8 @@
         ]
       }
     ],
-    "sample_id": "train_34463"
+    "sample_id": "train_34463",
+    "answer": "no"
   },
   {
     "graphq_ir": "what is <ES> <C> film festival edition </C> that <R> follows </R> forward to <E> 2010 Sundance Film Festival </E> </ES>",
@@ -675,7 +689,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_61044"
+    "sample_id": "train_61044",
+    "answer": "2011 Sundance Film Festival"
   },
   {
     "graphq_ir": "how many <ES> <C> film character </C> that <R> educated at </R> forward to <E> Boston University School of Law </E> </ES>",
@@ -720,7 +735,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_85100"
+    "sample_id": "train_85100",
+    "answer": "0"
   },
   {
     "graphq_ir": "what is <ES> <C> visual artwork </C> that <R> followed by </R> backward to <ES> <C> film </C> whose <A> official website </A> is text <V> http://web.archive.org/web/20061116073244/http://saw3.com/ </V> </ES> </ES>",
@@ -782,7 +798,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_49504"
+    "sample_id": "train_49504",
+    "answer": "Saw IV"
   },
   {
     "graphq_ir": "what is the qualifier <Q> end time </Q> of <E> Giovani dos Santos </E> that <R> member of sports team </R> to <E> RCD Mallorca </E>",
@@ -819,7 +836,8 @@
         ]
       }
     ],
-    "sample_id": "train_40533"
+    "sample_id": "train_40533",
+    "answer": "2013-01-01"
   },
   {
     "graphq_ir": "what is the relation from <E> Notting Hill </E> to <ES> <E> Hugh Grant </E> whose <A> CANTIC-ID </A> is text <V> a11752531 </V> </ES>",
@@ -863,7 +881,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_60963"
+    "sample_id": "train_60963",
+    "answer": "cast member"
   },
   {
     "graphq_ir": "what is <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0001 2142 1582 </V> </ES>",
@@ -906,7 +925,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_70507"
+    "sample_id": "train_70507",
+    "answer": "Vilmos Zsigmond"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <E> Jarhead </E> or <ES> <E> Yellow Submarine </E> (<ES> ones that <R> film release region </R> forward to <E> Hungary </E> </ES>) </ES> </ES>",
@@ -968,7 +988,8 @@
         ]
       }
     ],
-    "sample_id": "train_511"
+    "sample_id": "train_511",
+    "answer": "Jarhead"
   },
   {
     "graphq_ir": "what is the relation from <E> 16 Blocks </E> to <E> Klaus Badelt </E>",
@@ -1002,7 +1023,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_48486"
+    "sample_id": "train_48486",
+    "answer": "composer"
   },
   {
     "graphq_ir": "what is the attribute <A> population </A> of <ES> <C> city </C> that <R> twinned administrative body </R> backward to <E> Tijuana </E> </ES>",
@@ -1049,7 +1071,8 @@
         ]
       }
     ],
-    "sample_id": "train_14379"
+    "sample_id": "train_14379",
+    "answer": "2141652"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <ES> <E> DeKalb County </E> whose <A> PermID </A> is text <V> 5037043580 </V> </ES> or <E> Boulder County </E> </ES>",
@@ -1096,7 +1119,8 @@
         ]
       }
     ],
-    "sample_id": "train_51096"
+    "sample_id": "train_51096",
+    "answer": "DeKalb County"
   },
   {
     "graphq_ir": "what is the relation from <E> Cinderella Man </E> to <E> Screen Actors Guild Award for Outstanding Performance by a Male Actor in a Leading Role </E>",
@@ -1130,7 +1154,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_65803"
+    "sample_id": "train_65803",
+    "answer": "nominated for"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> whose <A> name in native language </A> is text <V> Richard C. Clark </V> </ES> <A> ISNI </A> is text <V> 0000 0001 0707 9354 </V>",
@@ -1184,7 +1209,8 @@
         ]
       }
     ],
-    "sample_id": "train_41800"
+    "sample_id": "train_41800",
+    "answer": "no"
   },
   {
     "graphq_ir": "what is <ES> <C> television film </C> that <R> cast member </R> forward to <E> Alan Cumming </E> </ES>",
@@ -1229,7 +1255,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_79103"
+    "sample_id": "train_79103",
+    "answer": "Annie"
   },
   {
     "graphq_ir": "what is the relation from <E> Delft </E> to <E> The Hague </E>",
@@ -1263,7 +1290,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_58240"
+    "sample_id": "train_58240",
+    "answer": "shares border with"
   },
   {
     "graphq_ir": "what is the relation from <E> FC Levadia Tallinn </E> to <E> green </E>",
@@ -1297,7 +1325,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_32752"
+    "sample_id": "train_32752",
+    "answer": "official color"
   },
   {
     "graphq_ir": "what is the qualifier <Q> language of work or name </Q> of <ES> <C> city of the United States </C> whose <A> population </A> is number <V> 67947 </V> ( <Q> point in time </Q> is year <V> 2010 </V> ) </ES> whose <A> official website </A> is <V> http://www.santafenm.gov/ </V>",
@@ -1356,7 +1385,8 @@
         ]
       }
     ],
-    "sample_id": "train_78009"
+    "sample_id": "train_78009",
+    "answer": "English"
   },
   {
     "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <C> visual artwork </C> that <R> director of photography </R> forward to <ES> <E> Harry Stradling </E> whose <A> date of birth </A> is date <V> 1925-01-07 </V> </ES> </ES> whose <A> publication date </A> is <V> 1974-03-07 </V>",
@@ -1416,7 +1446,8 @@
         ]
       }
     ],
-    "sample_id": "train_80884"
+    "sample_id": "train_80884",
+    "answer": "Germany"
   },
   {
     "graphq_ir": "what is the qualifier <Q> number of subscribers </Q> of <E> Sichuan </E> whose <A> subreddit </A> is <V> sichuan </V>",
@@ -1446,7 +1477,8 @@
         ]
       }
     ],
-    "sample_id": "train_55165"
+    "sample_id": "train_55165",
+    "answer": "17"
   },
   {
     "graphq_ir": "what is the relation from <E> pop music </E> to <E> Paris Hilton </E>",
@@ -1480,7 +1512,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_17951"
+    "sample_id": "train_17951",
+    "answer": "famous people"
   },
   {
     "graphq_ir": "what is the attribute <A> Instagram username </A> of <E> National Register of Historic Places </E>",
@@ -1508,7 +1541,8 @@
         ]
       }
     ],
-    "sample_id": "train_1467"
+    "sample_id": "train_1467",
+    "answer": "nationalregisternps"
   },
   {
     "graphq_ir": "how many <ES> <C> former French region </C> that <R> replaced by </R> forward to <ES> <C> region of France </C> whose <A> SIREN number </A> is text <V> 200053403 </V> </ES> </ES>",
@@ -1570,7 +1604,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_28649"
+    "sample_id": "train_28649",
+    "answer": "2"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <ES> <E> Thomas Hardy </E> whose <A> date of death </A> is date <V> 1805-01-01 </V> </ES>",
@@ -1609,7 +1644,8 @@
         ]
       }
     ],
-    "sample_id": "train_66424"
+    "sample_id": "train_66424",
+    "answer": "0000 0000 0888 5545"
   },
   {
     "graphq_ir": "which one has the largest <A> number of episodes </A> among <ES> <C> comedy </C> that <R> genre </R> forward to <E> situation comedy </E> </ES>",
@@ -1657,7 +1693,8 @@
         ]
       }
     ],
-    "sample_id": "train_3112"
+    "sample_id": "train_3112",
+    "answer": "The Golden Girls"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> nominated for </R> forward to <E> Tony Award for Best Actress in a Play </E> ( <Q> point in time </Q> is year <V> 1991 </V> ) </ES> <A> Deutsche Synchronkartei actor-ID </A> is text <V> 71675 </V>",
@@ -1724,7 +1761,8 @@
         ]
       }
     ],
-    "sample_id": "train_21561"
+    "sample_id": "train_21561",
+    "answer": "no"
   },
   {
     "graphq_ir": "whether <ES> <E> Michael Winterbottom </E> (<ES> ones that <R> educated at </R> forward to <E> Dulwich College </E> </ES>) </ES> <A> ISNI </A> is text <V> 0000 0001 2144 6958 </V>",
@@ -1786,7 +1824,8 @@
         ]
       }
     ],
-    "sample_id": "train_35679"
+    "sample_id": "train_35679",
+    "answer": "no"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> sovereign state </C> whose <A> Human Development Index </A> smaller than number <V> 1.0 </V> </ES> or <ES> <C> sovereign state </C> whose <A> area </A> larger than number <V> 45 square versta </V> </ES> </ES>",
@@ -1863,7 +1902,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_10863"
+    "sample_id": "train_10863",
+    "answer": "123"
   },
   {
     "graphq_ir": "what is the attribute <A> official website </A> of <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0000 6310 5556 </V> </ES>",
@@ -1908,7 +1948,8 @@
         ]
       }
     ],
-    "sample_id": "train_70544"
+    "sample_id": "train_70544",
+    "answer": "http://www.gwenstefani.com"
   },
   {
     "graphq_ir": "what is the relation from <E> Jeremy Renner </E> to <E> Modesto </E>",
@@ -1942,7 +1983,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_48570"
+    "sample_id": "train_48570",
+    "answer": "place of birth"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> university </C> whose <A> postal code </A> is text <V> 58202-8193 </V> </ES> or <ES> <C> university </C> whose <A> ISNI </A> is text <V> 0000 0001 2336 6580 </V> </ES> </ES>",
@@ -2017,7 +2059,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_82492"
+    "sample_id": "train_82492",
+    "answer": "2"
   },
   {
     "graphq_ir": "what is the qualifier <Q> statement is subject of </Q> of <ES> <E> Days of Thunder </E> (<ES> ones that <R> film release region </R> forward to <E> United States of America </E> </ES>) </ES> that <R> nominated for </R> to <E> Academy Award for Best Sound Mixing </E>",
@@ -2079,7 +2122,8 @@
         ]
       }
     ],
-    "sample_id": "train_31155"
+    "sample_id": "train_31155",
+    "answer": "63rd Academy Awards"
   },
   {
     "graphq_ir": "what is the qualifier <Q> nominee </Q> of <E> Blade Runner </E> that <R> nominated for </R> to <E> BAFTA Award for Best Editing </E>",
@@ -2116,7 +2160,8 @@
         ]
       }
     ],
-    "sample_id": "train_81282"
+    "sample_id": "train_81282",
+    "answer": "Terry Rawlings"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Michelangelo </E> whose <A> name in native language </A> is text <V> Michelangelo </V> </ES> to <E> ninja </E>",
@@ -2160,7 +2205,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_73797"
+    "sample_id": "train_73797",
+    "answer": "occupation"
   },
   {
     "graphq_ir": "what is the qualifier <Q> located in the administrative territorial entity </Q> of <ES> <C> pome </C> whose <A> total produced </A> is number <V> 590016000 pound </V> </ES> whose <A> total produced </A> is <V> 280014000 pound </V>",
@@ -2208,7 +2254,8 @@
         ]
       }
     ],
-    "sample_id": "train_78816"
+    "sample_id": "train_78816",
+    "answer": "California"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> sovereign state </C> that <R> diplomatic relation </R> backward to <E> Taiwan </E> ( <Q> statement is subject of </Q> is text <V> East Timor–Taiwan relations </V> ) </ES> whose <A> population </A> is <V> 1148958 </V>",
@@ -2267,7 +2314,8 @@
         ]
       }
     ],
-    "sample_id": "train_7748"
+    "sample_id": "train_7748",
+    "answer": "2012"
   },
   {
     "graphq_ir": "which one has the smallest <A> duration </A> among <ES> <ES> <E> Speed </E> (<ES> ones that <R> award received </R> forward to <E> Academy Award for Best Sound Mixing </E> </ES>) </ES> or <ES> <E> Star Wars: The Clone Wars </E> (<ES> ones that <R> production company </R> forward to <E> Warner Bros. </E> </ES>) </ES> </ES>",
@@ -2354,7 +2402,8 @@
         ]
       }
     ],
-    "sample_id": "train_62671"
+    "sample_id": "train_62671",
+    "answer": "Star Wars: The Clone Wars"
   },
   {
     "graphq_ir": "what is the relation from <E> Joseph L. Mankiewicz </E> to <E> 23rd Academy Awards </E>",
@@ -2388,7 +2437,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_13094"
+    "sample_id": "train_13094",
+    "answer": "award received"
   },
   {
     "graphq_ir": "whether <E> Jake Shimabukuro </E> <A> official website </A> is text <V> http://www.jakeshimabukuro.com/ </V>",
@@ -2425,7 +2475,8 @@
         ]
       }
     ],
-    "sample_id": "train_58763"
+    "sample_id": "train_58763",
+    "answer": "yes"
   },
   {
     "graphq_ir": "what is the qualifier <Q> number of matches played/races/starts </Q> of <E> Chris Nurse </E> that <R> member of sports team </R> to <E> Fort Lauderdale Strikers </E>",
@@ -2462,7 +2513,8 @@
         ]
       }
     ],
-    "sample_id": "train_64111"
+    "sample_id": "train_64111",
+    "answer": "16"
   },
   {
     "graphq_ir": "whether <ES> <C> city of the United States </C> that <R> place of death </R> backward to <E> Nathanael Greene </E> </ES> <A> local dialing code </A> is text <V> 912 </V>",
@@ -2518,7 +2570,8 @@
         ]
       }
     ],
-    "sample_id": "train_33390"
+    "sample_id": "train_33390",
+    "answer": "yes"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <E> David Foster </E> (<ES> ones that <R> country of citizenship </R> forward to <E> Canada </E> </ES>) </ES> that <R> award received </R> to <E> Grammy Award for Best Musical Theater Album </E>",
@@ -2580,7 +2633,8 @@
         ]
       }
     ],
-    "sample_id": "train_62528"
+    "sample_id": "train_62528",
+    "answer": "1982"
   },
   {
     "graphq_ir": "what is the qualifier <Q> start time </Q> of <ES> <E> Chicago </E> whose <A> demonym </A> is text <V> Chicagoan </V> </ES> that <R> twinned administrative body </R> to <E> Belgrade </E>",
@@ -2627,7 +2681,8 @@
         ]
       }
     ],
-    "sample_id": "train_45379"
+    "sample_id": "train_45379",
+    "answer": "2005-06-01"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> basketball team </C> whose <A> subreddit </A> is text <V> rockets </V> </ES> or <ES> <C> basketball team </C> that <R> seed team </R> backward to <E> 1993 NCAA Men's Division I Basketball Tournament </E> </ES> </ES>",
@@ -2704,7 +2759,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_81012"
+    "sample_id": "train_81012",
+    "answer": "5"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <E> Til Schweiger </E>",
@@ -2732,7 +2788,8 @@
         ]
       }
     ],
-    "sample_id": "train_43105"
+    "sample_id": "train_43105",
+    "answer": "0000 0001 1497 4293"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> martial arts </C> that <R> sport </R> backward to <E> Johnny Yong Bosch </E> </ES> and <ES> <C> martial arts </C> that <R> country </R> forward to <E> Japan </E> </ES> </ES>",
@@ -2811,7 +2868,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_84186"
+    "sample_id": "train_84186",
+    "answer": "judo"
   },
   {
     "graphq_ir": "whether <ES> <C> visual artwork </C> whose <A> title </A> is text <V> Born on the Fourth of July </V> </ES> <A> publication date </A> is year <V> 1991 </V> ( <Q> place of publication </Q> is <V> Germany </V> )",
@@ -2868,7 +2926,8 @@
         ]
       }
     ],
-    "sample_id": "train_29562"
+    "sample_id": "train_29562",
+    "answer": "no"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> human </C> whose <A> work period (start) </A> larger than year <V> 1951 </V> </ES> and <ES> <C> human </C> whose <A> audio recording of the subject's spoken voice </A> is text <V> Dustin hoffman bbc radio4 desert island discs 02 12 2012 b01p314n.flac </V> </ES> </ES>",
@@ -2944,7 +3003,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_21671"
+    "sample_id": "train_21671",
+    "answer": "Dustin Hoffman"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> city of the United States </C> whose <A> official website </A> is text <V> http://www.romefloyd.com/ </V> </ES> whose <A> population </A> is <V> 34980 </V>",
@@ -2991,7 +3051,8 @@
         ]
       }
     ],
-    "sample_id": "train_26696"
+    "sample_id": "train_26696",
+    "answer": "2000"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <C> county of Washington </C> whose <A> population </A> smaller than number <V> 910000 </V> </ES>",
@@ -3038,7 +3099,8 @@
         ]
       }
     ],
-    "sample_id": "train_37789"
+    "sample_id": "train_37789",
+    "answer": "Okanogan County"
   },
   {
     "graphq_ir": "what is <ES> <C> metropolitan borough </C> whose <A> TOID </A> is text <V> 7000000000000018 </V> </ES>",
@@ -3081,7 +3143,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_94299"
+    "sample_id": "train_94299",
+    "answer": "Birmingham"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <C> city in New Jersey </C> whose <A> inception </A> smaller than year <V> 1863 </V> </ES>",
@@ -3128,7 +3191,8 @@
         ]
       }
     ],
-    "sample_id": "train_31083"
+    "sample_id": "train_31083",
+    "answer": "Newark"
   },
   {
     "graphq_ir": "which one has the largest <A> population </A> among <ES> <E> French Third Republic </E> or <E> Dutch Republic </E> </ES>",
@@ -3165,7 +3229,8 @@
         ]
       }
     ],
-    "sample_id": "train_68884"
+    "sample_id": "train_68884",
+    "answer": "French Third Republic"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <ES> <E> Sullivan County </E> (<ES> ones that <R> shares border with </R> backward to <E> Grafton County </E> </ES>) </ES> or <E> Sandoval County </E> </ES>",
@@ -3227,7 +3292,8 @@
         ]
       }
     ],
-    "sample_id": "train_31903"
+    "sample_id": "train_31903",
+    "answer": "Sandoval County"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <E> Dazed and Confused </E> or <ES> <E> Terminator 3: Rise of the Machines </E> (<ES> ones that <R> composer </R> forward to <E> Marco Beltrami </E> </ES>) </ES> </ES>",
@@ -3289,7 +3355,8 @@
         ]
       }
     ],
-    "sample_id": "train_46765"
+    "sample_id": "train_46765",
+    "answer": "Terminator 3: Rise of the Machines"
   },
   {
     "graphq_ir": "what is the relation from <E> Batman Beyond </E> to <E> Lauren Tom </E>",
@@ -3323,7 +3390,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_51130"
+    "sample_id": "train_51130",
+    "answer": "voice actor"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> ethnic community </C> whose <A> population </A> larger than number <V> 5700000000 </V> </ES> or <ES> <C> ethnic community </C> that <R> part of </R> forward to <E> Irish Americans </E> </ES> </ES>",
@@ -3401,7 +3469,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_72664"
+    "sample_id": "train_72664",
+    "answer": "0"
   },
   {
     "graphq_ir": "how many <ES> <C> literary award </C> that <R> award received </R> backward to <E> Larry Niven </E> </ES>",
@@ -3446,7 +3515,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_793"
+    "sample_id": "train_793",
+    "answer": "5"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0000 7847 8275 </V> </ES> <A> date of birth </A> larger than year <V> 1589 </V>",
@@ -3501,7 +3571,8 @@
         ]
       }
     ],
-    "sample_id": "train_52015"
+    "sample_id": "train_52015",
+    "answer": "yes"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <E> Michael Haneke </E>",
@@ -3529,7 +3600,8 @@
         ]
       }
     ],
-    "sample_id": "train_70966"
+    "sample_id": "train_70966",
+    "answer": "0000 0001 2125 4091"
   },
   {
     "graphq_ir": "what is the attribute <A> official website </A> of <E> Dwight Yoakam </E>",
@@ -3557,7 +3629,8 @@
         ]
       }
     ],
-    "sample_id": "train_7486"
+    "sample_id": "train_7486",
+    "answer": "http://www.dwightyoakam.com/"
   },
   {
     "graphq_ir": "whether <ES> <C> legislative term </C> that <R> follows </R> backward to <E> 19th United States Congress </E> </ES> <A> start time </A> is not year <V> 1990 </V>",
@@ -3614,7 +3687,8 @@
         ]
       }
     ],
-    "sample_id": "train_81046"
+    "sample_id": "train_81046",
+    "answer": "yes"
   },
   {
     "graphq_ir": "which one has the smallest <A> number of children </A> among <ES> <E> Laura Innes </E> or <E> J. K. Rowling </E> </ES>",
@@ -3651,7 +3725,8 @@
         ]
       }
     ],
-    "sample_id": "train_42011"
+    "sample_id": "train_42011",
+    "answer": "Laura Innes"
   },
   {
     "graphq_ir": "whether <ES> <E> John Hughes </E> (<ES> ones that <R> member of sports team </R> forward to <E> Sunderland A.F.C. </E> </ES>) </ES> <A> date of birth </A> smaller than year <V> 1969 </V>",
@@ -3714,7 +3789,8 @@
         ]
       }
     ],
-    "sample_id": "train_13198"
+    "sample_id": "train_13198",
+    "answer": "yes"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> Charleston County </E> whose <A> population </A> is <V> 389262 </V>",
@@ -3744,7 +3820,8 @@
         ]
       }
     ],
-    "sample_id": "train_14468"
+    "sample_id": "train_14468",
+    "answer": "2015-01-01"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> higher education institution </C> that <R> educated at </R> backward to <E> Jerome Kern </E> </ES> whose <A> students count </A> is <V> 30787 </V>",
@@ -3793,7 +3870,8 @@
         ]
       }
     ],
-    "sample_id": "train_29297"
+    "sample_id": "train_29297",
+    "answer": "2016-12-01"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> political party </C> that <R> official color </R> forward to <E> red </E> </ES> and <ES> <C> political party </C> that <R> parent organization </R> backward to <E> Liberation Tigers of Tamil Eelam </E> </ES> </ES>",
@@ -3872,7 +3950,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_16412"
+    "sample_id": "train_16412",
+    "answer": "0"
   },
   {
     "graphq_ir": "what is the attribute <A> start time </A> of <E> 1980 Winter Olympics </E>",
@@ -3900,7 +3979,8 @@
         ]
       }
     ],
-    "sample_id": "train_20362"
+    "sample_id": "train_20362",
+    "answer": "1980-02-14"
   },
   {
     "graphq_ir": "what is the attribute <A> publication date </A> of <ES> <E> Transformers: Dark of the Moon </E> (<ES> ones that <R> platform </R> forward to <E> Wii </E> </ES>) </ES>",
@@ -3953,7 +4033,8 @@
         ]
       }
     ],
-    "sample_id": "train_29520"
+    "sample_id": "train_29520",
+    "answer": "2011-06-14"
   },
   {
     "graphq_ir": "what is the attribute <A> official website </A> of <ES> <C> association football club </C> whose <A> Twitter username </A> is text <V> FGRFC_Official </V> </ES>",
@@ -3998,7 +4079,8 @@
         ]
       }
     ],
-    "sample_id": "train_60928"
+    "sample_id": "train_60928",
+    "answer": "https://www.fgr.co.uk/"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> Walmart </E> whose <A> total revenue </A> is <V> 446509000000 United States dollar </V>",
@@ -4028,7 +4110,8 @@
         ]
       }
     ],
-    "sample_id": "train_34724"
+    "sample_id": "train_34724",
+    "answer": "2012"
   },
   {
     "graphq_ir": "whether <E> Peter Capaldi </E> <A> height </A> larger than number <V> 1.7 metre </V>",
@@ -4066,7 +4149,8 @@
         ]
       }
     ],
-    "sample_id": "train_76703"
+    "sample_id": "train_76703",
+    "answer": "yes"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> miniseries </C> that <R> after a work by </R> forward to <E> Charles Dickens </E> </ES> or <ES> <C> miniseries </C> that <R> main subject </R> forward to <E> World War II </E> </ES> </ES>",
@@ -4145,7 +4229,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_20884"
+    "sample_id": "train_20884",
+    "answer": "6"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> form of government </C> whose <A> pronunciation audio </A> is text <V> Lb-Italien.ogg </V> </ES> and <ES> <C> form of government </C> whose <A> nominal GDP </A> larger than number <V> 14000000000000 Russian ruble </V> </ES> </ES>",
@@ -4221,7 +4306,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_68234"
+    "sample_id": "train_68234",
+    "answer": "0"
   },
   {
     "graphq_ir": "what is the attribute <A> IPTC Newscode </A> of <E> mountain biking </E>",
@@ -4249,7 +4335,8 @@
         ]
       }
     ],
-    "sample_id": "train_16272"
+    "sample_id": "train_16272",
+    "answer": "mediatopic/20000903"
   },
   {
     "graphq_ir": "what is <ES> <C> human </C> that <R> creator </R> backward to <ES> <C> television series </C> that <R> cast member </R> forward to <E> Kathleen Quinlan </E> </ES> </ES>",
@@ -4313,7 +4400,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_79203"
+    "sample_id": "train_79203",
+    "answer": "David Shore"
   },
   {
     "graphq_ir": "whether <ES> <C> free software copyleft license </C> whose <A> short name </A> is text <V> GNU GPL </V> </ES> <A> full work available at </A> is text <V> https://www.gnu.org/licenses/gpl.html </V>",
@@ -4367,7 +4455,8 @@
         ]
       }
     ],
-    "sample_id": "train_55769"
+    "sample_id": "train_55769",
+    "answer": "yes"
   },
   {
     "graphq_ir": "what is the qualifier <Q> end time </Q> of <E> Nancy Pelosi </E> that <R> residence </R> to <ES> <E> New York </E> (<ES> ones that <R> located in the administrative territorial entity </R> backward to <E> Nassau County </E> </ES>) </ES>",
@@ -4429,7 +4518,8 @@
         ]
       }
     ],
-    "sample_id": "train_20718"
+    "sample_id": "train_20718",
+    "answer": "1969"
   },
   {
     "graphq_ir": "what is the attribute <A> population </A> of <ES> <C> ceremonial county of England </C> that <R> place of death </R> backward to <E> Jack Bruce </E> </ES>",
@@ -4476,7 +4566,8 @@
         ]
       }
     ],
-    "sample_id": "train_55719"
+    "sample_id": "train_55719",
+    "answer": "741900"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Jon Stewart </E> (<ES> ones that <R> member of sports team </R> forward to <E> Weymouth F.C. </E> </ES>) </ES> to <E> Burnley F.C. </E>",
@@ -4535,7 +4626,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_54098"
+    "sample_id": "train_54098",
+    "answer": "member of sports team"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Melbourne </E> whose <A> official website </A> is text <V> http://www.melbourneflorida.org </V> </ES> to <ES> <E> Melbourne </E> (<ES> ones that <R> place of birth </R> backward to <E> Scott McDonald </E> </ES>) </ES>",
@@ -4604,7 +4696,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_56859"
+    "sample_id": "train_56859",
+    "answer": "named after"
   },
   {
     "graphq_ir": "what is the qualifier <Q> character role </Q> of <ES> <E> The Lord of the Rings: The Fellowship of the Ring </E> (<ES> ones that <R> nominated for </R> forward to <E> BAFTA Award for Best Editing </E> </ES>) </ES> that <R> cast member </R> to <ES> <E> Billy Boyd </E> (<ES> ones that <R> winner </R> backward to <E> Broadcast Film Critics Association Award for Best Cast </E> </ES>) </ES>",
@@ -4691,7 +4784,8 @@
         ]
       }
     ],
-    "sample_id": "train_49398"
+    "sample_id": "train_49398",
+    "answer": "Peregrin Took"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> composer </R> backward to <ES> <E> The Phantom of the Opera </E> (<ES> ones that <R> original language of film or TV show </R> forward to <E> Italian </E> </ES>) </ES> </ES> <A> CANTIC-ID </A> is text <V> a10445444 </V>",
@@ -4772,7 +4866,8 @@
         ]
       }
     ],
-    "sample_id": "train_58598"
+    "sample_id": "train_58598",
+    "answer": "no"
   },
   {
     "graphq_ir": "what is the relation from <E> National Society of Film Critics Award for Best Actress </E> to <E> Elisabeth Shue </E>",
@@ -4806,7 +4901,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_88825"
+    "sample_id": "train_88825",
+    "answer": "winner"
   },
   {
     "graphq_ir": "what is <ES> <C> higher education institution </C> that <R> educated at </R> backward to <E> Shirley Knight </E> </ES>",
@@ -4851,7 +4947,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_28828"
+    "sample_id": "train_28828",
+    "answer": "Wichita State University"
   },
   {
     "graphq_ir": "which one has the largest <A> real gross domestic product growth rate </A> among <ES> <E> Colombia </E> or <ES> <E> Georgia </E> (<ES> ones that <R> diplomatic relation </R> backward to <E> Vietnam </E> </ES>) </ES> </ES>",
@@ -4913,7 +5010,8 @@
         ]
       }
     ],
-    "sample_id": "train_35296"
+    "sample_id": "train_35296",
+    "answer": "Georgia"
   },
   {
     "graphq_ir": "how many <ES> <C> medal </C> that <R> country </R> forward to <ES> <C> sovereign state </C> that <R> country </R> forward to <ES> <E> Republic of the Congo </E> whose <A> life expectancy </A> is number <V> 64.625 year </V> </ES> </ES> </ES>",
@@ -4988,7 +5086,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_75162"
+    "sample_id": "train_75162",
+    "answer": "0"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> agent </C> whose <A> ISNI </A> is text <V> 0000 0001 2159 0079 </V> </ES> and <ES> <C> agent </C> whose <A> inception </A> is not year <V> 1799 </V> </ES> </ES>",
@@ -5064,7 +5163,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_88037"
+    "sample_id": "train_88037",
+    "answer": "Organisation for Economic Co-operation and Development"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <C> county of Texas </C> whose <A> inception </A> smaller than year <V> 1849 </V> </ES>",
@@ -5111,7 +5211,8 @@
         ]
       }
     ],
-    "sample_id": "train_27541"
+    "sample_id": "train_27541",
+    "answer": "Harris County"
   },
   {
     "graphq_ir": "whether <ES> <C> cemetery </C> that <R> country </R> forward to <E> France </E> </ES> <A> inception </A> is not year <V> 1818 </V>",
@@ -5168,7 +5269,8 @@
         ]
       }
     ],
-    "sample_id": "train_41836"
+    "sample_id": "train_41836",
+    "answer": "yes"
   },
   {
     "graphq_ir": "which one has the largest <A> mass </A> among <ES> <E> linoleic acid </E> or <E> arachidonic acid </E> </ES>",
@@ -5205,7 +5307,8 @@
         ]
       }
     ],
-    "sample_id": "train_86776"
+    "sample_id": "train_86776",
+    "answer": "arachidonic acid"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <E> Monroe County </E> whose <A> FIPS 6-4 (US counties) </A> is text <V> 18105 </V> </ES> whose <A> population </A> is <V> 140305 </V>",
@@ -5245,7 +5348,8 @@
         ]
       }
     ],
-    "sample_id": "train_4974"
+    "sample_id": "train_4974",
+    "answer": "2011-07-01"
   },
   {
     "graphq_ir": "what is the qualifier <Q> character role </Q> of <E> The Bourne Legacy </E> that <R> cast member </R> to <E> Joan Allen </E>",
@@ -5282,7 +5386,8 @@
         ]
       }
     ],
-    "sample_id": "train_3266"
+    "sample_id": "train_3266",
+    "answer": "Pamela Landy"
   },
   {
     "graphq_ir": "how many <ES> <C> hip hop music </C> that <R> famous people </R> forward to <E> Lil Jon </E> </ES>",
@@ -5327,7 +5432,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_74242"
+    "sample_id": "train_74242",
+    "answer": "4"
   },
   {
     "graphq_ir": "what is the attribute <A> date of birth </A> of <E> Richard Kind </E>",
@@ -5355,7 +5461,8 @@
         ]
       }
     ],
-    "sample_id": "train_75193"
+    "sample_id": "train_75193",
+    "answer": "1956-11-22"
   },
   {
     "graphq_ir": "whether <ES> <C> big city </C> whose <A> WOEID </A> is text <V> 673361 </V> </ES> <A> official website </A> is text <V> http://www.miramax.com/movie/life-is-beautiful </V>",
@@ -5409,7 +5516,8 @@
         ]
       }
     ],
-    "sample_id": "train_73069"
+    "sample_id": "train_73069",
+    "answer": "no"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> county of Indiana </C> that <R> contains administrative territorial entity </R> forward to <ES> <E> Anderson </E> whose <A> official website </A> is text <V> http://www.cityofanderson.com/ </V> </ES> </ES> or <ES> <C> county of Indiana </C> that <R> located in the administrative territorial entity </R> forward to <E> Indiana </E> </ES> </ES>",
@@ -5498,7 +5606,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_37405"
+    "sample_id": "train_37405",
+    "answer": "13"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> Sex, Lies, and Videotape </E> that <R> award received </R> to <E> National Film Registry </E>",
@@ -5535,7 +5644,8 @@
         ]
       }
     ],
-    "sample_id": "train_29333"
+    "sample_id": "train_29333",
+    "answer": "2006-01-01"
   },
   {
     "graphq_ir": "what is the relation from <E> A Simple Life </E> to <E> Italy </E>",
@@ -5569,7 +5679,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_57476"
+    "sample_id": "train_57476",
+    "answer": "film release region"
   },
   {
     "graphq_ir": "how many <ES> <C> album </C> that <R> derivative work </R> forward to <ES> <E> Tommy </E> (<ES> ones that <R> distributor </R> forward to <E> Columbia Pictures </E> </ES>) </ES> </ES>",
@@ -5639,7 +5750,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_86929"
+    "sample_id": "train_86929",
+    "answer": "1"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <E> Date Night </E> or <E> Face/Off </E> </ES>",
@@ -5676,7 +5788,8 @@
         ]
       }
     ],
-    "sample_id": "train_7375"
+    "sample_id": "train_7375",
+    "answer": "Face/Off"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> film </C> whose <A> title </A> is text <V> Hercules </V> </ES> and <ES> <C> film </C> whose <A> duration </A> smaller than number <V> 220 minute </V> </ES> </ES>",
@@ -5752,7 +5865,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_21823"
+    "sample_id": "train_21823",
+    "answer": "Hercules"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Batman Forever </E> (<ES> ones that <R> game mode </R> forward to <E> single-player video game </E> </ES>) </ES> to <E> action game </E>",
@@ -5811,7 +5925,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_773"
+    "sample_id": "train_773",
+    "answer": "genre"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Law & Order </E> (<ES> ones that <R> nominated for </R> forward to <E> Screen Actors Guild Award for Outstanding Performance by an Ensemble in a Drama Series </E> </ES>) </ES> to <E> police procedural </E>",
@@ -5870,7 +5985,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_34245"
+    "sample_id": "train_34245",
+    "answer": "genre"
   },
   {
     "graphq_ir": "what is the attribute <A> date of death </A> of <ES> <C> human </C> that <R> nominated for </R> forward to <E> Academy Award for Best Animated Short Film </E> ( <Q> for work </Q> is text <V> For Scent-imental Reasons </V> ) </ES>",
@@ -5927,7 +6043,8 @@
         ]
       }
     ],
-    "sample_id": "train_39288"
+    "sample_id": "train_39288",
+    "answer": "1970-02-22"
   },
   {
     "graphq_ir": "which one has the smallest <A> number of episodes </A> among <ES> <E> Thirtysomething </E> or <E> Brothers & Sisters </E> </ES>",
@@ -5964,7 +6081,8 @@
         ]
       }
     ],
-    "sample_id": "train_16939"
+    "sample_id": "train_16939",
+    "answer": "Thirtysomething"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <ES> <E> Lawrence </E> whose <A> official name </A> is text <V> Lawrence </V> </ES> or <ES> <E> Hastings </E> whose <A> area </A> is number <V> 28.794686 square kilometre </V> </ES> </ES>",
@@ -6022,7 +6140,8 @@
         ]
       }
     ],
-    "sample_id": "train_25041"
+    "sample_id": "train_25041",
+    "answer": "Lawrence"
   },
   {
     "graphq_ir": "what is the qualifier <Q> language of work or name </Q> of <ES> <C> television channel </C> whose <A> inception </A> is year <V> 2008 </V> </ES> whose <A> official website </A> is <V> http://www.metvnetwork.com </V>",
@@ -6070,7 +6189,8 @@
         ]
       }
     ],
-    "sample_id": "train_27934"
+    "sample_id": "train_27934",
+    "answer": "English"
   },
   {
     "graphq_ir": "what is <ES> <C> film </C> that <R> award received </R> forward to <E> Academy Award for Best Actress </E> ( <Q> statement is subject of </Q> is text <V> 26th Academy Awards </V> ) </ES>",
@@ -6125,7 +6245,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_64636"
+    "sample_id": "train_64636",
+    "answer": "Roman Holiday"
   },
   {
     "graphq_ir": "what is the qualifier <Q> applies to part </Q> of <ES> <E> Aachen </E> whose <A> postal code </A> is text <V> 52062 </V> </ES> whose <A> elevation above sea level </A> is <V> 173 metre </V>",
@@ -6165,7 +6286,8 @@
         ]
       }
     ],
-    "sample_id": "train_27005"
+    "sample_id": "train_27005",
+    "answer": "city hall"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Aude </E> whose <A> ISNI </A> is text <V> 0000 0000 7408 0673 </V> </ES> to <E> Montreal </E>",
@@ -6209,7 +6331,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_9662"
+    "sample_id": "train_9662",
+    "answer": "place of birth"
   },
   {
     "graphq_ir": "what is <ES> <C> activity </C> that <R> sports season of league or competition </R> backward to <E> 1997 NCAA Men's Division I Basketball Tournament </E> </ES>",
@@ -6254,7 +6377,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_80984"
+    "sample_id": "train_80984",
+    "answer": "NCAA Men's Division I Basketball Championship"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <C> county of New York </C> whose <A> inception </A> larger than year <V> 1791 </V> </ES>",
@@ -6301,7 +6425,8 @@
         ]
       }
     ],
-    "sample_id": "train_75902"
+    "sample_id": "train_75902",
+    "answer": "St. Lawrence County"
   },
   {
     "graphq_ir": "whether <ES> <C> association football club </C> that <R> headquarters location </R> forward to <ES> <E> Veracruz </E> (<ES> ones that <R> twinned administrative body </R> backward to <E> San Jose </E> </ES>) </ES> </ES> <A> inception </A> is not year <V> 1777 </V>",
@@ -6383,7 +6508,8 @@
         ]
       }
     ],
-    "sample_id": "train_31569"
+    "sample_id": "train_31569",
+    "answer": "yes"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <ES> <E> Ludwig van Beethoven </E> (<ES> ones that <R> place of death </R> forward to <E> Bonn </E> </ES>) </ES>",
@@ -6436,7 +6562,8 @@
         ]
       }
     ],
-    "sample_id": "train_51586"
+    "sample_id": "train_51586",
+    "answer": "0000 0000 5768 271X"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> comune of Italy </C> that <R> twinned administrative body </R> forward to <E> Sarasota </E> </ES> or <ES> <C> comune of Italy </C> whose <A> UN/LOCODE </A> is text <V> ITMAN </V> </ES> </ES>",
@@ -6513,7 +6640,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_30640"
+    "sample_id": "train_30640",
+    "answer": "2"
   },
   {
     "graphq_ir": "what is the relation from <E> Jermaine Easter </E> to <E> Milton Keynes Dons F.C. </E>",
@@ -6547,7 +6675,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_35327"
+    "sample_id": "train_35327",
+    "answer": "member of sports team"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> city </C> whose <A> Statistics Canada Geographic code </A> is text <V> 3510010 </V> </ES> whose <A> population </A> is <V> 123798 </V>",
@@ -6594,7 +6723,8 @@
         ]
       }
     ],
-    "sample_id": "train_57900"
+    "sample_id": "train_57900",
+    "answer": "2016"
   },
   {
     "graphq_ir": "what is the relation from <E> Aidan Gillen </E> to <E> Dublin </E>",
@@ -6628,7 +6758,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_76947"
+    "sample_id": "train_76947",
+    "answer": "place of birth"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Cher </E> whose <A> Instagram username </A> is text <V> cher </V> </ES> to <E> MCA Records </E>",
@@ -6672,7 +6803,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_79147"
+    "sample_id": "train_79147",
+    "answer": "record label"
   },
   {
     "graphq_ir": "whether <ES> <C> film </C> whose <A> title </A> is text <V> The Fisher King </V> </ES> <A> publication date </A> smaller than year <V> 1920 </V> ( <Q> place of publication </Q> is <V> Germany </V> )",
@@ -6729,7 +6861,8 @@
         ]
       }
     ],
-    "sample_id": "train_85978"
+    "sample_id": "train_85978",
+    "answer": "no"
   },
   {
     "graphq_ir": "whether <E> Bruce Dern </E> <A> work period (start) </A> is not year <V> 1963 </V>",
@@ -6767,7 +6900,8 @@
         ]
       }
     ],
-    "sample_id": "train_92572"
+    "sample_id": "train_92572",
+    "answer": "yes"
   },
   {
     "graphq_ir": "whether <ES> <C> city of the United States </C> whose <A> WOEID </A> is text <V> 2406008 </V> </ES> <A> area </A> larger than number <V> 50 square kilometre </V>",
@@ -6822,7 +6956,8 @@
         ]
       }
     ],
-    "sample_id": "train_43176"
+    "sample_id": "train_43176",
+    "answer": "yes"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <ES> <E> Shelby County </E> whose <A> population </A> is number <V> 42274 </V> </ES> or <ES> <E> Linn County </E> whose <A> population </A> is number <V> 211226 </V> </ES> </ES>",
@@ -6881,7 +7016,8 @@
         ]
       }
     ],
-    "sample_id": "train_11269"
+    "sample_id": "train_11269",
+    "answer": "Shelby County"
   },
   {
     "graphq_ir": "whether <ES> <C> college of the University of Oxford </C> whose <A> IPv4 routing prefix </A> is text <V> 129.67.60.0/22 </V> </ES> <A> inception </A> is date <V> 1989-08-01 </V>",
@@ -6936,7 +7072,8 @@
         ]
       }
     ],
-    "sample_id": "train_12977"
+    "sample_id": "train_12977",
+    "answer": "no"
   },
   {
     "graphq_ir": "which one has the largest <A> number of episodes </A> among <ES> <ES> <E> Joan of Arc </E> (<ES> ones that <R> cast member </R> forward to <E> Shirley MacLaine </E> </ES>) </ES> or <ES> <E> Savannah </E> whose <A> number of episodes </A> is number <V> 34 </V> </ES> </ES>",
@@ -7009,7 +7146,8 @@
         ]
       }
     ],
-    "sample_id": "train_39983"
+    "sample_id": "train_39983",
+    "answer": "Savannah"
   },
   {
     "graphq_ir": "what is the relation from <E> The Social Network </E> to <ES> <E> Egypt </E> whose <A> inflation rate </A> is number <V> 14.0 percentage </V> </ES>",
@@ -7054,7 +7192,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_46733"
+    "sample_id": "train_46733",
+    "answer": "film release region"
   },
   {
     "graphq_ir": "which one has the smallest <A> elevation above sea level </A> among <ES> <E> Laval </E> or <E> Vilnius </E> </ES>",
@@ -7091,7 +7230,8 @@
         ]
       }
     ],
-    "sample_id": "train_58759"
+    "sample_id": "train_58759",
+    "answer": "Laval"
   },
   {
     "graphq_ir": "what is the relation from <E> The Bourne Supremacy </E> to <E> Central Intelligence Agency </E>",
@@ -7125,7 +7265,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_41666"
+    "sample_id": "train_41666",
+    "answer": "main subject"
   },
   {
     "graphq_ir": "what is the qualifier <Q> determination method </Q> of <ES> <C> national association football team </C> that <R> country </R> forward to <E> Cameroon </E> </ES> whose <A> ranking </A> is <V> 60 </V>",
@@ -7174,7 +7315,8 @@
         ]
       }
     ],
-    "sample_id": "train_35764"
+    "sample_id": "train_35764",
+    "answer": "FIFA World Rankings"
   },
   {
     "graphq_ir": "what is the qualifier <Q> statement is subject of </Q> of <ES> <E> Romania </E> (<ES> ones that <R> diplomatic relation </R> forward to <E> Ukraine </E> </ES>) </ES> that <R> shares border with </R> to <E> Moldova </E>",
@@ -7236,7 +7378,8 @@
         ]
       }
     ],
-    "sample_id": "train_44723"
+    "sample_id": "train_44723",
+    "answer": "Moldova–Romania border"
   },
   {
     "graphq_ir": "which one has the smallest <A> duration </A> among <ES> <E> Lost Highway </E> or <E> Legends of the Fall </E> </ES>",
@@ -7273,7 +7416,8 @@
         ]
       }
     ],
-    "sample_id": "train_13135"
+    "sample_id": "train_13135",
+    "answer": "Legends of the Fall"
   },
   {
     "graphq_ir": "whether <ES> <C> organization </C> that <R> production company </R> backward to <E> Dragon Ball Z: Dead Zone </E> </ES> <A> Corporate Number (Japan) </A> is text <V> 6010001034866 </V>",
@@ -7329,7 +7473,8 @@
         ]
       }
     ],
-    "sample_id": "train_61488"
+    "sample_id": "train_61488",
+    "answer": "yes"
   },
   {
     "graphq_ir": "whether <ES> <E> Max Weber </E> whose <A> date of birth </A> is date <V> 1897-08-02 </V> </ES> <A> date of death </A> is year <V> 1842 </V>",
@@ -7378,7 +7523,8 @@
         ]
       }
     ],
-    "sample_id": "train_77017"
+    "sample_id": "train_77017",
+    "answer": "no"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Victoria </E> whose <A> publication date </A> is date <V> 2015-06-11 </V> </ES> to <E> German </E>",
@@ -7423,7 +7569,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_61285"
+    "sample_id": "train_61285",
+    "answer": "original language of film or TV show"
   },
   {
     "graphq_ir": "what is <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0001 1483 0433 </V> </ES>",
@@ -7466,7 +7613,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_73068"
+    "sample_id": "train_73068",
+    "answer": "Doug Savant"
   },
   {
     "graphq_ir": "what is the attribute <A> inception </A> of <ES> <C> British Academy Film Awards </C> that <R> winner </R> forward to <E> Anne V. Coates </E> ( <Q> point in time </Q> is year <V> 2007 </V> ) </ES>",
@@ -7524,7 +7672,8 @@
         ]
       }
     ],
-    "sample_id": "train_25058"
+    "sample_id": "train_25058",
+    "answer": "1971"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <ES> <E> Quincy </E> whose <A> subreddit </A> is text <V> QuincyIL </V> </ES> or <ES> <E> Mansfield </E> (<ES> ones that <R> filming location </R> backward to <E> The Shawshank Redemption </E> </ES>) </ES> </ES>",
@@ -7596,7 +7745,8 @@
         ]
       }
     ],
-    "sample_id": "train_14576"
+    "sample_id": "train_14576",
+    "answer": "Mansfield"
   },
   {
     "graphq_ir": "what is the attribute <A> inception </A> of <ES> <C> public office </C> that <R> position held </R> backward to <ES> <E> John Davis </E> whose <A> British Museum person-institution </A> is text <V> 203983 </V> </ES> ( <Q> start time </Q> is year <V> 1834 </V> ) </ES>",
@@ -7664,7 +7814,8 @@
         ]
       }
     ],
-    "sample_id": "train_81715"
+    "sample_id": "train_81715",
+    "answer": "1780-10-25"
   },
   {
     "graphq_ir": "what is the attribute <A> title </A> of <E> Tucker: The Man and His Dream </E>",
@@ -7692,7 +7843,8 @@
         ]
       }
     ],
-    "sample_id": "train_68219"
+    "sample_id": "train_68219",
+    "answer": "Tucker: The Man and His Dream"
   },
   {
     "graphq_ir": "which one has the smallest <A> elevation above sea level </A> among <ES> <C> city in New Jersey </C> whose <A> population </A> smaller than number <V> 43000 </V> </ES>",
@@ -7739,7 +7891,8 @@
         ]
       }
     ],
-    "sample_id": "train_83659"
+    "sample_id": "train_83659",
+    "answer": "Atlantic City"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <C> non-metropolitan district </C> that <R> located in the administrative territorial entity </R> forward to <ES> <E> Surrey </E> whose <A> NUTS code </A> is text <V> UKJ23 </V> </ES> </ES>",
@@ -7797,7 +7950,8 @@
         ]
       }
     ],
-    "sample_id": "train_65219"
+    "sample_id": "train_65219",
+    "answer": "Woking"
   },
   {
     "graphq_ir": "which one has the largest <A> cost </A> among <ES> <ES> <E> Die Another Day </E> whose <A> title </A> is text <V> Die Another Day </V> </ES> or <ES> <E> Halloween </E> (<ES> ones that <R> film release region </R> forward to <E> Italy </E> </ES>) </ES> </ES>",
@@ -7869,7 +8023,8 @@
         ]
       }
     ],
-    "sample_id": "train_19945"
+    "sample_id": "train_19945",
+    "answer": "Die Another Day"
   },
   {
     "graphq_ir": "which one has the largest <A> elevation above sea level </A> among <ES> <C> human settlement </C> whose <A> local dialing code </A> is text <V> 973 </V> </ES>",
@@ -7915,7 +8070,8 @@
         ]
       }
     ],
-    "sample_id": "train_49783"
+    "sample_id": "train_49783",
+    "answer": "West Orange"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <ES> <E> Robert Guillaume </E> (<ES> ones that <R> award received </R> forward to <E> Primetime Emmy Award for Outstanding Supporting Actor in a Comedy Series </E> </ES>) </ES>",
@@ -7968,7 +8124,8 @@
         ]
       }
     ],
-    "sample_id": "train_27664"
+    "sample_id": "train_27664",
+    "answer": "0000 0001 1468 1570"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> city of Pennsylvania </C> that <R> located in the administrative territorial entity </R> backward to <E> University of Pennsylvania </E> </ES> and <ES> <C> city of Pennsylvania </C> whose <A> population </A> is not number <V> 250000000 </V> ( <Q> point in time </Q> is year <V> 1820 </V> ) </ES> </ES>",
@@ -8057,7 +8214,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_26252"
+    "sample_id": "train_26252",
+    "answer": "Philadelphia"
   },
   {
     "graphq_ir": "how many <ES> <C> miniseries </C> that <R> nominated for </R> forward to <ES> <C> Primetime Emmy Award </C> that <R> nominated for </R> backward to <E> Steven Moffat </E> ( <Q> for work </Q> is text <V> Sherlock </V> ) </ES> </ES>",
@@ -8131,7 +8289,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_93159"
+    "sample_id": "train_93159",
+    "answer": "9"
   },
   {
     "graphq_ir": "how many <ES> <C> cable channel </C> whose <A> official website </A> is text <V> https://www.international.tbs.com/ </V> </ES>",
@@ -8174,7 +8333,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_21075"
+    "sample_id": "train_21075",
+    "answer": "1"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <E> Capcom </E>",
@@ -8202,7 +8362,8 @@
         ]
       }
     ],
-    "sample_id": "train_1726"
+    "sample_id": "train_1726",
+    "answer": "0000 0001 1703 8185"
   },
   {
     "graphq_ir": "what is <ES> <C> visual artwork </C> that <R> followed by </R> backward to <ES> <E> The Chronicles of Narnia: Prince Caspian </E> whose <A> duration </A> is number <V> 140 minute </V> </ES> </ES>",
@@ -8258,7 +8419,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_19297"
+    "sample_id": "train_19297",
+    "answer": "The Chronicles of Narnia: The Voyage of the Dawn Treader"
   },
   {
     "graphq_ir": "what is the qualifier <Q> language of work or name </Q> of <ES> <C> higher education institution </C> whose <A> located at street address (DEPRECATED) </A> is text <V> 1011 South Dr 201 Sutton Hall, Indiana, PA, 15705-1098 </V> </ES> whose <A> official website </A> is <V> http://www.iup.edu </V>",
@@ -8305,7 +8467,8 @@
         ]
       }
     ],
-    "sample_id": "train_31738"
+    "sample_id": "train_31738",
+    "answer": "English"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> American Idol </E> (<ES> ones that <R> creator </R> forward to <E> Simon Fuller </E> </ES>) </ES> to <E> Ryan Seacrest </E>",
@@ -8364,7 +8527,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_5251"
+    "sample_id": "train_5251",
+    "answer": "presenter"
   },
   {
     "graphq_ir": "what is the relation from <E> Jermaine Easter </E> to <E> Wolverhampton Wanderers F.C. </E>",
@@ -8398,7 +8562,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_91808"
+    "sample_id": "train_91808",
+    "answer": "member of sports team"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <C> big city </C> whose <A> annual number of weddings </A> smaller than number <V> 1000 </V> </ES>",
@@ -8445,7 +8610,8 @@
         ]
       }
     ],
-    "sample_id": "train_1356"
+    "sample_id": "train_1356",
+    "answer": "Leuven"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> death metal </C> that <R> country of origin </R> forward to <E> Finland </E> </ES> or <ES> <C> death metal </C> whose <A> inception </A> smaller than year <V> 1990 </V> </ES> </ES>",
@@ -8523,7 +8689,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_91904"
+    "sample_id": "train_91904",
+    "answer": "3"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> profession </C> whose <A> OSM tag or key </A> is text <V> Tag:shop=hairdresser </V> </ES> or <ES> <C> profession </C> whose <A> SBC-2010 occupation code </A> is text <V> 610405 </V> </ES> </ES>",
@@ -8598,7 +8765,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_26633"
+    "sample_id": "train_26633",
+    "answer": "2"
   },
   {
     "graphq_ir": "how many <ES> <C> capital </C> that <R> film release region </R> backward to <ES> <C> visual artwork </C> whose <A> title </A> is text <V> جدایی نادر از سیمین </V> </ES> </ES>",
@@ -8660,7 +8828,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_70865"
+    "sample_id": "train_70865",
+    "answer": "1"
   },
   {
     "graphq_ir": "which one has the smallest <A> height </A> among <ES> <ES> <E> Stephen Graham </E> whose <A> mass </A> is number <V> 98 kilogram </V> </ES> or <E> Jermaine Easter </E> </ES>",
@@ -8708,7 +8877,8 @@
         ]
       }
     ],
-    "sample_id": "train_82193"
+    "sample_id": "train_82193",
+    "answer": "Jermaine Easter"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> bowed string instrument </C> whose <A> Hornbostel-Sachs classification </A> is text <V> 321.322-71 </V> </ES> or <ES> <C> bowed string instrument </C> that <R> instrument </R> backward to <E> John Hartford </E> </ES> </ES>",
@@ -8785,7 +8955,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_81502"
+    "sample_id": "train_81502",
+    "answer": "4"
   },
   {
     "graphq_ir": "what is the attribute <A> title </A> of <ES> <E> Cobra </E> (<ES> ones that <R> producer </R> forward to <E> Menahem Golan </E> </ES>) </ES>",
@@ -8838,7 +9009,8 @@
         ]
       }
     ],
-    "sample_id": "train_62213"
+    "sample_id": "train_62213",
+    "answer": "Cobra"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> county of North Carolina </C> that <R> named after </R> forward to <ES> <E> James Madison </E> (<ES> ones that <R> member of political party </R> forward to <E> Democratic-Republican Party </E> </ES>) </ES> </ES> whose <A> population </A> is <V> 21022 </V>",
@@ -8912,7 +9084,8 @@
         ]
       }
     ],
-    "sample_id": "train_17604"
+    "sample_id": "train_17604",
+    "answer": "2013-07-01"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <E> Fort Wayne </E> or <ES> <E> Fontana </E> whose <A> postal code </A> is text <V> 92331, 92334–92337 </V> </ES> </ES>",
@@ -8959,7 +9132,8 @@
         ]
       }
     ],
-    "sample_id": "train_17763"
+    "sample_id": "train_17763",
+    "answer": "Fontana"
   },
   {
     "graphq_ir": "which one has the largest <A> number of children </A> among <ES> <ES> <E> Mark Williams </E> (<ES> ones that <R> winner </R> backward to <E> Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture </E> </ES>) </ES> or <ES> <E> Jon Favreau </E> (<ES> ones that <R> occupation </R> forward to <E> screenwriter </E> </ES>) </ES> </ES>",
@@ -9046,7 +9220,8 @@
         ]
       }
     ],
-    "sample_id": "train_79231"
+    "sample_id": "train_79231",
+    "answer": "Jon Favreau"
   },
   {
     "graphq_ir": "what is the relation from <E> Anchorage </E> to <ES> <E> Darwin </E> whose <A> inception </A> is year <V> 1869 </V> </ES>",
@@ -9091,7 +9266,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_76714"
+    "sample_id": "train_76714",
+    "answer": "twinned administrative body"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Perth Airport </E> whose <A> patronage </A> is number <V> 3202023 </V> </ES> to <ES> <E> Australia </E> (<ES> ones that <R> named after </R> backward to <E> South Australia </E> </ES>) </ES>",
@@ -9161,7 +9337,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_68103"
+    "sample_id": "train_68103",
+    "answer": "continent"
   },
   {
     "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <E> X-Men Origins: Wolverine </E> (<ES> ones that <R> film release region </R> forward to <E> Eindhoven </E> </ES>) </ES> whose <A> publication date </A> is <V> 2009-04-30 </V>",
@@ -9216,7 +9393,8 @@
         ]
       }
     ],
-    "sample_id": "train_42396"
+    "sample_id": "train_42396",
+    "answer": "Hungary"
   },
   {
     "graphq_ir": "what is <ES> <C> association football club </C> that <R> member of sports team </R> backward to <ES> <C> human </C> whose <A> McCune-Reischauer romanization </A> is text <V> Chŏng Sŏngnyong </V> </ES> ( <Q> start time </Q> is year <V> 2011 </V> ) </ES>",
@@ -9289,7 +9467,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_80882"
+    "sample_id": "train_80882",
+    "answer": "Suwon Samsung Bluewings"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <C> television film </C> that <R> color </R> forward to <E> black-and-white </E> </ES>",
@@ -9337,7 +9516,8 @@
         ]
       }
     ],
-    "sample_id": "train_40567"
+    "sample_id": "train_40567",
+    "answer": "Germany in Autumn"
   },
   {
     "graphq_ir": "which one has the largest <A> number of episodes </A> among <ES> <ES> <E> Las Vegas </E> whose <A> official website </A> is text <V> http://www.nbc.com/Las_Vegas/ </V> </ES> or <E> Degrassi: The Next Generation </E> </ES>",
@@ -9384,7 +9564,8 @@
         ]
       }
     ],
-    "sample_id": "train_38973"
+    "sample_id": "train_38973",
+    "answer": "Degrassi: The Next Generation"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> BAFTA Award for Best Direction </E> that <R> winner </R> to <ES> <E> Robert Altman </E> (<ES> ones that <R> director </R> backward to <E> Gosford Park </E> </ES>) </ES>",
@@ -9446,7 +9627,8 @@
         ]
       }
     ],
-    "sample_id": "train_58124"
+    "sample_id": "train_58124",
+    "answer": "1993"
   },
   {
     "graphq_ir": "which one has the largest <A> GDP (PPP) </A> among <ES> <ES> <E> Israel </E> whose <A> area </A> is number <V> 20770 square kilometre </V> </ES> or <E> East Timor </E> </ES>",
@@ -9494,7 +9676,8 @@
         ]
       }
     ],
-    "sample_id": "train_42754"
+    "sample_id": "train_42754",
+    "answer": "Israel"
   },
   {
     "graphq_ir": "what is <ES> <C> legislative term </C> whose <A> end time </A> is date <V> 1839-03-04 </V> </ES>",
@@ -9538,7 +9721,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_92081"
+    "sample_id": "train_92081",
+    "answer": "25th United States Congress"
   },
   {
     "graphq_ir": "which one has the largest <A> population </A> among <ES> <E> County Antrim </E> or <E> United States Virgin Islands </E> </ES>",
@@ -9575,7 +9759,8 @@
         ]
       }
     ],
-    "sample_id": "train_31694"
+    "sample_id": "train_31694",
+    "answer": "County Antrim"
   },
   {
     "graphq_ir": "what is <ES> <C> university </C> whose <A> official website </A> is text <V> http://www.sfu.ca/ </V> </ES>",
@@ -9618,7 +9803,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_62755"
+    "sample_id": "train_62755",
+    "answer": "Simon Fraser University"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <ES> <E> Rock of Ages </E> whose <A> publication date </A> is date <V> 2012-06-14 </V> </ES> or <E> A Prophet </E> </ES>",
@@ -9666,7 +9852,8 @@
         ]
       }
     ],
-    "sample_id": "train_32280"
+    "sample_id": "train_32280",
+    "answer": "A Prophet"
   },
   {
     "graphq_ir": "whether <ES> <C> city of the United States </C> whose <A> official website </A> is text <V> http://www.cityofspartanburg.org </V> </ES> <A> population </A> larger than number <V> 580000 </V>",
@@ -9721,7 +9908,8 @@
         ]
       }
     ],
-    "sample_id": "train_16089"
+    "sample_id": "train_16089",
+    "answer": "no"
   },
   {
     "graphq_ir": "which one has the smallest <A> cost </A> among <ES> <ES> <E> The Lord of the Rings: The Fellowship of the Ring </E> (<ES> ones that <R> nominated for </R> forward to <E> Academy Award for Best Makeup and Hairstyling </E> </ES>) </ES> or <E> J. Edgar </E> </ES>",
@@ -9783,7 +9971,8 @@
         ]
       }
     ],
-    "sample_id": "train_88215"
+    "sample_id": "train_88215",
+    "answer": "J. Edgar"
   },
   {
     "graphq_ir": "how many <ES> <C> film production company </C> that <R> producer </R> backward to <ES> <C> visual artwork </C> whose <A> title </A> is text <V> To Kill a Mockingbird </V> </ES> </ES>",
@@ -9845,7 +10034,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_58200"
+    "sample_id": "train_58200",
+    "answer": "1"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> nominated for </R> forward to <E> Academy Award for Best Supporting Actress </E> ( <Q> for work </Q> is text <V> Ragtime </V> ) </ES> <A> ISNI </A> is text <V> 0000 0001 0306 6927 </V>",
@@ -9911,7 +10101,8 @@
         ]
       }
     ],
-    "sample_id": "train_48852"
+    "sample_id": "train_48852",
+    "answer": "no"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> cast member </R> backward to <ES> <E> Some Like It Hot </E> (<ES> ones that <R> distributor </R> forward to <E> Paramount Pictures </E> </ES>) </ES> </ES> <A> CANTIC-ID </A> is text <V> a11051796 </V>",
@@ -9992,7 +10183,8 @@
         ]
       }
     ],
-    "sample_id": "train_82950"
+    "sample_id": "train_82950",
+    "answer": "yes"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> religion </C> whose <A> Universal Decimal Classification </A> is text <V> 141.45 </V> </ES> or <ES> <C> religion </C> whose <A> ISNI </A> is text <V> 0000 0004 0508 6616 </V> </ES> </ES>",
@@ -10067,7 +10259,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_35266"
+    "sample_id": "train_35266",
+    "answer": "2"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> nominated for </R> forward to <E> Nobel Prize in Chemistry </E> ( <Q> point in time </Q> is date <V> 1955-01-01 </V> ) </ES> <A> Erdős number </A> is not number <V> 3.1 </V>",
@@ -10135,7 +10328,8 @@
         ]
       }
     ],
-    "sample_id": "train_45018"
+    "sample_id": "train_45018",
+    "answer": "yes"
   },
   {
     "graphq_ir": "what is the qualifier <Q> end time </Q> of <ES> <E> Hulk </E> (<ES> ones that <R> sport </R> forward to <E> association football </E> </ES>) </ES> that <R> member of sports team </R> to <E> F.C. Zenit St. Petersburg </E>",
@@ -10197,7 +10391,8 @@
         ]
       }
     ],
-    "sample_id": "train_69453"
+    "sample_id": "train_69453",
+    "answer": "2016"
   },
   {
     "graphq_ir": "what is the qualifier <Q> character role </Q> of <ES> <E> Harry Potter and the Chamber of Secrets </E> whose <A> publication date </A> is date <V> 2002-11-14 </V> </ES> that <R> cast member </R> to <E> Toby Jones </E>",
@@ -10245,7 +10440,8 @@
         ]
       }
     ],
-    "sample_id": "train_81357"
+    "sample_id": "train_81357",
+    "answer": "Dobby"
   },
   {
     "graphq_ir": "which one has the largest <A> population </A> among <ES> <E> Wheaton </E> or <E> Henderson </E> </ES>",
@@ -10282,7 +10478,8 @@
         ]
       }
     ],
-    "sample_id": "train_2914"
+    "sample_id": "train_2914",
+    "answer": "Henderson"
   },
   {
     "graphq_ir": "what is the relation from <E> The Rolling Stones </E> to <E> protopunk </E>",
@@ -10316,7 +10513,8 @@
         "inputs": []
       }
     ],
-    "sample_id": "train_65636"
+    "sample_id": "train_65636",
+    "answer": "genre"
   },
   {
     "graphq_ir": "what is the attribute <A> official website </A> of <ES> <E> Concord </E> (<ES> ones that <R> place of birth </R> backward to <E> Tom Hanks </E> </ES>) </ES>",
@@ -10369,7 +10567,8 @@
         ]
       }
     ],
-    "sample_id": "train_89623"
+    "sample_id": "train_89623",
+    "answer": "http://www.ci.concord.ca.us"
   },
   {
     "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <E> Taxi Driver </E> (<ES> ones that <R> nominated for </R> forward to <E> Golden Globe Award for Best Screenplay </E> </ES>) </ES> whose <A> publication date </A> is <V> 1977-03-12 </V>",
@@ -10424,6 +10623,7 @@
         ]
       }
     ],
-    "sample_id": "train_91683"
+    "sample_id": "train_91683",
+    "answer": "Sweden"
   }
 ]
