@@ -44,8 +44,35 @@ def merge_sampled_data():
         save_json(R, file)
 
 
-    
-if __name__ == "__main__":
-    merge_sampled_data()
+def convert_valdata():
+    """ 将 valdata 的标注融合进 sampled 数据中 
+    run once only
+    """
+    valtest = load_json("/home/qing/raid/paperwork/aaai24/data/kqa/gqir/left_val.json")
+    q2data = { s['question']: s for s in valtest }
 
+
+    leftval = load_json("/home/qing/raid/paperwork/kgtool/data/kqa/split/left_val.json")
+
+    for s in leftval:
+        q = s['question']
+        s.update(q2data[q])
+    
+
+    save_json(leftval, "/home/qing/raid/paperwork/kgtool/data/kqa/split/test_8k.json")
+
+    merged_val = load_json("/home/qing/raid/paperwork/aaai24/data/kqa/merged/val.json")
+    id2sample = { s['sample_id']: s for s in merged_val }
+    val = load_json("/home/qing/raid/paperwork/kgtool/data/kqa/split/val.json")
+    for s in val:
+        m = id2sample[s['sample_id']]
+        s['graphq_ir'] = m['graphq_ir']
+        s['kopl'] = m['kopl']
+        s['lambda-dcs'] = m['lambda-dcs']
+    
+    save_json(val, "/home/qing/raid/paperwork/kgtool/data/kqa/split/val_3k.json")
+
+if __name__ == "__main__":
+    # merge_sampled_data()
+    convert_valdata()
     pass 
