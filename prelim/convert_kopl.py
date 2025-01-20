@@ -48,18 +48,24 @@ def convert_valdata():
     """ 将 valdata 的标注融合进 sampled 数据中 
     run once only
     """
-    valtest = load_json("/home/qing/raid/paperwork/aaai24/data/kqa/gqir/left_val.json")
-    q2data = { s['question']: s for s in valtest }
-
+    
+    
 
     leftval = load_json("/home/qing/raid/paperwork/kgtool/data/kqa/split/left_val.json")
+    raw_val = load_json("/home/qing/raid/paperwork/kgtool/data/kqa/full/val.json")
+    q2sample_raw = { s['question']: s for s in raw_val }
 
     for s in leftval:
         q = s['question']
-        s.update(q2data[q])
-    
+        s.update(q2sample_raw[q])
+        s.pop("where_clause")
+        s.pop("where_clause_type")
+        s.pop("match_clause")
+        s.pop("match_clause_type")
 
     save_json(leftval, "/home/qing/raid/paperwork/kgtool/data/kqa/split/test_8k.json")
+
+
 
     merged_val = load_json("/home/qing/raid/paperwork/aaai24/data/kqa/merged/val.json")
     id2sample = { s['sample_id']: s for s in merged_val }
