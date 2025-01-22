@@ -22,6 +22,22 @@ from qdls.data import load_json, save_json
 
 kb = load_json("/home/qing/raid/paperwork/kgtool/data/kqa/kb.json")
 
+
+def inspect_concept():
+    from collections import defaultdict
+    concept_to_entity = defaultdict(list)
+    for eid, e in kb['entities'].items():
+        print(e)
+        input()
+        for cid in e['instanceOf']:
+            concept_to_entity[cid].append(eid)
+      
+    print(len(concept_to_entity['Q1132631']))
+
+
+inspect_concept()
+exit() 
+
 # for qid, v in kb['entities'].items():
 #     save_json(v, f"./{qid}.json")
 #     exit()
@@ -40,4 +56,4 @@ for qid, v in kb['concepts'].items():
 
 
 
-save_json(kb, "/home/qing/raid/paperwork/kgtool/data/kqa/kb_fixed.json")
+save_json(kb, "/home/qing/raid/paperwork/kgtool/data/kqa/kb_fixed_v122.json")
