@@ -3,3 +3,5 @@
 
 train.json 
 kb.json
+
+__pycache__

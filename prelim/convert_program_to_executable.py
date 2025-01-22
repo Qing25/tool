@@ -25,7 +25,7 @@ def load_engine():
     return engine
 
 # engine = load_engine()
-engine = KoPLEngine(load_json("/home/qing/raid/paperwork/kgtool/data/kqa/kb_fixed.json"))
+engine = KoPLEngine(load_json("/home/qing/raid/paperwork/kgtool/data/kqa/full/kb.json"))
 
 def convert_to_python(program):
     """
@@ -170,7 +170,7 @@ def compare_result(ans, exec_result):
             return ans == s
 
     if isinstance(exec_result, list):
-        if len(exec_result) > 1:
+        if len(exec_result) == 1:
             exec_result = exec_result[0] 
         elif len(exec_result) == 0:
             exec_result = "Empty"
@@ -198,13 +198,16 @@ def validate_all_program(file):
         if compare_result(ans, exec_result):
             cnt += 1
         else:
-            print()
+            print(item['sample_id'])
+            print(python_code)
+            # print(item['cypher_match'])
+
             # print(item)
 
     print(f"validate {cnt}/{n} programs, accuracy: {cnt/n}")
 
 if __name__ == "__main__":
-    validate_all_program("/home/qing/raid/paperwork/kgtool/data/kqa/split/val_3k.json")   # validate 2988/3000 programs, accuracy: 0.996
-    validate_all_program("/home/qing/raid/paperwork/kgtool/data/kqa/split/test_8k.json")  # validate 8773/8797 programs, accuracy: 0.9972717972035922
+    # validate_all_program("/home/qing/raid/paperwork/kgtool/data/kqa/split/val_3k.json")   # validate 2988/3000 programs, accuracy: 0.996
+    # validate_all_program("/home/qing/raid/paperwork/kgtool/data/kqa/split/test_8k.json")  # validate 8773/8797 programs, accuracy: 0.9972717972035922
     validate_all_program("/home/qing/raid/paperwork/kgtool/data/kqa/full/train.json")     # validate 94029/94376 programs, accuracy: 0.996323217767229
 
