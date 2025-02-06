@@ -1,0 +1,143 @@
+{
+    "transitions": {
+        "FindAll": {
+            "FilterStr": 20797,
+            "FilterNum": 4940,
+            "FilterYear": 3576,
+            "FilterDate": 914,
+            "FilterConcept": 39
+        },
+        "FilterStr": {
+            "FilterConcept": 19524,
+            "QFilterStr": 766,
+            "QueryRelationQualifier": 242,
+            "Relate": 1065,
+            "SelectBetween": 682,
+            "QFilterNum": 335,
+            "Find": 1617,
+            "QueryRelation": 377,
+            "QFilterYear": 96,
+            "QueryAttrQualifier": 164,
+            "QueryAttr": 347,
+            "QFilterDate": 76,
+            "QueryAttrUnderCondition": 14
+        },
+        "FilterConcept": {
+            "FindAll": 4366,
+            "And": 4742,
+            "QueryAttr": 13844,
+            "SelectAmong": 4288,
+            "QueryAttrQualifier": 6376,
+            "Relate": 4297,
+            "Count": 5651,
+            "Or": 3812,
+            "What": 7915,
+            "Find": 4188,
+            "QueryAttrUnderCondition": 484
+        },
+        "And": {
+            "What": 3259,
+            "Find": 8822,
+            "QueryRelation": 1339,
+            "Relate": 4207,
+            "QueryRelationQualifier": 835,
+            "SelectBetween": 3007,
+            "Count": 1483,
+            "QueryAttr": 1636,
+            "QueryAttrQualifier": 640,
+            "QueryAttrUnderCondition": 74
+        },
+        "QueryAttr": {
+            "VerifyStr": 5567,
+            "VerifyDate": 168,
+            "VerifyYear": 3539,
+            "VerifyNum": 1570
+        },
+        "FilterNum": {
+            "FilterConcept": 4632,
+            "Find": 1656,
+            "Relate": 869,
+            "QueryAttr": 266,
+            "QueryRelation": 325,
+            "SelectBetween": 958,
+            "QueryAttrUnderCondition": 11,
+            "QFilterYear": 141,
+            "QueryAttrQualifier": 144,
+            "QFilterStr": 44,
+            "QueryRelationQualifier": 163,
+            "QFilterDate": 103,
+            "QFilterNum": 20
+        },
+        "Find": {
+            "Relate": 39214,
+            "And": 20560,
+            "SelectBetween": 8084,
+            "Find": 21537,
+            "QueryRelationQualifier": 6808,
+            "FilterNum": 4392,
+            "QueryRelation": 11720,
+            "QueryAttr": 5840,
+            "QueryAttrQualifier": 2280,
+            "FilterStr": 4508,
+            "FilterYear": 568,
+            "FilterDate": 2723,
+            "QueryAttrUnderCondition": 223
+        },
+        "Relate": {
+            "Find": 20560,
+            "FilterConcept": 26564,
+            "QFilterStr": 1504,
+            "QFilterDate": 327,
+            "QFilterNum": 228,
+            "QFilterYear": 1074
+        },
+        "Or": {
+            "Count": 3812
+        },
+        "QFilterStr": {
+            "FilterConcept": 2401
+        },
+        "FilterYear": {
+            "FilterConcept": 3546,
+            "Find": 215,
+            "QueryRelation": 40,
+            "QueryAttr": 59,
+            "QFilterStr": 29,
+            "Relate": 128,
+            "SelectBetween": 73,
+            "QueryRelationQualifier": 30,
+            "QueryAttrQualifier": 22,
+            "QueryAttrUnderCondition": 1,
+            "QFilterYear": 1
+        },
+        "QFilterNum": {
+            "FilterConcept": 583
+        },
+        "FilterDate": {
+            "FilterConcept": 856,
+            "SelectBetween": 443,
+            "Find": 1386,
+            "QueryAttr": 273,
+            "QueryAttrQualifier": 35,
+            "Relate": 477,
+            "QueryRelation": 75,
+            "QFilterStr": 58,
+            "QueryRelationQualifier": 32,
+            "QueryAttrUnderCondition": 2
+        },
+        "QueryAttrUnderCondition": {
+            "VerifyYear": 313,
+            "VerifyNum": 422,
+            "VerifyDate": 13,
+            "VerifyStr": 61
+        },
+        "QFilterDate": {
+            "FilterConcept": 506
+        },
+        "QFilterYear": {
+            "FilterConcept": 1312
+        }
+    },
+    "start_states": {},
+    "end_states": {}
+}
