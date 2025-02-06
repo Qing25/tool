@@ -1,0 +1,22 @@
+# Base configuration
+model:
+  name: "gpt-4o-mini"
+  api:
+    base_url: "https://api.chatanywhere.tech/v1"
+    api_key_env: ${oc.env:CHATANY_API_KEY}
+
+knowledge_base:
+  kb_path: "/home/qing/raid/paperwork/kgtool/data/kqa/kb.json"
+  pickle_path: "/home/qing/raid/paperwork/kgtool/data/kqa/kb.pkl"
+
+vq_model:
+  enabled: false
+  input_dim: 768
+  codebook_dim: 256 
+  codebook_size: 512
+  embedding_model: "all-MiniLM-L6-v2"
+  bart_model: "facebook/bart-base"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s" 

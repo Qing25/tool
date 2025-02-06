@@ -1,0 +1,3414 @@
+[
+  {
+    "graphq_ir": "which one has the smallest <A> area </A> among <ES> <ES> <E> DeKalb County </E> whose <A> PermID </A> is text <V> 5037043580 </V> </ES> or <E> Boulder County </E> </ES>",
+    "kopl": "Find(DeKalb County).FilterStr(PermID,5037043580).Find(Boulder County).Or().Select(area,smallest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { { ?e <pred:name> \"DeKalb County\" . ?e <PermID> ?pv_1 . ?pv_1 <pred:value> \"5037043580\" . } UNION { ?e <pred:name> \"Boulder County\" . } ?e <area> ?pv . ?pv <pred:value> ?v .  } ORDER BY ?v LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.concat ( call SW.filter en.DeKalb_County ( string PermID ) ( string = ) ( string 5037043580 ) ) en.Boulder_County ) ( string min ) ( string area ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"DeKalb County\"\nMATCH (n1) WHERE n1.PermID = \"5037043580\"\nRETURN n1.name AS name\nORDER BY n1.area DESC\nUNION\nMATCH (n1) WHERE n1.name = \"Boulder County\"\nRETURN n1.name AS name\nORDER BY n1.area DESC\nLIMIT 1",
+    "question": "Is there less area in DeKalb County (the one whose PermID is 5037043580) or Boulder County ?",
+    "cypher_match": "call { match (e:Resource{name:\"DeKalb County\"})-[:PermID]->(pv_1:Resource{value:\"5037043580\"}) return e union match (e:Resource{name:\"Boulder County\"}) return e } match (e)-[:area]->(pv) return e order by pv.value limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "DeKalb County"
+        ]
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "PermID",
+          "5037043580"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Boulder County"
+        ]
+      },
+      {
+        "function": "SelectBetween",
+        "dependencies": [
+          1,
+          2
+        ],
+        "inputs": [
+          "area",
+          "less"
+        ]
+      }
+    ],
+    "sample_id": "train_51096",
+    "answer": "DeKalb County",
+    "history": [
+      {
+        "thought": "To answer the question, I need to compare the area of DeKalb County (with PermID 5037043580) and Boulder County. \n\nThe next step is to gather the area information for both counties. I will first find the area of DeKalb County using its PermID. \n\nI will use the `Find` function to get the details of DeKalb County using its PermID. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "DeKalb County"
+          }
+        },
+        "result": "(['Q486398', 'Q111613'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FilterStr",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q486398",
+                "Q111613"
+              ],
+              "triples": null
+            },
+            "key": "PermID",
+            "value": "5037043580"
+          }
+        },
+        "result": "([], [])"
+      }
+    ],
+    "response": "Final Answer: The previous steps did not yield the expected results for DeKalb County using its PermID. Therefore, I will now directly find the area information for both DeKalb County and Boulder County.\n\nFirst, I will gather the area information for DeKalb County using its PermID. Then, I will find the area for Boulder County.\n\nLet's proceed with finding the area for DeKalb County using its PermID directly. \n\nAction: Find\nArguments: {\"name\": \"Boulder County\"}\n\nReasoning:\nStep 1: To answer the question, I need to compare the area of DeKalb County (with PermID 5037043580) and Boulder County. \n\nThe next step is to gather the area information for both counties. I will first find the area of DeKalb County using its PermID. \n\nI will use the `Find` function to get the details of DeKalb County using its PermID. \n\nLet's proceed with that.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <E> Monroe County </E> whose <A> FIPS 6-4 (US counties) </A> is text <V> 18105 </V> </ES> whose <A> population </A> is <V> 140305 </V>",
+    "kopl": "Find(Monroe County).FilterStr(FIPS 6-4 (US counties),18105).QueryAttrQualifier(population,140305,point in time)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e <pred:name> \"Monroe County\" . ?e <FIPS_6-4_(US_counties)> ?pv_1 . ?pv_1 <pred:value> \"18105\" . ?e <population> ?pv . ?pv <pred:unit> \"1\" . ?pv <pred:value> \"140305\"^^xsd:double . [ <pred:fact_h> ?e ; <pred:fact_r> <population> ; <pred:fact_t> ?pv ] <point_in_time> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE (n1.name = \"Monroe County\" AND n1.population =  140305 )\nMATCH (n1) WHERE n1.FIPS_6-4_(US_counties) = \"18105\"\nRETURN .point_in_time",
+    "question": "When did Monroe County (the one whose FIPS 6-4 (US counties) is 18105) have a population of 140305?",
+    "cypher_match": "match (e:Resource{name:\"Monroe County\"})-[:`FIPS_6-4_(US_counties)`]->(pv_1:Resource{value:\"18105\"}) match (e:Resource{name:\"Monroe County\"})-[:population]->(pv:Resource{unit:\"1\",value:140305.0}),(e)<-[:fact_h]-(tmp)-[:fact_t]->(pv), (tmp)-[:fact_r]-(qr:Relation{name:\"population\"}),(tmp)-[:point_in_time]->(qpv) return distinct qpv",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Monroe County"
+        ]
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "FIPS 6-4 (US counties)",
+          "18105"
+        ]
+      },
+      {
+        "function": "QueryAttrQualifier",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "population",
+          "140305",
+          "point in time"
+        ]
+      }
+    ],
+    "sample_id": "train_4974",
+    "answer": "2011-07-01",
+    "history": [
+      {
+        "thought": "To answer the question about when Monroe County had a population of 140305, I need to first gather information about Monroe County using its FIPS code. \n\nThe next step is to find the entity for Monroe County with the FIPS code 18105. I will use the `FindAll()` function to get all entities and then filter for Monroe County with the specific FIPS code. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will directly filter for Monroe County using the FIPS code 18105. This will help narrow down the results to just the relevant entity.\n\nNext step:\n1. Use `FilterStr()` to filter the entities for Monroe County with the FIPS code 18105.\n\nLet's proceed with that. \n\nAction: FilterStr\nArguments: \n- EntityTuple: Last step result\n- Key: \"FIPS 6-4\"\n- Value: \"18105\"\n\nReasoning:\nStep 1: To answer the question about when Monroe County had a population of 140305, I need to first gather information about Monroe County using its FIPS code. \n\nThe next step is to find the entity for Monroe County with the FIPS code 18105. I will use the `FindAll()` function to get all entities and then filter for Monroe County with the specific FIPS code. \n\nLet's proceed with that."
+  },
+  {
+    "graphq_ir": "how many <ES> <C> former French region </C> that <R> replaced by </R> forward to <ES> <C> region of France </C> whose <A> SIREN number </A> is text <V> 200053403 </V> </ES> </ES>",
+    "kopl": "FindAll().FilterStr(SIREN number,200053403).FilterConcept(region of France).Relate(replaced by,backward).FilterConcept(former French region).Count()",
+    "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?count) WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"former French region\" . ?e <replaced_by> ?e_1 . ?e_1 <pred:instance_of> ?c_1 . ?c_1 <pred:name> \"region of France\" . ?e_1 <SIREN_number> ?pv_1 . ?pv_1 <pred:value> \"200053403\" .   }",
+    "lambda-dcs": "( call SW.listValue ( call .size ( call SW.filter ( getProperty ( singleton en.former_French_region ) ( string ! type ) ) ( string replaced_by ) ) ) )",
+    "cypher": "MATCH (n2:region_of_France) WHERE n2.SIREN_number = \"200053403\"\nMATCH (n1:former_French_region)<-[r1:replaced_by]-(n2)\nRETURN count(n1)",
+    "question": "For the region of France with the SIREN number 200053403, how many former French regions were replaced by it?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"former French region\"}) match (e)-[:replaced_by]->(e_1) match (e_1)-[:instance_of]->(c_1:Resource{name:\"region of France\"}) match (e_1)-[:SIREN_number]->(pv_1:Resource{value:\"200053403\"}) return count(distinct e) as n",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "SIREN number",
+          "200053403"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "region of France"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "replaced by",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "former French region"
+        ]
+      },
+      {
+        "function": "Count",
+        "dependencies": [
+          4
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_28649",
+    "answer": "2",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FilterStr",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q7270",
+                "Q130232",
+                "Q280658",
+                "Q8355",
+                "Q8445"
+              ],
+              "triples": null
+            },
+            "key": "SIREN number",
+            "value": "200053403"
+          }
+        },
+        "result": "([], [])"
+      },
+      {
+        "thought": "Since the previous steps did not yield any results, I will try a different approach. I will first retrieve all entities again and then filter for the concept of \"region of France\" to ensure I am working with the correct set of entities. \n\nNext step:\n1. Call FindAll() again to get all entities.\n2. Filter for the concept of \"region of France\". \n\nLet's proceed with the first step. \n\nExecuting FindAll() again.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the previous attempts to filter entities based on the SIREN number did not yield any results, and the FindAll() function continues to return too many items, I will try a different approach.\n\nNext step:\n1. I will use the Find function to search specifically for the region of France with the SIREN number 200053403. This should help narrow down the results significantly.\n\nExecuting Find with the name \"200053403\". \n\nAction: Find\nArguments: {\"name\": \"200053403\"}\n\nReasoning:\nStep 1: Executing next step\nStep 2: Executing next step\nStep 3: Since the previous steps did not yield any results, I will try a different approach. I will first retrieve all entities again and then filter for the concept of \"region of France\" to ensure I am working with the correct set of entities. \n\nNext step:\n1. Call FindAll() again to get all entities.\n2. Filter for the concept of \"region of France\". \n\nLet's proceed with the first step. \n\nExecuting FindAll() again."
+  },
+  {
+    "graphq_ir": "how many <ES> <ES> <C> bowed string instrument </C> whose <A> Hornbostel-Sachs classification </A> is text <V> 321.322-71 </V> </ES> or <ES> <C> bowed string instrument </C> that <R> instrument </R> backward to <E> John Hartford </E> </ES> </ES>",
+    "kopl": "FindAll().FilterStr(Hornbostel-Sachs classification,321.322-71).FilterConcept(bowed string instrument).Find(John Hartford).Relate(instrument,forward).FilterConcept(bowed string instrument).Or().Count()",
+    "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?count) WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"bowed string instrument\" .  { ?e <Hornbostel-Sachs_classification> ?pv . ?pv <pred:value> \"321.322-71\" .  } UNION { ?e_1 <instrument> ?e . ?e_1 <pred:name> \"John Hartford\" .  } }",
+    "lambda-dcs": "( call SW.listValue ( call .size ( call SW.concat ( call SW.filter ( getProperty ( singleton en.bowed_string_instrument ) ( string ! type ) ) ( string Hornbostel-Sachs_classification ) ( string = ) ( string 321.322-71 ) ) ( call SW.filter ( getProperty ( singleton en.bowed_string_instrument ) ( string ! type ) ) ( call SW.reverse ( string instrument ) ) ) ) ) )",
+    "cypher": "MATCH (n1:bowed_string_instrument) WHERE n1.Hornbostel-Sachs_classification = \"321.322-71\"\nRETURN count(n1)\nUNION\nMATCH (n2) WHERE n2.name = \"John Hartford\"\nMATCH (n1:bowed_string_instrument)-[r1:instrument]->(n2)\nRETURN count(n1)",
+    "question": "How many bowed string instruments do we know Hornbostel-Sachs classification is 321.322-71 or that are the instrument used by John Hartford?",
+    "cypher_match": "call { match (e)-[:`Hornbostel-Sachs_classification`]->(pv:Resource{value:\"321.322-71\"}) return e union match (e_1:Resource{name:\"John Hartford\"})-[:instrument]->(e) return e } match (e)-[:instance_of]->(c:Resource{name:\"bowed string instrument\"}) return count(distinct e) as n",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "Hornbostel-Sachs classification",
+          "321.322-71"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "bowed string instrument"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "John Hartford"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "instrument",
+          "forward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          4
+        ],
+        "inputs": [
+          "bowed string instrument"
+        ]
+      },
+      {
+        "function": "Or",
+        "dependencies": [
+          2,
+          5
+        ],
+        "inputs": []
+      },
+      {
+        "function": "Count",
+        "dependencies": [
+          6
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_81502",
+    "answer": "4",
+    "history": [
+      {
+        "thought": "To answer the question, I need to gather information about bowed string instruments that fall under the Hornbostel-Sachs classification 321.322-71 and also identify the instruments used by John Hartford. \n\nThe first step will be to find all entities related to bowed string instruments and then filter them based on the Hornbostel-Sachs classification. \n\nI will start by calling the `FindAll()` function to get all entities. Then, I will filter for the specific classification and also look for instruments associated with John Hartford. \n\nLet's begin with the first step. \n\nI'll call `FindAll()`.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will filter the entities directly for the specific Hornbostel-Sachs classification 321.322-71. \n\nThe next step is to filter the entities for the Hornbostel-Sachs classification. I will use the `FilterStr` function to find entities that match this classification.\n\nLet's proceed with that.\n\nAction: FilterStr\nArguments: \n- entities: Last step result\n- key: \"Hornbostel-Sachs classification\"\n- value: \"321.322-71\"\n\nReasoning:\nStep 1: To answer the question, I need to gather information about bowed string instruments that fall under the Hornbostel-Sachs classification 321.322-71 and also identify the instruments used by John Hartford. \n\nThe first step will be to find all entities related to bowed string instruments and then filter them based on the Hornbostel-Sachs classification. \n\nI will start by calling the `FindAll()` function to get all entities. Then, I will filter for the specific classification and also look for instruments associated with John Hartford. \n\nLet's begin with the first step. \n\nI'll call `FindAll()`."
+  },
+  {
+    "graphq_ir": "what is <ES> <C> visual artwork </C> that <R> producer </R> forward to <E> Werner Herzog </E> </ES>",
+    "kopl": "Find(Werner Herzog).Relate(producer,backward).FilterConcept(visual artwork).What()",
+    "sparql": "SELECT DISTINCT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"visual artwork\" . ?e <producer> ?e_1 . ?e_1 <pred:name> \"Werner Herzog\" .   }",
+    "lambda-dcs": "( call SW.listValue ( call SW.filter ( getProperty ( singleton en.visual_artwork ) ( string ! type ) ) ( string producer ) ) )",
+    "cypher": "MATCH (n2) WHERE n2.name = \"Werner Herzog\"\nMATCH (n1:visual_artwork)<-[r1:producer]-(n2)\nRETURN n1.name",
+    "question": "What visual artwork was produced by Werner Herzog?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"visual artwork\"}) match (e)-[:producer]->(e_1:Resource{name:\"Werner Herzog\"}) return distinct e.name",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Werner Herzog"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "producer",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "visual artwork"
+        ]
+      },
+      {
+        "function": "What",
+        "dependencies": [
+          2
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_56711",
+    "answer": "Invincible",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FilterConcept",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q7270",
+                "Q130232",
+                "Q280658",
+                "Q8355",
+                "Q8445"
+              ],
+              "triples": null
+            },
+            "concept_name": "visual artwork"
+          }
+        },
+        "result": "{'ids': [], 'triples': None}"
+      },
+      {
+        "thought": "Since the previous steps did not yield any results, I will try a different approach. I will first filter the entities related to Werner Herzog and then look for visual artworks associated with him.\n\nNext step:\n1. Find entities related to Werner Herzog.\n2. Filter those entities to find any that are classified as visual artworks.\n\nLet's start by finding the entities related to Werner Herzog. \n\nI will execute the following:\n- Use `Find` to locate Werner Herzog and then retrieve related entities. \n\nExecuting the next step.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Werner Herzog"
+          }
+        },
+        "result": "(['Q44131'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "Relate",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q44131"
+              ],
+              "triples": null
+            },
+            "relation": "produced",
+            "direction": "forward"
+          }
+        },
+        "result": "([], [])"
+      }
+    ],
+    "response": "Final Answer: Since the previous steps did not yield any results regarding visual artworks produced by Werner Herzog, I will try a different approach. \n\nNext step:\n1. I will search for any visual artworks that might be associated with Werner Herzog by looking for artworks that have him listed as a creator or contributor.\n\nI will execute the following:\n- Use `FindAll` to get all visual artworks and then filter for those associated with Werner Herzog.\n\nExecuting the next step.\nAction: FindAll\nArguments: {}\n\nReasoning:\nStep 1: Executing next step\nStep 2: Executing next step\nStep 3: Since the previous steps did not yield any results, I will try a different approach. I will first filter the entities related to Werner Herzog and then look for visual artworks associated with him.\n\nNext step:\n1. Find entities related to Werner Herzog.\n2. Filter those entities to find any that are classified as visual artworks.\n\nLet's start by finding the entities related to Werner Herzog. \n\nI will execute the following:\n- Use `Find` to locate Werner Herzog and then retrieve related entities. \n\nExecuting the next step.\nStep 4: Executing next step"
+  },
+  {
+    "graphq_ir": "what is <ES> <C> metropolitan borough </C> whose <A> TOID </A> is text <V> 7000000000000018 </V> </ES>",
+    "kopl": "FindAll().FilterStr(TOID,7000000000000018).FilterConcept(metropolitan borough).What()",
+    "sparql": "SELECT DISTINCT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"metropolitan borough\" . ?e <TOID> ?pv . ?pv <pred:value> \"7000000000000018\" .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.filter ( getProperty ( singleton en.metropolitan_borough ) ( string ! type ) ) ( string TOID ) ( string = ) ( string 7000000000000018 ) ) )",
+    "cypher": "MATCH (n1:metropolitan_borough) WHERE n1.TOID = \"7000000000000018\"\nRETURN n1.name",
+    "question": "TOID 7000000000000018 designates which metro borough?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"metropolitan borough\"}) match (e)-[:TOID]->(pv:Resource{value:\"7000000000000018\"}) return distinct e.name",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "TOID",
+          "7000000000000018"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "metropolitan borough"
+        ]
+      },
+      {
+        "function": "What",
+        "dependencies": [
+          2
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_94299",
+    "answer": "Birmingham",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the entities based on the specific TOID value. I will use the `FilterStr` function to find the entity that has the TOID equal to 7000000000000018.\n\nLet's proceed with that. \n\nStep 2:\nAction: FilterStr\nArguments: \n- entities: Last step result\n- key: \"TOID\"\n- value: \"7000000000000018\"\n\nReasoning:\nStep 1: Executing next step"
+  },
+  {
+    "graphq_ir": "whether <ES> <C> visual artwork </C> whose <A> title </A> is text <V> Born on the Fourth of July </V> </ES> <A> publication date </A> is year <V> 1991 </V> ( <Q> place of publication </Q> is <V> Germany </V> )",
+    "kopl": "FindAll().FilterStr(title,Born on the Fourth of July).FilterConcept(visual artwork).QueryAttrUnderCondition(publication date,place of publication,Germany).VerifyYear(1991,=)",
+    "sparql": "ASK { ?e <pred:instance_of> ?c . ?c <pred:name> \"visual artwork\" . ?e <title> ?pv_1 . ?pv_1 <pred:value> \"Born on the Fourth of July\" . ?e <publication_date> ?pv . ?pv <pred:year> 1991 . [ <pred:fact_h> ?e ; <pred:fact_r> <publication_date> ; <pred:fact_t> ?pv ] <place_of_publication> ?qpv . ?qpv <pred:value> \"Germany\" .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1:visual_artwork) WHERE (n1.title = \"Born on the Fourth of July\" AND n1.publication_date =  1991 )\nRETURN isEmpty(n1)",
+    "question": "Was the film Born on the Fourth of July released in Germany in 1991?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"visual artwork\"}) match (e)-[:title]->(pv_1:Resource{value:\"Born on the Fourth of July\"}) match (e)-[:publication_date]->(pv:Resource{year:1991}),(e)<-[:fact_h]-(tmp)-[:fact_t]->(pv), (tmp)-[:fact_r]-(qr:Relation{name:\"publication_date\"}),(tmp)-[:place_of_publication]->(qpv:Resource{value:\"Germany\"}) return pv.year = 1991",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "title",
+          "Born on the Fourth of July"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "visual artwork"
+        ]
+      },
+      {
+        "function": "QueryAttrUnderCondition",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "publication date",
+          "place of publication",
+          "Germany"
+        ]
+      },
+      {
+        "function": "VerifyYear",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "1991",
+          "="
+        ]
+      }
+    ],
+    "sample_id": "train_29562",
+    "answer": "no",
+    "history": [],
+    "response": "Final Answer: To determine if the film \"Born on the Fourth of July\" was released in Germany in 1991, I need to find information about the release date of the film in Germany. \n\nThe next step is to find the entity for the film \"Born on the Fourth of July\" and then check its release information specifically for Germany in 1991. \n\nI will start by using the Find tool to locate the film entity. \n\nLet's proceed with that. \n\n```json\n{\n    \"name\": \"Born on the Fourth of July\"\n}\n```\n\nReasoning:\n"
+  },
+  {
+    "graphq_ir": "which one has the largest <A> duration </A> among <ES> <ES> <E> Rock of Ages </E> whose <A> publication date </A> is date <V> 2012-06-14 </V> </ES> or <E> A Prophet </E> </ES>",
+    "kopl": "Find(Rock of Ages).FilterDate(publication date,2012-06-14,=).Find(A Prophet).Or().Select(duration,largest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { { ?e <pred:name> \"Rock of Ages\" . ?e <publication_date> ?pv_1 . ?pv_1 <pred:date> \"2012-06-14\"^^xsd:date . } UNION { ?e <pred:name> \"A Prophet\" . } ?e <duration> ?pv . ?pv <pred:value> ?v .  } ORDER BY DESC(?v) LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.concat ( call SW.filter en.Rock_of_Ages ( string publication_date ) ( string = ) ( date 2012-06-14 ) ) en.A_Prophet ) ( string max ) ( string duration ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Rock of Ages\"\nMATCH (n1) WHERE n1.publication_date =  2012-06-14 \nRETURN n1.name AS name\nORDER BY n1.duration DESC\nUNION\nMATCH (n1) WHERE n1.name = \"A Prophet\"\nRETURN n1.name AS name\nORDER BY n1.duration DESC\nLIMIT 1",
+    "question": "What is the relationship between Rock of Ages (the one whose publication date is 2012-06-14) or A Prophet?",
+    "cypher_match": "call { match (e:Resource{name:\"Rock of Ages\"})-[:publication_date]->(pv_1:Resource{date:Date(\"2012-06-14\")}) return e union match (e:Resource{name:\"A Prophet\"}) return e } match (e)-[:duration]->(pv) return e order by pv.value desc limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Rock of Ages"
+        ]
+      },
+      {
+        "function": "FilterDate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "publication date",
+          "2012-06-14",
+          "="
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "A Prophet"
+        ]
+      },
+      {
+        "function": "SelectBetween",
+        "dependencies": [
+          1,
+          2
+        ],
+        "inputs": [
+          "duration",
+          "greater"
+        ]
+      }
+    ],
+    "sample_id": "train_32280",
+    "answer": "A Prophet",
+    "history": [
+      {
+        "thought": "To find the relationship between \"Rock of Ages\" (published on 2012-06-14) and \"A Prophet,\" I will first need to gather information about both entities. \n\nThe next step is to find all entities and then filter them to get the specific entity for \"Rock of Ages\" with the publication date of 2012-06-14. After that, I will look for the entity related to \"A Prophet.\" \n\nLet's start by finding all entities. \n\nI'll execute the `FindAll()` function.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the entities to find the specific \"Rock of Ages\" with the publication date of 2012-06-14. Since the result from `FindAll()` is too long, I will use the `FilterStr` function to narrow down the search.\n\nI will first filter for the entity with the title \"Rock of Ages\" and then check for the publication date. \n\nLet's proceed with the `FilterStr` function to find \"Rock of Ages\". \n\nI'll execute the `FilterStr` function with the name \"Rock of Ages\". \n\nAction: FilterStr\nArguments: \n- entities: Last step result\n- key: \"title\"\n- value: \"Rock of Ages\"\n\nReasoning:\nStep 1: To find the relationship between \"Rock of Ages\" (published on 2012-06-14) and \"A Prophet,\" I will first need to gather information about both entities. \n\nThe next step is to find all entities and then filter them to get the specific entity for \"Rock of Ages\" with the publication date of 2012-06-14. After that, I will look for the entity related to \"A Prophet.\" \n\nLet's start by finding all entities. \n\nI'll execute the `FindAll()` function."
+  },
+  {
+    "graphq_ir": "whether <ES> <C> college of the University of Oxford </C> whose <A> IPv4 routing prefix </A> is text <V> 129.67.60.0/22 </V> </ES> <A> inception </A> is date <V> 1989-08-01 </V>",
+    "kopl": "FindAll().FilterStr(IPv4 routing prefix,129.67.60.0/22).FilterConcept(college of the University of Oxford).QueryAttr(inception).VerifyDate(1989-08-01,=)",
+    "sparql": "ASK { ?e <pred:instance_of> ?c . ?c <pred:name> \"college of the University of Oxford\" . ?e <IPv4_routing_prefix> ?pv_1 . ?pv_1 <pred:value> \"129.67.60.0/22\" . ?e <inception> ?pv . ?pv <pred:date> \"1989-08-01\"^^xsd:date .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1:college_of_the_University_of_Oxford) WHERE (n1.IPv4_routing_prefix = \"129.67.60.0/22\" AND n1.inception =  1989-08-01 )\nRETURN isEmpty(n1)",
+    "question": "If we know an University of Oxford, whose  IPv4 routing prefix is 129.67.60.0/22, was it founded on 1st August 1989 ?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"college of the University of Oxford\"}) match (e)-[:IPv4_routing_prefix]->(pv_1:Resource{value:\"129.67.60.0/22\"}) match (e)-[:inception]->(pv:Resource) return pv.date = Date(\"1989-08-01\")",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "IPv4 routing prefix",
+          "129.67.60.0/22"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "college of the University of Oxford"
+        ]
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "inception"
+        ]
+      },
+      {
+        "function": "VerifyDate",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "1989-08-01",
+          "="
+        ]
+      }
+    ],
+    "sample_id": "train_12977",
+    "answer": "no",
+    "history": [
+      {
+        "thought": "To determine if the University of Oxford was founded on 1st August 1989, I need to first find the entity representing the University of Oxford and then check its founding date. \n\nThe next step is to find the University of Oxford entity using its IPv4 routing prefix. I will start by calling the `FindAll()` function to get all entities and then filter for the University of Oxford using the IPv4 routing prefix. \n\nLet's proceed with that. \n\nI'll call `FindAll()`.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will filter the entities directly using the IPv4 routing prefix to find the University of Oxford. \n\nThe next step is to use the `FilterStr` function to filter entities by the specific attribute of the IPv4 routing prefix. \n\nI'll proceed with that. \n\nAction: `FilterStr`\nArguments: \n- `entities`: Last step result\n- `key`: \"IPv4 routing prefix\"\n- `value`: \"129.67.60.0/22\"\n\nReasoning:\nStep 1: To determine if the University of Oxford was founded on 1st August 1989, I need to first find the entity representing the University of Oxford and then check its founding date. \n\nThe next step is to find the University of Oxford entity using its IPv4 routing prefix. I will start by calling the `FindAll()` function to get all entities and then filter for the University of Oxford using the IPv4 routing prefix. \n\nLet's proceed with that. \n\nI'll call `FindAll()`."
+  },
+  {
+    "graphq_ir": "what is the relation from <E> FC Levadia Tallinn </E> to <E> green </E>",
+    "kopl": "Find(FC Levadia Tallinn).Find(green).QueryRelation()",
+    "sparql": "SELECT DISTINCT ?p WHERE { ?e_1 <pred:name> \"FC Levadia Tallinn\" . ?e_2 <pred:name> \"green\" . ?e_1 ?p ?e_2 .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"FC Levadia Tallinn\"\nMATCH (n2) WHERE n2.name = \"green\"\nMATCH (n1)-[r1]->(n2)\nRETURN r1.label",
+    "question": "What is the relationship between FC Levadia Tallinn and green?",
+    "cypher_match": "match (e_1:Resource{name:\"FC Levadia Tallinn\"})-[p]->(e_2:Resource{name:\"green\"}) return distinct type(p)",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "FC Levadia Tallinn"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "green"
+        ]
+      },
+      {
+        "function": "QueryRelation",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_32752",
+    "answer": "official color",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the entities to find the specific entity for \"FC Levadia Tallinn\" and then explore its relationships. I will use the `Find` function to locate the entity for \"FC Levadia Tallinn\".\n\nLet's proceed with that. \n\nStep 2:\n- Action: Find\n- Arguments: { \"name\": \"FC Levadia Tallinn\" }\n\nReasoning:\nStep 1: Executing next step"
+  },
+  {
+    "graphq_ir": "what is <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0001 1483 0433 </V> </ES>",
+    "kopl": "FindAll().FilterStr(ISNI,0000 0001 1483 0433).FilterConcept(human).What()",
+    "sparql": "SELECT DISTINCT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"human\" . ?e <ISNI> ?pv . ?pv <pred:value> \"0000 0001 1483 0433\" .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.filter ( getProperty ( singleton en.human ) ( string ! type ) ) ( string ISNI ) ( string = ) ( string 0000 0001 1483 0433 ) ) )",
+    "cypher": "MATCH (n1:human) WHERE n1.ISNI = \"0000 0001 1483 0433\"\nRETURN n1.name",
+    "question": "What person's ISNI is 0000 0001 1483 0433?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"human\"}) match (e)-[:ISNI]->(pv:Resource{value:\"0000 0001 1483 0433\"}) return distinct e.name",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "ISNI",
+          "0000 0001 1483 0433"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "human"
+        ]
+      },
+      {
+        "function": "What",
+        "dependencies": [
+          2
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_73068",
+    "answer": "Doug Savant",
+    "history": [
+      {
+        "thought": "The next step is to find the entity associated with the ISNI number \"0000 0001 1483 0433\". I will use the Find function to search for this specific ISNI. \n\nLet's proceed with that. \n\n```json\n{\n    \"name\": \"0000 0001 1483 0433\"\n}\n```",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "0000 0001 1483 0433"
+          }
+        },
+        "result": "([], None)"
+      }
+    ],
+    "response": "Final Answer: Since the search for the ISNI \"0000 0001 1483 0433\" did not return any results, the next step is to gather all entities in the knowledge base to see if we can find the ISNI among them. \n\nLet's proceed with that.\n\n```json\n{}\n```\nAction: FindAll\nArguments: {}\n\n\nReasoning:\nStep 1: The next step is to find the entity associated with the ISNI number \"0000 0001 1483 0433\". I will use the Find function to search for this specific ISNI. \n\nLet's proceed with that. \n\n```json\n{\n    \"name\": \"0000 0001 1483 0433\"\n}\n```"
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> higher education institution </C> that <R> educated at </R> backward to <E> Jerome Kern </E> </ES> whose <A> students count </A> is <V> 30787 </V>",
+    "kopl": "Find(Jerome Kern).Relate(educated at,forward).FilterConcept(higher education institution).QueryAttrQualifier(students count,30787,point in time)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"higher education institution\" . ?e_1 <educated_at> ?e . ?e_1 <pred:name> \"Jerome Kern\" .  ?e <students_count> ?pv . ?pv <pred:unit> \"1\" . ?pv <pred:value> \"30787\"^^xsd:double . [ <pred:fact_h> ?e ; <pred:fact_r> <students_count> ; <pred:fact_t> ?pv ] <point_in_time> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n2) WHERE n2.name = \"Jerome Kern\"\nMATCH (n1:higher_education_institution)-[r1:educated_at]->(n2) WHERE n1.students_count =  30787 \nRETURN r1.point_in_time",
+    "question": "When did the higher education institution where Jerome Kern was educated have a student count of 30787?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"higher education institution\"}) match (e)-[:students_count]->(pv:Resource{unit:\"1\",value:30787.0}) match (e_1:Resource{name:\"Jerome Kern\"})-[:educated_at]->(e),(e)<-[:fact_h]-(tmp)-[:fact_t]->(pv), (tmp)-[:fact_r]-(qr:Relation{name:\"students_count\"}),(tmp)-[:point_in_time]->(qpv) return distinct qpv",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Jerome Kern"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "educated at",
+          "forward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "higher education institution"
+        ]
+      },
+      {
+        "function": "QueryAttrQualifier",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "students count",
+          "30787",
+          "point in time"
+        ]
+      }
+    ],
+    "sample_id": "train_29297",
+    "answer": "2016-12-01",
+    "history": [
+      {
+        "thought": "To answer the question, I need to first identify the higher education institution where Jerome Kern was educated. After that, I can check the historical student count for that institution to find out when it had a student count of 30,787.\n\nThe next step is to find the entity related to Jerome Kern and filter for the higher education institution he attended. I will start by querying for Jerome Kern's information.\n\nI will use the `Find` function to locate Jerome Kern's entity. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Jerome Kern"
+          }
+        },
+        "result": "(['Q313270'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "QueryAttr",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q313270"
+              ],
+              "triples": null
+            },
+            "key": "educated at"
+          }
+        },
+        "result": "[]"
+      }
+    ],
+    "response": "Final Answer: Since the previous attempt to find the higher education institution where Jerome Kern was educated did not yield any results, I will try a different approach. \n\nI will use the `Relate` function to find the higher education institution related to Jerome Kern. This will help me identify the institution he attended.\n\nLet's proceed with that.\nAction: Relate\nArguments: {\"entities\": {\"ids\": [\"Q313270\"], \"triples\": null}, \"relation\": \"educated at\", \"direction\": \"forward\"}\n\nReasoning:\nStep 1: To answer the question, I need to first identify the higher education institution where Jerome Kern was educated. After that, I can check the historical student count for that institution to find out when it had a student count of 30,787.\n\nThe next step is to find the entity related to Jerome Kern and filter for the higher education institution he attended. I will start by querying for Jerome Kern's information.\n\nI will use the `Find` function to locate Jerome Kern's entity. \n\nLet's proceed with that.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "whether <ES> <C> cemetery </C> that <R> country </R> forward to <E> France </E> </ES> <A> inception </A> is not year <V> 1818 </V>",
+    "kopl": "Find(France).Relate(country,backward).FilterConcept(cemetery).QueryAttr(inception).VerifyYear(1818,!=)",
+    "sparql": "ASK { ?e <pred:instance_of> ?c . ?c <pred:name> \"cemetery\" . ?e <country> ?e_1 . ?e_1 <pred:name> \"France\" .  ?e <inception> ?pv . ?pv <pred:year> ?v . FILTER ( ?v != 1818 ) .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n2) WHERE n2.name = \"France\"\nMATCH (n1:cemetery)<-[r1:country]-(n2) WHERE n1.inception <>  1818 \nRETURN isEmpty(n1)",
+    "question": "Was the cemetry located in France not started in 1818?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"cemetery\"}) match (e)-[:country]->(e_1:Resource{name:\"France\"}) match (e)-[:inception]->(pv) return pv.year <> 1818",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "France"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "country",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "cemetery"
+        ]
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "inception"
+        ]
+      },
+      {
+        "function": "VerifyYear",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "1818",
+          "!="
+        ]
+      }
+    ],
+    "sample_id": "train_41836",
+    "answer": "yes",
+    "history": [
+      {
+        "thought": "To answer the question about whether a cemetery located in France was not started in 1818, I need to first identify cemeteries in France and then check their start dates. \n\nThe next step is to find all entities related to cemeteries in France. I will use the `FindAll()` function to gather this information.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will filter the entities to focus specifically on cemeteries located in France. \n\nThe next step is to filter the entities by the concept of \"cemetery\" and then check their start dates. I will first filter for cemeteries in France using the `FilterConcept` function.\n\nAction: \n- Use `FilterConcept` to find entities that are cemeteries.\n- Then, I will filter those results to find cemeteries located in France.\n\nLet's proceed with the first filtering step.\n\nAction: FilterConcept\nArguments: \n- entities: { \"Ids\": [\"Q7270\", \"Q130232\", \"Q280658\", \"Q8355\", \"Q8445\"], \"Triples\": null }\n- concept_name: \"cemetery\"\n\nReasoning:\nStep 1: To answer the question about whether a cemetery located in France was not started in 1818, I need to first identify cemeteries in France and then check their start dates. \n\nThe next step is to find all entities related to cemeteries in France. I will use the `FindAll()` function to gather this information."
+  },
+  {
+    "graphq_ir": "what is the relation from <E> 16 Blocks </E> to <E> Klaus Badelt </E>",
+    "kopl": "Find(16 Blocks).Find(Klaus Badelt).QueryRelation()",
+    "sparql": "SELECT DISTINCT ?p WHERE { ?e_1 <pred:name> \"16 Blocks\" . ?e_2 <pred:name> \"Klaus Badelt\" . ?e_1 ?p ?e_2 .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"16 Blocks\"\nMATCH (n2) WHERE n2.name = \"Klaus Badelt\"\nMATCH (n1)-[r1]->(n2)\nRETURN r1.label",
+    "question": "How is 16 Blocks related to Klaus Badelt?",
+    "cypher_match": "match (e_1:Resource{name:\"16 Blocks\"})-[p]->(e_2:Resource{name:\"Klaus Badelt\"}) return distinct type(p)",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "16 Blocks"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Klaus Badelt"
+        ]
+      },
+      {
+        "function": "QueryRelation",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_48486",
+    "answer": "composer",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      },
+      {
+        "thought": "The next step is to filter the results to find the specific entities related to \"16 Blocks\" and \"Klaus Badelt\". I will first filter for the entity \"16 Blocks\".\n\nLet's proceed with the following action:\n\nStep 2:\n- Use the `FilterStr` function to filter the entities for \"16 Blocks\". \n\nI'll execute that now.",
+        "action": {
+          "tool": "FilterStr",
+          "args": {
+            "entities": {
+              "ids": [],
+              "triples": null
+            },
+            "key": "name",
+            "value": "16 Blocks"
+          }
+        },
+        "result": "([], [])"
+      }
+    ],
+    "response": "Final Answer: Since the result of filtering for \"16 Blocks\" returned no entities, it indicates that there might be no direct match for that name in the knowledge base. \n\nNext, I will attempt to find the entity for \"Klaus Badelt\" to see if there are any relations from that side. \n\nLet's proceed with the following action:\n\n- Use the `FilterStr` function to filter the entities for \"Klaus Badelt\". \n\nI'll execute that now. \n\nAction: FilterStr\nArguments: {\"entities\": {\"ids\": [], \"triples\": null}, \"key\": \"name\", \"value\": \"Klaus Badelt\"}\n\nReasoning:\nStep 1: Executing next step\nStep 2: The next step is to filter the results to find the specific entities related to \"16 Blocks\" and \"Klaus Badelt\". I will first filter for the entity \"16 Blocks\".\n\nLet's proceed with the following action:\n\nStep 2:\n- Use the `FilterStr` function to filter the entities for \"16 Blocks\". \n\nI'll execute that now."
+  },
+  {
+    "graphq_ir": "which one has the smallest <A> area </A> among <ES> <ES> <E> Shelby County </E> whose <A> population </A> is number <V> 42274 </V> </ES> or <ES> <E> Linn County </E> whose <A> population </A> is number <V> 211226 </V> </ES> </ES>",
+    "kopl": "Find(Shelby County).FilterNum(population,42274,=).Find(Linn County).FilterNum(population,211226,=).Or().Select(area,smallest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { { ?e <pred:name> \"Shelby County\" . ?e <population> ?pv_1 . ?pv_1 <pred:unit> \"1\" . ?pv_1 <pred:value> \"42274\"^^xsd:double . } UNION { ?e <pred:name> \"Linn County\" . ?e <population> ?pv_2 . ?pv_2 <pred:unit> \"1\" . ?pv_2 <pred:value> \"211226\"^^xsd:double . } ?e <area> ?pv . ?pv <pred:value> ?v .  } ORDER BY ?v LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.concat ( call SW.filter en.Shelby_County ( string population ) ( string = ) ( number 42274 ) ) ( call SW.filter en.Linn_County ( string population ) ( string = ) ( number 211226 ) ) ) ( string min ) ( string area ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Shelby County\"\nMATCH (n1) WHERE n1.population =  42274 \nRETURN n1.name AS name\nORDER BY n1.area DESC\nUNION\nMATCH (n1) WHERE n1.name = \"Linn County\"\nMATCH (n1) WHERE n1.population =  211226 \nRETURN n1.name AS name\nORDER BY n1.area DESC\nLIMIT 1",
+    "question": "Which area is smaller, Shelby County (the one whose population is 42274) or Linn County (the one whose population is 211226)?",
+    "cypher_match": "call { match (e:Resource{name:\"Shelby County\"})-[:population]->(pv_1:Resource{unit:\"1\",value:42274.0}) return e union match (e:Resource{name:\"Linn County\"})-[:population]->(pv_2:Resource{unit:\"1\",value:211226.0}) return e } match (e)-[:area]->(pv) return e order by pv.value limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Shelby County"
+        ]
+      },
+      {
+        "function": "FilterNum",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "population",
+          "42274",
+          "="
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Linn County"
+        ]
+      },
+      {
+        "function": "FilterNum",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "population",
+          "211226",
+          "="
+        ]
+      },
+      {
+        "function": "SelectBetween",
+        "dependencies": [
+          1,
+          3
+        ],
+        "inputs": [
+          "area",
+          "less"
+        ]
+      }
+    ],
+    "sample_id": "train_11269",
+    "answer": "Shelby County",
+    "history": [],
+    "response": "Final Answer: To determine which area is smaller between Shelby County and Linn County, I need to gather information about the area sizes of both counties. \n\nThe next step is to find the entities for Shelby County and Linn County, and then query their area sizes. \n\nI will start by finding all entities to locate Shelby County and Linn County. \n\nLet's execute the first step: \n\n```json\n{\n    \"tool\": \"functions.FindAll\",\n    \"parameters\": {}\n}\n```\n\nReasoning:\n"
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> statement is subject of </Q> of <ES> <E> Romania </E> (<ES> ones that <R> diplomatic relation </R> forward to <E> Ukraine </E> </ES>) </ES> that <R> shares border with </R> to <E> Moldova </E>",
+    "kopl": "Find(Ukraine).Relate(diplomatic relation,backward).Find(Romania).And().Find(Moldova).QueryRelationQualifier(shares border with,statement is subject of)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e_1 <pred:name> \"Romania\" . ?e_1 <diplomatic_relation> ?e_3 . ?e_3 <pred:name> \"Ukraine\" . ?e_2 <pred:name> \"Moldova\" . ?e_1 <shares_border_with> ?e_2 . [ <pred:fact_h> ?e_1 ; <pred:fact_r> <shares_border_with> ; <pred:fact_t> ?e_2 ] <statement_is_subject_of> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n3) WHERE n3.name = \"Romania\"\nMATCH (n2) WHERE n2.name = \"Ukraine\"\nMATCH (n3)<-[r1:diplomatic_relation]-(n2)\nMATCH (n4) WHERE n4.name = \"Moldova\"\nMATCH (n3)-[r2:shares_border_with]->(n4)\nRETURN r2.statement_is_subject_of",
+    "question": "What is the subject of the statement that Romania (that has a diplomatic relationship with Ukraine) shares a border with Moldova?",
+    "cypher_match": "match (e_1:Resource{name:\"Romania\"})-[:diplomatic_relation]->(e_3:Resource{name:\"Ukraine\"}) match (e_1:Resource{name:\"Romania\"})-[:shares_border_with]->(e_2:Resource{name:\"Moldova\"}),(e_1)<-[:fact_h]-(tmp)-[:fact_t]->(e_2), (tmp)-[:fact_r]-(qr:Relation{name:\"shares_border_with\"}),(tmp)-[:statement_is_subject_of]->(qpv) return distinct qpv.value",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Ukraine"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "diplomatic relation",
+          "backward"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Romania"
+        ]
+      },
+      {
+        "function": "And",
+        "dependencies": [
+          1,
+          2
+        ],
+        "inputs": []
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Moldova"
+        ]
+      },
+      {
+        "function": "QueryRelationQualifier",
+        "dependencies": [
+          3,
+          4
+        ],
+        "inputs": [
+          "shares border with",
+          "statement is subject of"
+        ]
+      }
+    ],
+    "sample_id": "train_44723",
+    "answer": "Moldova–Romania border",
+    "history": [
+      {
+        "thought": "To answer the question, I need to identify the subject of the statement regarding Romania sharing a border with Moldova, while also considering the context of its diplomatic relationship with Ukraine. \n\nThe next step is to find the entities related to Romania and its diplomatic relationship with Ukraine, and then check the relationship between Romania and Moldova. \n\nI will start by finding all entities to gather the necessary information. \n\nLet's execute the first step: \n\n1. Call `FindAll()` to get all entities.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will narrow down the search by directly looking for the specific entities related to Romania and its diplomatic relationship with Ukraine. \n\nThe next step is to filter for the entity representing Romania and check its diplomatic relationship with Ukraine. \n\nI will execute the following steps:\n1. Use `Find()` to locate the entity for Romania.\n2. Use `Relate()` to find the diplomatic relationship between Romania and Ukraine.\n\nLet's start by finding the entity for Romania. \n\nAction: Find\nArguments: { \"name\": \"Romania\" }\n\nReasoning:\nStep 1: To answer the question, I need to identify the subject of the statement regarding Romania sharing a border with Moldova, while also considering the context of its diplomatic relationship with Ukraine. \n\nThe next step is to find the entities related to Romania and its diplomatic relationship with Ukraine, and then check the relationship between Romania and Moldova. \n\nI will start by finding all entities to gather the necessary information. \n\nLet's execute the first step: \n\n1. Call `FindAll()` to get all entities."
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> number of matches played/races/starts </Q> of <E> Chris Nurse </E> that <R> member of sports team </R> to <E> Fort Lauderdale Strikers </E>",
+    "kopl": "Find(Chris Nurse).Find(Fort Lauderdale Strikers).QueryRelationQualifier(member of sports team,number of matches played/races/starts)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e_1 <pred:name> \"Chris Nurse\" . ?e_2 <pred:name> \"Fort Lauderdale Strikers\" . ?e_1 <member_of_sports_team> ?e_2 . [ <pred:fact_h> ?e_1 ; <pred:fact_r> <member_of_sports_team> ; <pred:fact_t> ?e_2 ] <number_of_matches_played/races/starts> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Chris Nurse\"\nMATCH (n2) WHERE n2.name = \"Fort Lauderdale Strikers\"\nMATCH (n1)-[r1:member_of_sports_team]->(n2)\nRETURN r1.number_of_matches_played/races/starts",
+    "question": "Chris Nurse had how many match appearances as a member of the Fort Lauderdale Strikers?",
+    "cypher_match": "match (e_1:Resource{name:\"Chris Nurse\"})-[:member_of_sports_team]->(e_2:Resource{name:\"Fort Lauderdale Strikers\"}),(e_1)<-[:fact_h]-(tmp)-[:fact_t]->(e_2), (tmp)-[:fact_r]-(qr:Relation{name:\"member_of_sports_team\"}),(tmp)-[:`number_of_matches_played/races/starts`]->(qpv) return distinct qpv",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Chris Nurse"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Fort Lauderdale Strikers"
+        ]
+      },
+      {
+        "function": "QueryRelationQualifier",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": [
+          "member of sports team",
+          "number of matches played/races/starts"
+        ]
+      }
+    ],
+    "sample_id": "train_64111",
+    "answer": "16",
+    "history": [
+      {
+        "thought": "To answer the question about Chris Nurse's match appearances for the Fort Lauderdale Strikers, I need to first find the entity for Chris Nurse and then look for the specific attribute related to his match appearances with the Fort Lauderdale Strikers.\n\nThe next step is to find the entity for Chris Nurse. I will use the `Find` function to locate him in the knowledge base. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Chris Nurse"
+          }
+        },
+        "result": "(['Q2437145'], None)"
+      }
+    ],
+    "response": "Final Answer: The next step is to query the attribute related to match appearances for Chris Nurse. Since I have found the entity for Chris Nurse, I will now use the `QueryAttr` function to retrieve the number of match appearances he had as a member of the Fort Lauderdale Strikers.\n\nLet's proceed with that. \n\nAction: QueryAttr\nArguments: {\"entities\": {\"ids\": [\"Q2437145\"], \"triples\": null}, \"key\": \"match appearances\"}\n\nReasoning:\nStep 1: To answer the question about Chris Nurse's match appearances for the Fort Lauderdale Strikers, I need to first find the entity for Chris Nurse and then look for the specific attribute related to his match appearances with the Fort Lauderdale Strikers.\n\nThe next step is to find the entity for Chris Nurse. I will use the `Find` function to locate him in the knowledge base. \n\nLet's proceed with that."
+  },
+  {
+    "graphq_ir": "how many <ES> <C> capital </C> that <R> film release region </R> backward to <ES> <C> visual artwork </C> whose <A> title </A> is text <V> جدایی نادر از سیمین </V> </ES> </ES>",
+    "kopl": "FindAll().FilterStr(title,جدایی نادر از سیمین).FilterConcept(visual artwork).Relate(film release region,forward).FilterConcept(capital).Count()",
+    "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?count) WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"capital\" . ?e_1 <film_release_region> ?e . ?e_1 <pred:instance_of> ?c_1 . ?c_1 <pred:name> \"visual artwork\" . ?e_1 <title> ?pv . ?pv <pred:value> \"جدایی نادر از سیمین\" .   }",
+    "lambda-dcs": "( call SW.listValue ( call .size ( call SW.filter ( getProperty ( singleton en.capital ) ( string ! type ) ) ( call SW.reverse ( string film_release_region ) ) ) ) )",
+    "cypher": "MATCH (n2:visual_artwork) WHERE n2.title = \"جدایی نادر از سیمین\"\nMATCH (n1:capital)-[r1:film_release_region]->(n2)\nRETURN count(n1)",
+    "question": "What is the number of capitals that are the release territory of the visual artwork titled جدایی نادر از سیمین?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"capital\"}) match (e_1)-[:film_release_region]->(e) match (e_1)-[:instance_of]->(c_1:Resource{name:\"visual artwork\"}) match (e_1)-[:title]->(pv:Resource{value:\"جدایی نادر از سیمین\"}) return count(distinct e) as n",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "title",
+          "جدایی نادر از سیمین"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "visual artwork"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "film release region",
+          "forward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "capital"
+        ]
+      },
+      {
+        "function": "Count",
+        "dependencies": [
+          4
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_70865",
+    "answer": "1",
+    "history": [
+      {
+        "thought": "To answer the question, I need to follow these steps:\n\n1. First, I will find the entity for the visual artwork titled \"جدایی نادر از سیمین\".\n2. Then, I will query the release territories associated with this artwork.\n3. Finally, I will filter those territories to count how many of them are capitals.\n\nLet's start by finding the entity for the artwork. I will use the `Find` function to search for the artwork by its title. \n\nI'll proceed with that now.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "جدایی نادر از سیمین"
+          }
+        },
+        "result": "([], None)"
+      }
+    ],
+    "response": "Final Answer: Since the `Find` function did not return any results for the artwork titled \"جدایی نادر از سیمین\", I will try to retrieve all entities first to see if the artwork is listed under a different name or if there are any related entities.\n\nI'll proceed with the `FindAll` function to get all entities in the knowledge base. \n\nAction: FindAll\nArguments: {}\n\nReasoning:\nStep 1: To answer the question, I need to follow these steps:\n\n1. First, I will find the entity for the visual artwork titled \"جدایی نادر از سیمین\".\n2. Then, I will query the release territories associated with this artwork.\n3. Finally, I will filter those territories to count how many of them are capitals.\n\nLet's start by finding the entity for the artwork. I will use the `Find` function to search for the artwork by its title. \n\nI'll proceed with that now."
+  },
+  {
+    "graphq_ir": "which one has the largest <A> real gross domestic product growth rate </A> among <ES> <E> Colombia </E> or <ES> <E> Georgia </E> (<ES> ones that <R> diplomatic relation </R> backward to <E> Vietnam </E> </ES>) </ES> </ES>",
+    "kopl": "Find(Colombia).Find(Vietnam).Relate(diplomatic relation,forward).Find(Georgia).And().Or().Select(real gross domestic product growth rate,largest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { { ?e <pred:name> \"Colombia\" .  } UNION { ?e <pred:name> \"Georgia\" . ?e_1 <diplomatic_relation> ?e . ?e_1 <pred:name> \"Vietnam\" .   } ?e <real_gross_domestic_product_growth_rate> ?pv . ?pv <pred:value> ?v .  } ORDER BY DESC(?v) LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.concat en.Colombia ( call SW.and en.Georgia ( lambda s ( call SW.filter ( var s ) ( call SW.reverse ( string diplomatic_relation ) ) ( string = ) en.Vietnam ) ) ) ) ( string max ) ( string real_gross_domestic_product_growth_rate ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Colombia\"\nRETURN n1.name AS name\nORDER BY n1.real_gross_domestic_product_growth_rate DESC\nUNION\nMATCH (n3) WHERE n3.name = \"Georgia\"\nMATCH (n2) WHERE n2.name = \"Vietnam\"\nMATCH (n3)-[r1:diplomatic_relation]->(n2)\nRETURN n3.name AS name\nORDER BY n1.real_gross_domestic_product_growth_rate DESC\nLIMIT 1",
+    "question": "Does Colombia or Georgia, which has diplomatic relations with Vietnam, have a greater real gross domestic product growth rate?",
+    "cypher_match": "call { match (e:Resource{name:\"Colombia\"}) return e union match (e_1:Resource{name:\"Vietnam\"})-[:diplomatic_relation]->(e:Resource{name:\"Georgia\"}) return e } match (e)-[:real_gross_domestic_product_growth_rate]->(pv) return e order by pv.value desc limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Colombia"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Vietnam"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "diplomatic relation",
+          "forward"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Georgia"
+        ]
+      },
+      {
+        "function": "And",
+        "dependencies": [
+          2,
+          3
+        ],
+        "inputs": []
+      },
+      {
+        "function": "SelectBetween",
+        "dependencies": [
+          0,
+          4
+        ],
+        "inputs": [
+          "real gross domestic product growth rate",
+          "greater"
+        ]
+      }
+    ],
+    "sample_id": "train_35296",
+    "answer": "Georgia",
+    "history": [
+      {
+        "thought": "To answer the question about the real gross domestic product (GDP) growth rate of Colombia and Georgia, I need to gather the GDP growth rate data for both countries. \n\nThe next step is to find the GDP growth rate for Colombia and Georgia. I will start by querying the knowledge base for the GDP growth rate of both countries. \n\nI will use the `FindAll()` function to get all entities first, and then filter for Colombia and Georgia. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will directly filter for the specific countries, Colombia and Georgia, to obtain their GDP growth rates. \n\nI will first search for Colombia and Georgia individually to get their respective entities. \n\nLet's start with Colombia. \n\nAction: Find\nArguments: {\"name\": \"Colombia\"}\n\nReasoning:\nStep 1: To answer the question about the real gross domestic product (GDP) growth rate of Colombia and Georgia, I need to gather the GDP growth rate data for both countries. \n\nThe next step is to find the GDP growth rate for Colombia and Georgia. I will start by querying the knowledge base for the GDP growth rate of both countries. \n\nI will use the `FindAll()` function to get all entities first, and then filter for Colombia and Georgia. \n\nLet's proceed with that."
+  },
+  {
+    "graphq_ir": "which one has the largest <A> duration </A> among <ES> <C> television film </C> that <R> color </R> forward to <E> black-and-white </E> </ES>",
+    "kopl": "Find(black-and-white).Relate(color,backward).FilterConcept(television film).Select(duration,largest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"television film\" . ?e <color> ?e_1 . ?e_1 <pred:name> \"black-and-white\" .  ?e <duration> ?pv . ?pv <pred:value> ?v .  } ORDER BY DESC(?v) LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.filter ( getProperty ( singleton en.television_film ) ( string ! type ) ) ( string color ) ) ( string max ) ( string duration ) ) )",
+    "cypher": "MATCH (n2) WHERE n2.name = \"black-and-white\"\nMATCH (n1:television_film)<-[r1:color]-(n2)\nRETURN n1.name AS name\nORDER BY n1.duration DESC\nLIMIT 1",
+    "question": "Of all the television films done in black-and-white, which is the longest in duration?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"television film\"}) match (e)-[:color]->(e_1:Resource{name:\"black-and-white\"}) match (e)-[:duration]->(pv) return e order by pv.value desc limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "black-and-white"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "color",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "television film"
+        ]
+      },
+      {
+        "function": "SelectAmong",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "duration",
+          "largest"
+        ]
+      }
+    ],
+    "sample_id": "train_40567",
+    "answer": "Germany in Autumn",
+    "history": [
+      {
+        "thought": "To find the longest television film done in black-and-white, I will first gather all entities related to television films. After that, I will filter those entities to find only the ones that are in black-and-white. Finally, I will select the one with the longest duration.\n\nThe first step is to call the `FindAll()` function to get all entities. Let's proceed with that.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will use the `FilterConcept` function to narrow down the entities to only those that are television films. This will help reduce the number of entities to work with. \n\nLet's proceed with that step.\n\nAction: FilterConcept\nArguments: \n- entities: { \"Ids\": [\"Q7270\", \"Q130232\", \"Q280658\", \"Q8355\", \"Q8445\"], \"Triples\": null }\n- concept_name: \"television film\"\n\nReasoning:\nStep 1: To find the longest television film done in black-and-white, I will first gather all entities related to television films. After that, I will filter those entities to find only the ones that are in black-and-white. Finally, I will select the one with the longest duration.\n\nThe first step is to call the `FindAll()` function to get all entities. Let's proceed with that."
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> nominee </Q> of <E> Blade Runner </E> that <R> nominated for </R> to <E> BAFTA Award for Best Editing </E>",
+    "kopl": "Find(Blade Runner).Find(BAFTA Award for Best Editing).QueryRelationQualifier(nominated for,nominee)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e_1 <pred:name> \"Blade Runner\" . ?e_2 <pred:name> \"BAFTA Award for Best Editing\" . ?e_1 <nominated_for> ?e_2 . [ <pred:fact_h> ?e_1 ; <pred:fact_r> <nominated_for> ; <pred:fact_t> ?e_2 ] <nominee> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Blade Runner\"\nMATCH (n2) WHERE n2.name = \"BAFTA Award for Best Editing\"\nMATCH (n1)-[r1:nominated_for]->(n2)\nRETURN r1.nominee",
+    "question": "Who is the nominee connected to the nomination of the film Blade Runner for a BAFTA Award for Best Editing?",
+    "cypher_match": "match (e_1:Resource{name:\"Blade Runner\"})-[:nominated_for]->(e_2:Resource{name:\"BAFTA Award for Best Editing\"}),(e_1)<-[:fact_h]-(tmp)-[:fact_t]->(e_2), (tmp)-[:fact_r]-(qr:Relation{name:\"nominated_for\"}),(tmp)-[:nominee]->(qpv) return distinct qpv.value",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Blade Runner"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "BAFTA Award for Best Editing"
+        ]
+      },
+      {
+        "function": "QueryRelationQualifier",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": [
+          "nominated for",
+          "nominee"
+        ]
+      }
+    ],
+    "sample_id": "train_81282",
+    "answer": "Terry Rawlings",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Blade Runner"
+          }
+        },
+        "result": "(['Q184843'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "Relate",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q184843"
+              ],
+              "triples": null
+            },
+            "relation": "nominated for",
+            "direction": "forward"
+          }
+        },
+        "result": "([], [])"
+      },
+      {
+        "thought": "Since the previous steps did not yield any nominees connected to the nomination of \"Blade Runner\" for a BAFTA Award for Best Editing, I will now try to find the specific nomination details for the BAFTA Award for Best Editing and then look for the nominees associated with that nomination.\n\nNext step:\n1. Find the BAFTA Award for Best Editing.\n2. Relate it to the film \"Blade Runner\" to find the nominees.\n\nLet's start by finding the BAFTA Award for Best Editing. \n\nI will execute the Find function to locate the BAFTA Award for Best Editing.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "BAFTA Award for Best Editing"
+          }
+        },
+        "result": "(['Q787145'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "Relate",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q787145"
+              ],
+              "triples": null
+            },
+            "relation": "nominated for",
+            "direction": "backward"
+          }
+        },
+        "result": "([], [])"
+      }
+    ],
+    "response": "Final Answer: Since the previous steps did not yield any nominees connected to the nomination of \"Blade Runner\" for a BAFTA Award for Best Editing, I will now try to gather information about the nominees for the BAFTA Award for Best Editing in the year \"Blade Runner\" was nominated.\n\n1. I will first find the year \"Blade Runner\" was nominated for the BAFTA Award for Best Editing.\n2. Then, I will look for the nominees for that specific year.\n\nLet's start by querying the nomination year for \"Blade Runner.\" \n\nI will execute the QueryAttr function to find the nomination year for \"Blade Runner.\" \n\nAction: QueryAttr\nArguments: {\"entities\": {\"ids\": [\"Q184843\"], \"triples\": null}, \"key\": \"nominated for\"}\n\nReasoning:\nStep 1: Executing next step\nStep 2: Executing next step\nStep 3: Executing next step\nStep 4: Since the previous steps did not yield any nominees connected to the nomination of \"Blade Runner\" for a BAFTA Award for Best Editing, I will now try to find the specific nomination details for the BAFTA Award for Best Editing and then look for the nominees associated with that nomination.\n\nNext step:\n1. Find the BAFTA Award for Best Editing.\n2. Relate it to the film \"Blade Runner\" to find the nominees.\n\nLet's start by finding the BAFTA Award for Best Editing. \n\nI will execute the Find function to locate the BAFTA Award for Best Editing.\nStep 5: Executing next step"
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> county of North Carolina </C> that <R> named after </R> forward to <ES> <E> James Madison </E> (<ES> ones that <R> member of political party </R> forward to <E> Democratic-Republican Party </E> </ES>) </ES> </ES> whose <A> population </A> is <V> 21022 </V>",
+    "kopl": "Find(Democratic-Republican Party).Relate(member of political party,backward).Find(James Madison).And().Relate(named after,backward).FilterConcept(county of North Carolina).QueryAttrQualifier(population,21022,point in time)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"county of North Carolina\" . ?e <named_after> ?e_1 . ?e_1 <pred:name> \"James Madison\" . ?e_1 <member_of_political_party> ?e_2 . ?e_2 <pred:name> \"Democratic-Republican Party\" .  ?e <population> ?pv . ?pv <pred:unit> \"1\" . ?pv <pred:value> \"21022\"^^xsd:double . [ <pred:fact_h> ?e ; <pred:fact_r> <population> ; <pred:fact_t> ?pv ] <point_in_time> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n4) WHERE n4.name = \"James Madison\"\nMATCH (n3) WHERE n3.name = \"Democratic-Republican Party\"\nMATCH (n4)<-[r2:member_of_political_party]-(n3)\nMATCH (n1:county_of_North_Carolina)<-[r1:named_after]-(n4) WHERE n1.population =  21022 \nRETURN r1.point_in_time",
+    "question": "When did a county of North Carolina, named after James Madison (the one that is the member of political party Democratic-Republican Party), reach the population of 21,022 people ?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"county of North Carolina\"}) match (e)-[:named_after]->(e_1:Resource{name:\"James Madison\"}) match (e)-[:population]->(pv:Resource{unit:\"1\",value:21022.0}) match (e_1:Resource{name:\"James Madison\"})-[:member_of_political_party]->(e_2:Resource{name:\"Democratic-Republican Party\"}),(e)<-[:fact_h]-(tmp)-[:fact_t]->(pv), (tmp)-[:fact_r]-(qr:Relation{name:\"population\"}),(tmp)-[:point_in_time]->(qpv) return distinct qpv",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Democratic-Republican Party"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "member of political party",
+          "backward"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "James Madison"
+        ]
+      },
+      {
+        "function": "And",
+        "dependencies": [
+          1,
+          2
+        ],
+        "inputs": []
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "named after",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          4
+        ],
+        "inputs": [
+          "county of North Carolina"
+        ]
+      },
+      {
+        "function": "QueryAttrQualifier",
+        "dependencies": [
+          5
+        ],
+        "inputs": [
+          "population",
+          "21022",
+          "point in time"
+        ]
+      }
+    ],
+    "sample_id": "train_17604",
+    "answer": "2013-07-01",
+    "history": [],
+    "response": "Final Answer: To answer the question, I need to identify the county in North Carolina that is named after James Madison and then find out when its population reached 21,022 people. \n\nThe first step is to find all counties in North Carolina and filter for the one named after James Madison. After identifying the county, I can then check its population history to find the specific year it reached 21,022 people.\n\nI will start by calling the `FindAll()` function to get all entities. Then, I will filter for the county named after James Madison. \n\nLet's proceed with the first step. \n\n```json\n{\n    \"tool\": \"functions.FindAll\",\n    \"parameters\": {}\n}\n```\n\nReasoning:\n"
+  },
+  {
+    "graphq_ir": "which one has the largest <A> elevation above sea level </A> among <ES> <C> human settlement </C> whose <A> local dialing code </A> is text <V> 973 </V> </ES>",
+    "kopl": "FindAll().FilterStr(local dialing code,973).FilterConcept(human settlement).Select(elevation above sea level,largest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"human settlement\" . ?e <local_dialing_code> ?pv_1 . ?pv_1 <pred:value> \"973\" . ?e <elevation_above_sea_level> ?pv . ?pv <pred:value> ?v .  } ORDER BY DESC(?v) LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.filter ( getProperty ( singleton en.human_settlement ) ( string ! type ) ) ( string local_dialing_code ) ( string = ) ( string 973 ) ) ( string max ) ( string elevation_above_sea_level ) ) )",
+    "cypher": "MATCH (n1:human_settlement) WHERE n1.local_dialing_code = \"973\"\nRETURN n1.name AS name\nORDER BY n1.elevation_above_sea_level DESC\nLIMIT 1",
+    "question": "Which human settlement has the largest elevation (above sea level) among those with the local dialing code of 973?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"human settlement\"}) match (e)-[:local_dialing_code]->(pv_1:Resource{value:\"973\"}) match (e)-[:elevation_above_sea_level]->(pv) return e order by pv.value desc limit 1",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "local dialing code",
+          "973"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "human settlement"
+        ]
+      },
+      {
+        "function": "SelectAmong",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "elevation above sea level",
+          "largest"
+        ]
+      }
+    ],
+    "sample_id": "train_49783",
+    "answer": "West Orange",
+    "history": [
+      {
+        "thought": "To answer the question, I need to follow these steps:\n\n1. **Find all entities** to gather information about human settlements.\n2. **Filter those entities** by the local dialing code of 973.\n3. **Query the elevation** attribute for the filtered settlements.\n4. **Select the settlement** with the largest elevation.\n\nI will start by calling the `FindAll()` function to get all entities.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from the `FindAll()` function is too long, I will filter the entities directly by the concept of \"human settlement\" and then filter by the local dialing code of 973. \n\nI will first filter for human settlements. \n\nAction: \n```json\n{\n    \"tool\": \"functions.FilterConcept\",\n    \"parameters\": {\n        \"entities\": {\n            \"ids\": [],\n            \"triples\": null\n        },\n        \"concept_name\": \"human settlement\"\n    }\n}\n```\n\nReasoning:\nStep 1: To answer the question, I need to follow these steps:\n\n1. **Find all entities** to gather information about human settlements.\n2. **Filter those entities** by the local dialing code of 973.\n3. **Query the elevation** attribute for the filtered settlements.\n4. **Select the settlement** with the largest elevation.\n\nI will start by calling the `FindAll()` function to get all entities."
+  },
+  {
+    "graphq_ir": "whether <ES> <C> film </C> whose <A> title </A> is text <V> The Fisher King </V> </ES> <A> publication date </A> smaller than year <V> 1920 </V> ( <Q> place of publication </Q> is <V> Germany </V> )",
+    "kopl": "FindAll().FilterStr(title,The Fisher King).FilterConcept(film).QueryAttrUnderCondition(publication date,place of publication,Germany).VerifyYear(1920,<)",
+    "sparql": "ASK { ?e <pred:instance_of> ?c . ?c <pred:name> \"film\" . ?e <title> ?pv_1 . ?pv_1 <pred:value> \"The Fisher King\" . ?e <publication_date> ?pv . ?pv <pred:year> ?v . FILTER ( ?v < 1920 ) . [ <pred:fact_h> ?e ; <pred:fact_r> <publication_date> ; <pred:fact_t> ?pv ] <place_of_publication> ?qpv . ?qpv <pred:value> \"Germany\" .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1:film) WHERE (n1.title = \"The Fisher King\" AND n1.publication_date <  1920 )\nRETURN isEmpty(n1)",
+    "question": "Is the release date of the film titled The Fisher King before the year 1920 in Germany?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"film\"}) match (e)-[:title]->(pv_1:Resource{value:\"The Fisher King\"}) match (e)-[:publication_date]->(pv),(e)<-[:fact_h]-(tmp)-[:fact_t]->(pv), (tmp)-[:fact_r]-(qr:Relation{name:\"publication_date\"}),(tmp)-[:place_of_publication]->(qpv:Resource{value:\"Germany\"}) return pv.year < 1920",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "title",
+          "The Fisher King"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "film"
+        ]
+      },
+      {
+        "function": "QueryAttrUnderCondition",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "publication date",
+          "place of publication",
+          "Germany"
+        ]
+      },
+      {
+        "function": "VerifyYear",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "1920",
+          "<"
+        ]
+      }
+    ],
+    "sample_id": "train_85978",
+    "answer": "no",
+    "history": [
+      {
+        "thought": "To determine if the release date of the film \"The Fisher King\" is before the year 1920 in Germany, I need to first find the entity for the film titled \"The Fisher King\" and then check its release date specifically for Germany.\n\nThe next step is to use the `Find` function to locate the film entity by its title. \n\nI'll proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "The Fisher King"
+          }
+        },
+        "result": "(['Q466297'], None)"
+      }
+    ],
+    "response": "Final Answer: The next step is to query the release date of the film \"The Fisher King\" specifically for Germany. To do this, I will use the `QueryAttr` function to retrieve the release date attribute for the film entity identified in the previous step.\n\nI'll proceed with that.\nAction: QueryAttr\nArguments: {\"entities\": {\"ids\": [\"Q466297\"], \"triples\": null}, \"key\": \"release date\"}\n\nReasoning:\nStep 1: To determine if the release date of the film \"The Fisher King\" is before the year 1920 in Germany, I need to first find the entity for the film titled \"The Fisher King\" and then check its release date specifically for Germany.\n\nThe next step is to use the `Find` function to locate the film entity by its title. \n\nI'll proceed with that."
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> language of work or name </Q> of <ES> <C> television channel </C> whose <A> inception </A> is year <V> 2008 </V> </ES> whose <A> official website </A> is <V> http://www.metvnetwork.com </V>",
+    "kopl": "FindAll().FilterYear(inception,2008,=).FilterConcept(television channel).QueryAttrQualifier(official website,http://www.metvnetwork.com,language of work or name)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"television channel\" . ?e <inception> ?pv_1 . ?pv_1 <pred:year> 2008 . ?e <official_website> ?pv . ?pv <pred:value> \"http://www.metvnetwork.com\" . [ <pred:fact_h> ?e ; <pred:fact_r> <official_website> ; <pred:fact_t> ?pv ] <language_of_work_or_name> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1:television_channel) WHERE (n1.inception =  2008  AND n1.official_website =  http://www.metvnetwork.com )\nRETURN .language_of_work_or_name",
+    "question": "For the television channel whose inception time is in 2008, what is the language associated with this creative work for its official website of http://www.metvnetwork.com?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"television channel\"}) match (e)-[:inception]->(pv_1:Resource{year:2008}) match (e)-[:official_website]->(pv:Resource{value:\"http://www.metvnetwork.com\"}),(e)<-[:fact_h]-(tmp)-[:fact_t]->(pv), (tmp)-[:fact_r]-(qr:Relation{name:\"official_website\"}),(tmp)-[:language_of_work_or_name]->(qpv) return distinct qpv.value",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterYear",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "inception",
+          "2008",
+          "="
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "television channel"
+        ]
+      },
+      {
+        "function": "QueryAttrQualifier",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "official website",
+          "http://www.metvnetwork.com",
+          "language of work or name"
+        ]
+      }
+    ],
+    "sample_id": "train_27934",
+    "answer": "English",
+    "history": [
+      {
+        "thought": "To answer the question, I need to find the television channel that has an inception time in 2008 and then check the language associated with its official website. \n\nThe next step is to gather all entities first to identify the television channels and their attributes. I will use the `FindAll()` function to retrieve all entities. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will filter the entities to find only those that are television channels with an inception time in 2008. \n\nThe next step is to filter the entities by the concept of \"television channel\" and then filter by the inception time. \n\nI will first filter for the concept of \"television channel\" to narrow down the results. \n\nLet's proceed with that.\nAction: FilterConcept\nArguments: \n- entities: Last step result\n- concept_name: \"television channel\"\n\nReasoning:\nStep 1: To answer the question, I need to find the television channel that has an inception time in 2008 and then check the language associated with its official website. \n\nThe next step is to gather all entities first to identify the television channels and their attributes. I will use the `FindAll()` function to retrieve all entities. \n\nLet's proceed with that."
+  },
+  {
+    "graphq_ir": "which one has the largest <A> duration </A> among <ES> <E> Date Night </E> or <E> Face/Off </E> </ES>",
+    "kopl": "Find(Date Night).Find(Face/Off).Or().Select(duration,largest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { { ?e <pred:name> \"Date Night\" .  } UNION { ?e <pred:name> \"Face/Off\" .  } ?e <duration> ?pv . ?pv <pred:value> ?v .  } ORDER BY DESC(?v) LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.concat en.Date_Night en.Face/Off ) ( string max ) ( string duration ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Date Night\"\nRETURN n1.name AS name\nORDER BY n1.duration DESC\nUNION\nMATCH (n1) WHERE n1.name = \"Face/Off\"\nRETURN n1.name AS name\nORDER BY n1.duration DESC\nLIMIT 1",
+    "question": "Is Date Night or Face/Off longer?",
+    "cypher_match": "call { match (e:Resource{name:\"Date Night\"}) return e union match (e:Resource{name:\"Face/Off\"}) return e } match (e)-[:duration]->(pv) return e order by pv.value desc limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Date Night"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Face/Off"
+        ]
+      },
+      {
+        "function": "SelectBetween",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": [
+          "duration",
+          "greater"
+        ]
+      }
+    ],
+    "sample_id": "train_7375",
+    "answer": "Face/Off",
+    "history": [
+      {
+        "thought": "To determine which movie is longer, I need to find the runtime of both \"Date Night\" and \"Face/Off.\" \n\nThe next step is to use the Find tool to locate both movies in the knowledge base. I will start by searching for \"Date Night.\"",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Date Night"
+          }
+        },
+        "result": "(['Q1139801'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Face/Off"
+          }
+        },
+        "result": "(['Q223887'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "QueryAttr",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q1139801"
+              ],
+              "triples": null
+            },
+            "key": "runtime"
+          }
+        },
+        "result": "[]"
+      }
+    ],
+    "response": "Final Answer: Executed QueryAttr, result: []\n\nReasoning:\nStep 1: To determine which movie is longer, I need to find the runtime of both \"Date Night\" and \"Face/Off.\" \n\nThe next step is to use the Find tool to locate both movies in the knowledge base. I will start by searching for \"Date Night.\"\nStep 2: Executing next step\nStep 3: Executing next step"
+  },
+  {
+    "graphq_ir": "whether <ES> <E> Michael Winterbottom </E> (<ES> ones that <R> educated at </R> forward to <E> Dulwich College </E> </ES>) </ES> <A> ISNI </A> is text <V> 0000 0001 2144 6958 </V>",
+    "kopl": "Find(Dulwich College).Relate(educated at,backward).Find(Michael Winterbottom).And().QueryAttr(ISNI).VerifyStr(0000 0001 2144 6958)",
+    "sparql": "ASK { ?e <pred:name> \"Michael Winterbottom\" . ?e <educated_at> ?e_1 . ?e_1 <pred:name> \"Dulwich College\" .  ?e <ISNI> ?pv . ?pv <pred:value> \"0000 0001 2144 6958\" .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n3) WHERE (n3.name = \"Michael Winterbottom\" AND n3.ISNI = \"0000 0001 2144 6958\")\nMATCH (n2) WHERE n2.name = \"Dulwich College\"\nMATCH (n3)<-[r1:educated_at]-(n2)\nRETURN isEmpty(n3)",
+    "question": "Does Michael Winterbottom, who was educated at Dulwich College, have an ISNI of 0000 0001 2144 6958?",
+    "cypher_match": "match (e:Resource{name:\"Michael Winterbottom\"})-[:educated_at]->(e_1:Resource{name:\"Dulwich College\"}) match (e:Resource{name:\"Michael Winterbottom\"})-[:ISNI]->(pv:Resource) return pv.value = \"0000 0001 2144 6958\"",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Dulwich College"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "educated at",
+          "backward"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Michael Winterbottom"
+        ]
+      },
+      {
+        "function": "And",
+        "dependencies": [
+          1,
+          2
+        ],
+        "inputs": []
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "ISNI"
+        ]
+      },
+      {
+        "function": "VerifyStr",
+        "dependencies": [
+          4
+        ],
+        "inputs": [
+          "0000 0001 2144 6958"
+        ]
+      }
+    ],
+    "sample_id": "train_35679",
+    "answer": "no",
+    "history": [
+      {
+        "thought": "To determine if Michael Winterbottom, who was educated at Dulwich College, has an ISNI of 0000 0001 2144 6958, I will first need to find the entity for Michael Winterbottom. \n\nThe next step is to use the `Find` function to locate the entity for Michael Winterbottom. After that, I can check his attributes, including his ISNI. \n\nLet's proceed with the `Find` function. \n\nI'll execute the following command:\n```json\n{\n    \"name\": \"Michael Winterbottom\"\n}\n```",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Michael Winterbottom"
+          }
+        },
+        "result": "(['Q380237', 'Q1929854'], None)"
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the results obtained from the `Find` function to identify the specific entity for Michael Winterbottom. Since we have two potential entities, I will filter them by checking for the concept of \"person\" and also verify if he was educated at Dulwich College.\n\nLet's proceed with the `FilterConcept` function to narrow down the entities to those that are classified as a \"person.\" \n\nI'll execute the following command:\n```json\n{\n    \"entities\": {\n        \"ids\": [\"Q380237\", \"Q1929854\"],\n        \"triples\": null\n    },\n    \"concept_name\": \"person\"\n}\n```\n\nReasoning:\nStep 1: To determine if Michael Winterbottom, who was educated at Dulwich College, has an ISNI of 0000 0001 2144 6958, I will first need to find the entity for Michael Winterbottom. \n\nThe next step is to use the `Find` function to locate the entity for Michael Winterbottom. After that, I can check his attributes, including his ISNI. \n\nLet's proceed with the `Find` function. \n\nI'll execute the following command:\n```json\n{\n    \"name\": \"Michael Winterbottom\"\n}\n```"
+  },
+  {
+    "graphq_ir": "what is <ES> <C> film </C> that <R> award received </R> forward to <E> Academy Award for Best Actress </E> ( <Q> statement is subject of </Q> is text <V> 26th Academy Awards </V> ) </ES>",
+    "kopl": "Find(Academy Award for Best Actress).Relate(award received,backward).QFilterStr(statement is subject of,26th Academy Awards).FilterConcept(film).What()",
+    "sparql": "SELECT DISTINCT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"film\" . ?e <award_received> ?e_1 . ?e_1 <pred:name> \"Academy Award for Best Actress\" .  [ <pred:fact_h> ?e ; <pred:fact_r> <award_received> ; <pred:fact_t> ?e_1 ] <statement_is_subject_of> ?qpv . ?qpv <pred:value> \"26th Academy Awards\" .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n2) WHERE n2.name = \"Academy Award for Best Actress\"\nMATCH (n1:film)<-[r1:award_received]-(n2) WHERE r1.statement_is_subject_of = \"26th Academy Awards\"\nRETURN n1.name",
+    "question": "Which film was awarded the Academy Award for Best Actress in the 26th Academy Awards?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"film\"}) match (e)-[:award_received]->(e_1:Resource{name:\"Academy Award for Best Actress\"}),(e)<-[:fact_h]-(tmp)-[:fact_t]->(e_1), (tmp)-[:fact_r]-(qr:Relation{name:\"award_received\"}),(tmp)-[:statement_is_subject_of]->(qpv:Resource{value:\"26th Academy Awards\"}) return distinct e",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Academy Award for Best Actress"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "award received",
+          "backward"
+        ]
+      },
+      {
+        "function": "QFilterStr",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "statement is subject of",
+          "26th Academy Awards"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "film"
+        ]
+      },
+      {
+        "function": "What",
+        "dependencies": [
+          3
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_64636",
+    "answer": "Roman Holiday",
+    "history": [
+      {
+        "thought": "To answer the question about which film was awarded the Academy Award for Best Actress in the 26th Academy Awards, I need to gather information about the winners of the 26th Academy Awards, specifically focusing on the Best Actress category.\n\nThe next step is to find all entities related to the 26th Academy Awards. I will start by using the `FindAll()` function to get a list of all entities in the knowledge base. After that, I can filter for the specific award and category. \n\nLet's proceed with the first step. \n\nI'll call `FindAll()`.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will refine my search by directly filtering for the specific concept of the 26th Academy Awards. \n\nThe next step is to filter the entities to find those specifically related to the 26th Academy Awards. I will use the `FilterConcept` function to narrow down the results.\n\nLet's proceed with this step. \n\nI'll call `FilterConcept()` with the concept \"26th Academy Awards\". \n\nFirst, I need to find the IDs of the entities returned from `FindAll()`. Since the result is too long, I will use the last step result as input for the next step. \n\nAction: FilterConcept\nArguments: \n- entities: { \"Ids\": [\"Q7270\", \"Q130232\", \"Q280658\", \"Q8355\", \"Q8445\"], \"Triples\": null }\n- concept_name: \"26th Academy Awards\"\n\nReasoning:\nStep 1: To answer the question about which film was awarded the Academy Award for Best Actress in the 26th Academy Awards, I need to gather information about the winners of the 26th Academy Awards, specifically focusing on the Best Actress category.\n\nThe next step is to find all entities related to the 26th Academy Awards. I will start by using the `FindAll()` function to get a list of all entities in the knowledge base. After that, I can filter for the specific award and category. \n\nLet's proceed with the first step. \n\nI'll call `FindAll()`."
+  },
+  {
+    "graphq_ir": "which one has the largest <A> mass </A> among <ES> <E> linoleic acid </E> or <E> arachidonic acid </E> </ES>",
+    "kopl": "Find(linoleic acid).Find(arachidonic acid).Or().Select(mass,largest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { { ?e <pred:name> \"linoleic acid\" .  } UNION { ?e <pred:name> \"arachidonic acid\" .  } ?e <mass> ?pv . ?pv <pred:value> ?v .  } ORDER BY DESC(?v) LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.concat en.linoleic_acid en.arachidonic_acid ) ( string max ) ( string mass ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"linoleic acid\"\nRETURN n1.name AS name\nORDER BY n1.mass DESC\nUNION\nMATCH (n1) WHERE n1.name = \"arachidonic acid\"\nRETURN n1.name AS name\nORDER BY n1.mass DESC\nLIMIT 1",
+    "question": "Which acid has a greater mass, linoleic acid or arachidonic acid?",
+    "cypher_match": "call { match (e:Resource{name:\"linoleic acid\"}) return e union match (e:Resource{name:\"arachidonic acid\"}) return e } match (e)-[:mass]->(pv) return e order by pv.value desc limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "linoleic acid"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "arachidonic acid"
+        ]
+      },
+      {
+        "function": "SelectBetween",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": [
+          "mass",
+          "greater"
+        ]
+      }
+    ],
+    "sample_id": "train_86776",
+    "answer": "arachidonic acid",
+    "history": [
+      {
+        "thought": "To determine which acid has a greater mass between linoleic acid and arachidonic acid, I need to find the molecular weights of both acids. \n\nThe next step is to find the molecular weight of linoleic acid and arachidonic acid. I will start by querying the knowledge base for the molecular weight of linoleic acid. \n\nLet's proceed with that. \n\nI'll use the Find tool to locate linoleic acid first.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "linoleic acid"
+          }
+        },
+        "result": "(['Q407426'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "QueryAttr",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q407426"
+              ],
+              "triples": null
+            },
+            "key": "molecular weight"
+          }
+        },
+        "result": "[]"
+      }
+    ],
+    "response": "Final Answer: Since I was unable to retrieve the molecular weight of linoleic acid, I will now attempt to find the molecular weight of arachidonic acid. \n\nLet's proceed with that. \n\nI'll use the Find tool to locate arachidonic acid next. \nAction: Find\nArguments: {\"name\": \"arachidonic acid\"}\n\nReasoning:\nStep 1: To determine which acid has a greater mass between linoleic acid and arachidonic acid, I need to find the molecular weights of both acids. \n\nThe next step is to find the molecular weight of linoleic acid and arachidonic acid. I will start by querying the knowledge base for the molecular weight of linoleic acid. \n\nLet's proceed with that. \n\nI'll use the Find tool to locate linoleic acid first.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "which one has the smallest <A> duration </A> among <ES> <ES> <E> Speed </E> (<ES> ones that <R> award received </R> forward to <E> Academy Award for Best Sound Mixing </E> </ES>) </ES> or <ES> <E> Star Wars: The Clone Wars </E> (<ES> ones that <R> production company </R> forward to <E> Warner Bros. </E> </ES>) </ES> </ES>",
+    "kopl": "Find(Academy Award for Best Sound Mixing).Relate(award received,backward).Find(Speed).And().Find(Warner Bros.).Relate(production company,backward).Find(Star Wars: The Clone Wars).And().Or().Select(duration,smallest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { { ?e <pred:name> \"Speed\" . ?e <award_received> ?e_1 . ?e_1 <pred:name> \"Academy Award for Best Sound Mixing\" .   } UNION { ?e <pred:name> \"Star Wars: The Clone Wars\" . ?e <production_company> ?e_2 . ?e_2 <pred:name> \"Warner Bros.\" .  } ?e <duration> ?pv . ?pv <pred:value> ?v .  } ORDER BY ?v LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.concat ( call SW.and en.Speed ( lambda s ( call SW.filter ( var s ) ( string award_received ) ( string = ) en.Academy_Award_for_Best_Sound_Mixing ) ) ) ( call SW.and en.Star_Wars:_The_Clone_Wars ( lambda s ( call SW.filter ( var s ) ( string production_company ) ( string = ) en.Warner_Bros. ) ) ) ) ( string min ) ( string duration ) ) )",
+    "cypher": "MATCH (n3) WHERE n3.name = \"Speed\"\nMATCH (n2) WHERE n2.name = \"Academy Award for Best Sound Mixing\"\nMATCH (n3)<-[r1:award_received]-(n2)\nRETURN n3.name AS name\nORDER BY n3.duration DESC\nUNION\nMATCH (n3) WHERE n3.name = \"Star Wars: The Clone Wars\"\nMATCH (n2) WHERE n2.name = \"Warner Bros.\"\nMATCH (n3)<-[r1:production_company]-(n2)\nRETURN n3.name AS name\nORDER BY n3.duration DESC\nLIMIT 1",
+    "question": "Which movie is shorter, Speed (the one that received Academy Award for Best Sound Mixing) or Star Wars: The Clone Wars (the one whose production company is Warner Bros.)?",
+    "cypher_match": "call { match (e:Resource{name:\"Speed\"})-[:award_received]->(e_1:Resource{name:\"Academy Award for Best Sound Mixing\"}) return e union match (e:Resource{name:\"Star Wars: The Clone Wars\"})-[:production_company]->(e_2:Resource{name:\"Warner Bros.\"}) return e } match (e)-[:duration]->(pv) return e order by pv.value limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Academy Award for Best Sound Mixing"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "award received",
+          "backward"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Speed"
+        ]
+      },
+      {
+        "function": "And",
+        "dependencies": [
+          1,
+          2
+        ],
+        "inputs": []
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Warner Bros."
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          4
+        ],
+        "inputs": [
+          "production company",
+          "backward"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Star Wars: The Clone Wars"
+        ]
+      },
+      {
+        "function": "And",
+        "dependencies": [
+          5,
+          6
+        ],
+        "inputs": []
+      },
+      {
+        "function": "SelectBetween",
+        "dependencies": [
+          3,
+          7
+        ],
+        "inputs": [
+          "duration",
+          "less"
+        ]
+      }
+    ],
+    "sample_id": "train_62671",
+    "answer": "Star Wars: The Clone Wars",
+    "history": [
+      {
+        "thought": "To determine which movie is shorter, I need to gather information about the durations of both movies: \"Speed\" and \"Star Wars: The Clone Wars.\" \n\nThe next step is to find the entities for both movies and then query their durations. I will start by finding all entities to locate \"Speed\" and \"Star Wars: The Clone Wars.\" \n\nLet's begin with the first tool call to find all entities.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the entities to find the specific movies \"Speed\" and \"Star Wars: The Clone Wars\" instead of retrieving all entities. I will first search for \"Speed\" to get its entity details.\n\nAction: Find\nArguments: { \"name\": \"Speed\" }\n\nReasoning:\nStep 1: To determine which movie is shorter, I need to gather information about the durations of both movies: \"Speed\" and \"Star Wars: The Clone Wars.\" \n\nThe next step is to find the entities for both movies and then query their durations. I will start by finding all entities to locate \"Speed\" and \"Star Wars: The Clone Wars.\" \n\nLet's begin with the first tool call to find all entities."
+  },
+  {
+    "graphq_ir": "what is the relation from <E> Delft </E> to <E> The Hague </E>",
+    "kopl": "Find(Delft).Find(The Hague).QueryRelation()",
+    "sparql": "SELECT DISTINCT ?p WHERE { ?e_1 <pred:name> \"Delft\" . ?e_2 <pred:name> \"The Hague\" . ?e_1 ?p ?e_2 .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Delft\"\nMATCH (n2) WHERE n2.name = \"The Hague\"\nMATCH (n1)-[r1]->(n2)\nRETURN r1.label",
+    "question": "What is the relationship between Delft and The Hague?",
+    "cypher_match": "match (e_1:Resource{name:\"Delft\"})-[p]->(e_2:Resource{name:\"The Hague\"}) return distinct type(p)",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Delft"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "The Hague"
+        ]
+      },
+      {
+        "function": "QueryRelation",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_58240",
+    "answer": "shares border with",
+    "history": [
+      {
+        "thought": "To determine the relationship between Delft and The Hague, I will first find the entities for both locations. Then, I will query the relationships between them. \n\nThe next step is to find the entities for Delft and The Hague. I will use the `Find` function for both locations. \n\nLet's start with finding the entity for Delft. \n\nI'll execute the following:\n1. Find the entity for Delft.\n2. Find the entity for The Hague. \n\nI'll proceed with these steps now.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Delft"
+          }
+        },
+        "result": "(['Q690'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "The Hague"
+          }
+        },
+        "result": "(['Q36600'], None)"
+      }
+    ],
+    "response": "Final Answer: Now that I have the entities for both Delft (Q690) and The Hague (Q36600), the next step is to query the relationship between these two entities. \n\nI will use the `QueryRelation` function to find the relationship between Delft and The Hague.\n\nI'll execute the following:\n- Query the relationship between the entities for Delft and The Hague.\n\nAction: QueryRelation\nArguments: {\"s_entities\":{\"ids\":[\"Q690\"],\"triples\":null},\"t_entities\":{\"ids\":[\"Q36600\"],\"triples\":null}}\n\nReasoning:\nStep 1: To determine the relationship between Delft and The Hague, I will first find the entities for both locations. Then, I will query the relationships between them. \n\nThe next step is to find the entities for Delft and The Hague. I will use the `Find` function for both locations. \n\nLet's start with finding the entity for Delft. \n\nI'll execute the following:\n1. Find the entity for Delft.\n2. Find the entity for The Hague. \n\nI'll proceed with these steps now.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "what is <ES> <C> city of the United States </C> whose <A> local dialing code </A> is text <V> 480 602 </V> </ES>",
+    "kopl": "FindAll().FilterStr(local dialing code,480 602).FilterConcept(city of the United States).What()",
+    "sparql": "SELECT DISTINCT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"city of the United States\" . ?e <local_dialing_code> ?pv . ?pv <pred:value> \"480 602\" .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.filter ( getProperty ( singleton en.city_of_the_United_States ) ( string ! type ) ) ( string local_dialing_code ) ( string = ) ( string 480 602 ) ) )",
+    "cypher": "MATCH (n1:city_of_the_United_States) WHERE n1.local_dialing_code = \"480 602\"\nRETURN n1.name",
+    "question": "What United States city has the local dialing code 480 602?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"city of the United States\"}) match (e)-[:local_dialing_code]->(pv:Resource{value:\"480 602\"}) return distinct e.name",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "local dialing code",
+          "480 602"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "city of the United States"
+        ]
+      },
+      {
+        "function": "What",
+        "dependencies": [
+          2
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_32553",
+    "answer": "Mesa",
+    "history": [
+      {
+        "thought": "To find the United States city associated with the local dialing codes 480 and 602, I will first gather information about entities related to these dialing codes. \n\nThe next step is to use the `FindAll()` function to retrieve all entities in the knowledge base. After that, I can filter the results based on the dialing codes. \n\nLet's start with the `FindAll()` function.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will filter the entities directly by the dialing codes 480 and 602. \n\nThe next step is to use the `FilterStr()` function to filter entities based on the dialing code. I will first filter for the dialing code 480 and then for 602. \n\nLet's start with filtering for the dialing code 480. \n\nAction: FilterStr\nArguments: \n- entities: Last step result\n- key: \"dialing code\"\n- value: \"480\"\n\nReasoning:\nStep 1: To find the United States city associated with the local dialing codes 480 and 602, I will first gather information about entities related to these dialing codes. \n\nThe next step is to use the `FindAll()` function to retrieve all entities in the knowledge base. After that, I can filter the results based on the dialing codes. \n\nLet's start with the `FindAll()` function."
+  },
+  {
+    "graphq_ir": "what is the attribute <A> official website </A> of <E> Dwight Yoakam </E>",
+    "kopl": "Find(Dwight Yoakam).QueryAttr(official website)",
+    "sparql": "SELECT DISTINCT ?pv WHERE { ?e <pred:name> \"Dwight Yoakam\" . ?e <official_website> ?pv .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.getProperty en.Dwight_Yoakam ( string official_website ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Dwight Yoakam\"\nRETURN n1.official_website",
+    "question": "What is the official website for Dwight Yoakam ?",
+    "cypher_match": "match (e:Resource{name:\"Dwight Yoakam\"})-[:official_website]->(pv) return distinct pv.value",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Dwight Yoakam"
+        ]
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "official website"
+        ]
+      }
+    ],
+    "sample_id": "train_7486",
+    "answer": "http://www.dwightyoakam.com/",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Dwight Yoakam"
+          }
+        },
+        "result": "(['Q713099'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "QueryAttr",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q713099"
+              ],
+              "triples": null
+            },
+            "key": "official website"
+          }
+        },
+        "result": "[]"
+      }
+    ],
+    "response": "Final Answer: Since the previous steps did not yield the official website for Dwight Yoakam, I will try to query for any related attributes or qualifiers that might provide the official website. \n\nNext step:\n- Use the `QueryAttr` function to check for any other relevant attributes that might lead to the official website.\n\nExecuting:\n```json\n{\n    \"entities\": {\n        \"ids\": [\"Q713099\"],\n        \"triples\": null\n    },\n    \"key\": \"website\"\n}\n```\n\nReasoning:\nStep 1: Executing next step\nStep 2: Executing next step\nStep 3: Executing next step"
+  },
+  {
+    "graphq_ir": "what is the attribute <A> Twitter username </A> of <E> New York Islanders </E>",
+    "kopl": "Find(New York Islanders).QueryAttr(Twitter username)",
+    "sparql": "SELECT DISTINCT ?pv WHERE { ?e <pred:name> \"New York Islanders\" . ?e <Twitter_username> ?pv .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.getProperty en.New_York_Islanders ( string Twitter_username ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"New York Islanders\"\nRETURN n1.Twitter_username",
+    "question": "What Twitter handle belongs to the New York Islanders?",
+    "cypher_match": "match (e:Resource{name:\"New York Islanders\"})-[:Twitter_username]->(pv) return distinct pv.value",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "New York Islanders"
+        ]
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "Twitter username"
+        ]
+      }
+    ],
+    "sample_id": "train_2830",
+    "answer": "NYIslanders",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the results to find the specific entity for the New York Islanders. I will use the `FilterStr` function to search for the New York Islanders by name.\n\nLet's proceed with that. \n\nStep 2:\nAction: FilterStr\nArguments: \n- entities: Last step result\n- key: \"name\"\n- value: \"New York Islanders\"\n\nReasoning:\nStep 1: Executing next step"
+  },
+  {
+    "graphq_ir": "what is the attribute <A> title </A> of <E> Tucker: The Man and His Dream </E>",
+    "kopl": "Find(Tucker: The Man and His Dream).QueryAttr(title)",
+    "sparql": "SELECT DISTINCT ?pv WHERE { ?e <pred:name> \"Tucker: The Man and His Dream\" . ?e <title> ?pv .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.getProperty en.Tucker:_The_Man_and_His_Dream ( string title ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Tucker: The Man and His Dream\"\nRETURN n1.title",
+    "question": "What is the title of Tucker: The Man and His Dream?",
+    "cypher_match": "match (e:Resource{name:\"Tucker: The Man and His Dream\"})-[:title]->(pv) return distinct pv.value",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Tucker: The Man and His Dream"
+        ]
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "title"
+        ]
+      }
+    ],
+    "sample_id": "train_68219",
+    "answer": "Tucker: The Man and His Dream",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the results to find the specific entity related to \"Tucker: The Man and His Dream.\" I will use the `FilterStr` function to search for entities with a title that matches \"Tucker: The Man and His Dream.\"\n\nLet's proceed with that. \n\nStep 2:\nAction: FilterStr\nArguments: { \"entities\": { \"ids\": [\"Last step result\"], \"triples\": null }, \"key\": \"title\", \"value\": \"Tucker: The Man and His Dream\" }\n\nReasoning:\nStep 1: Executing next step"
+  },
+  {
+    "graphq_ir": "how many <ES> <ES> <C> political party </C> that <R> official color </R> forward to <E> red </E> </ES> and <ES> <C> political party </C> that <R> parent organization </R> backward to <E> Liberation Tigers of Tamil Eelam </E> </ES> </ES>",
+    "kopl": "Find(red).Relate(official color,backward).FilterConcept(political party).Find(Liberation Tigers of Tamil Eelam).Relate(parent organization,forward).FilterConcept(political party).And().Count()",
+    "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?count) WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"political party\" . ?e <official_color> ?e_1 . ?e_1 <pred:name> \"red\" .  ?e_2 <parent_organization> ?e . ?e_2 <pred:name> \"Liberation Tigers of Tamil Eelam\" .  }",
+    "lambda-dcs": "( call SW.listValue ( call .size ( call SW.and ( call SW.filter ( getProperty ( singleton en.political_party ) ( string ! type ) ) ( string official_color ) ) ( call SW.filter ( getProperty ( singleton en.political_party ) ( string ! type ) ) ( call SW.reverse ( string parent_organization ) ) ) ) ) )",
+    "cypher": "MATCH (n2) WHERE n2.name = \"red\"\nMATCH (n3:political_party)<-[r1:official_color]-(n2)\nMATCH (n2) WHERE n2.name = \"Liberation Tigers of Tamil Eelam\"\nMATCH (n3:political_party)-[r1:parent_organization]->(n2)\nRETURN count(n3)",
+    "question": "How many political parties use red as the official control and have Liberation Tigers of Tamil Eelam as the parent organization ?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"political party\"}) match (e)-[:official_color]->(e_1:Resource{name:\"red\"}) match (e_2:Resource{name:\"Liberation Tigers of Tamil Eelam\"})-[:parent_organization]->(e) return count(distinct e) as n",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "red"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "official color",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "political party"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Liberation Tigers of Tamil Eelam"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "parent organization",
+          "forward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          4
+        ],
+        "inputs": [
+          "political party"
+        ]
+      },
+      {
+        "function": "And",
+        "dependencies": [
+          2,
+          5
+        ],
+        "inputs": []
+      },
+      {
+        "function": "Count",
+        "dependencies": [
+          6
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_16412",
+    "answer": "0",
+    "history": [
+      {
+        "thought": "To answer the question, I need to find all political parties that have \"red\" as their official color and are related to the \"Liberation Tigers of Tamil Eelam\" as their parent organization. \n\nThe steps will be as follows:\n1. Find all entities to get a list of political parties.\n2. Filter those entities to find political parties that have \"red\" as their official color.\n3. Relate those filtered political parties to the \"Liberation Tigers of Tamil Eelam\" to find which ones have it as their parent organization.\n4. Count the number of resulting political parties.\n\nI'll start by calling the `FindAll()` function to get all entities.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long and not manageable, I will try to filter directly for political parties that have \"red\" as their official color and then relate them to the \"Liberation Tigers of Tamil Eelam\" as their parent organization.\n\nTo do this, I will first filter for political parties that have \"red\" as their official color. \n\nI'll proceed with the following steps:\n1. Use `FindAll()` to get all entities again.\n2. Filter for political parties that have \"red\" as their official color.\n\nLet's start with the first step again to ensure we have the latest data. \n\nAction: FindAll\nArguments: {}\n\nReasoning:\nStep 1: To answer the question, I need to find all political parties that have \"red\" as their official color and are related to the \"Liberation Tigers of Tamil Eelam\" as their parent organization. \n\nThe steps will be as follows:\n1. Find all entities to get a list of political parties.\n2. Filter those entities to find political parties that have \"red\" as their official color.\n3. Relate those filtered political parties to the \"Liberation Tigers of Tamil Eelam\" to find which ones have it as their parent organization.\n4. Count the number of resulting political parties.\n\nI'll start by calling the `FindAll()` function to get all entities.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "how many <ES> <C> medal </C> that <R> country </R> forward to <ES> <C> sovereign state </C> that <R> country </R> forward to <ES> <E> Republic of the Congo </E> whose <A> life expectancy </A> is number <V> 64.625 year </V> </ES> </ES> </ES>",
+    "kopl": "Find(Republic of the Congo).FilterNum(life expectancy,64.625 year,=).Relate(country,backward).FilterConcept(sovereign state).Relate(country,backward).FilterConcept(medal).Count()",
+    "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?count) WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"medal\" . ?e <country> ?e_1 . ?e_1 <pred:instance_of> ?c_1 . ?c_1 <pred:name> \"sovereign state\" . ?e_1 <country> ?e_2 . ?e_2 <pred:name> \"Republic of the Congo\" . ?e_2 <life_expectancy> ?pv_1 . ?pv_1 <pred:unit> \"year\" . ?pv_1 <pred:value> \"64.625\"^^xsd:double .   }",
+    "lambda-dcs": "( call SW.listValue ( call .size ( call SW.filter ( getProperty ( singleton en.medal ) ( string ! type ) ) ( string country ) ) ) )",
+    "cypher": "MATCH (n3) WHERE n3.name = \"Republic of the Congo\"\nMATCH (n3) WHERE n3.life_expectancy =  64.625 year \nMATCH (n2:sovereign_state)<-[r2:country]-(n3)\nMATCH (n1:medal)<-[r1:country]-(n2)\nRETURN count(n1)",
+    "question": "How many medals origin in a sovereign state whose country is Republic of the Congo (the country whose life expectancy is 64.625 years) ?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"medal\"}) match (e)-[:country]->(e_1) match (e_1)-[:instance_of]->(c_1:Resource{name:\"sovereign state\"}) match (e_1)-[:country]->(e_2:Resource{name:\"Republic of the Congo\"}) match (e_2:Resource{name:\"Republic of the Congo\"})-[:life_expectancy]->(pv_1:Resource{unit:\"year\",value:64.625}) return count(distinct e) as n",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Republic of the Congo"
+        ]
+      },
+      {
+        "function": "FilterNum",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "life expectancy",
+          "64.625 year",
+          "="
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "country",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "sovereign state"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "country",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          4
+        ],
+        "inputs": [
+          "medal"
+        ]
+      },
+      {
+        "function": "Count",
+        "dependencies": [
+          5
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_75162",
+    "answer": "0",
+    "history": [
+      {
+        "thought": "To answer the question, I need to find the sovereign state that corresponds to the Republic of the Congo and has a life expectancy of 64.625 years. Then, I will determine how many medals are associated with that sovereign state.\n\nThe first step is to find all entities to identify the Republic of the Congo and its life expectancy. After that, I can filter for the specific life expectancy and then find the number of medals associated with that entity.\n\nI will start by calling the `FindAll()` function to get all entities.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the entities to find the specific one for the Republic of the Congo with the life expectancy of 64.625 years. Since the result from `FindAll()` is too long, I will filter the entities based on the life expectancy directly.\n\nI will first filter for the concept of \"country\" and then look for the Republic of the Congo with the specified life expectancy.\n\nLet's proceed with the following steps:\n1. Filter the entities to find the Republic of the Congo.\n2. Filter by the life expectancy of 64.625 years.\n\nI will start by filtering for the concept of \"country\" to narrow down the results. \n\nAction: FilterConcept\nArguments: \n- entities: Last step result\n- concept_name: \"country\"\n\nReasoning:\nStep 1: To answer the question, I need to find the sovereign state that corresponds to the Republic of the Congo and has a life expectancy of 64.625 years. Then, I will determine how many medals are associated with that sovereign state.\n\nThe first step is to find all entities to identify the Republic of the Congo and its life expectancy. After that, I can filter for the specific life expectancy and then find the number of medals associated with that entity.\n\nI will start by calling the `FindAll()` function to get all entities."
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> Charleston County </E> whose <A> population </A> is <V> 389262 </V>",
+    "kopl": "Find(Charleston County).QueryAttrQualifier(population,389262,point in time)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e <pred:name> \"Charleston County\" . ?e <population> ?pv . ?pv <pred:unit> \"1\" . ?pv <pred:value> \"389262\"^^xsd:double . [ <pred:fact_h> ?e ; <pred:fact_r> <population> ; <pred:fact_t> ?pv ] <point_in_time> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE (n1.name = \"Charleston County\" AND n1.population =  389262 )\nRETURN .point_in_time",
+    "question": "When was the population of Charleston County 389262?",
+    "cypher_match": "match (e:Resource{name:\"Charleston County\"})-[:population]->(pv:Resource{unit:\"1\",value:389262.0}),(e)<-[:fact_h]-(tmp)-[:fact_t]->(pv), (tmp)-[:fact_r]-(qr:Relation{name:\"population\"}),(tmp)-[:point_in_time]->(qpv) return distinct qpv",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Charleston County"
+        ]
+      },
+      {
+        "function": "QueryAttrQualifier",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "population",
+          "389262",
+          "point in time"
+        ]
+      }
+    ],
+    "sample_id": "train_14468",
+    "answer": "2015-01-01",
+    "history": [
+      {
+        "thought": "To find out when the population of Charleston County was 389262, I need to first identify the entity for Charleston County. After that, I can query the population data to find the year when it reached that specific number.\n\nThe next step is to find the entity for Charleston County. I will use the `Find` function to locate it. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Charleston County"
+          }
+        },
+        "result": "(['Q181015'], None)"
+      }
+    ],
+    "response": "Final Answer: Now that I have identified the entity for Charleston County (with ID Q181015), the next step is to query the population data for this entity to find out when the population was 389262. \n\nI will use the `QueryAttr` function to retrieve the population data for Charleston County. \n\nLet's proceed with that. \n\nAction: QueryAttr\nArguments: {\"entities\":{\"ids\":[\"Q181015\"],\"triples\":null},\"key\":\"population\"}\n\nReasoning:\nStep 1: To find out when the population of Charleston County was 389262, I need to first identify the entity for Charleston County. After that, I can query the population data to find the year when it reached that specific number.\n\nThe next step is to find the entity for Charleston County. I will use the `Find` function to locate it. \n\nLet's proceed with that."
+  },
+  {
+    "graphq_ir": "whether <ES> <C> human </C> whose <A> name in native language </A> is text <V> Richard C. Clark </V> </ES> <A> ISNI </A> is text <V> 0000 0001 0707 9354 </V>",
+    "kopl": "FindAll().FilterStr(name in native language,Richard C. Clark).FilterConcept(human).QueryAttr(ISNI).VerifyStr(0000 0001 0707 9354)",
+    "sparql": "ASK { ?e <pred:instance_of> ?c . ?c <pred:name> \"human\" . ?e <name_in_native_language> ?pv_1 . ?pv_1 <pred:value> \"Richard C. Clark\" . ?e <ISNI> ?pv . ?pv <pred:value> \"0000 0001 0707 9354\" .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1:human) WHERE (n1.name_in_native_language = \"Richard C. Clark\" AND n1.ISNI = \"0000 0001 0707 9354\")\nRETURN isEmpty(n1)",
+    "question": "Is 0000 0001 0707 9354 the ISNI of the person whose native language name is Richard C. Clark?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"human\"}) match (e)-[:name_in_native_language]->(pv_1:Resource{value:\"Richard C. Clark\"}) match (e)-[:ISNI]->(pv:Resource) return pv.value = \"0000 0001 0707 9354\"",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "name in native language",
+          "Richard C. Clark"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "human"
+        ]
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "ISNI"
+        ]
+      },
+      {
+        "function": "VerifyStr",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "0000 0001 0707 9354"
+        ]
+      }
+    ],
+    "sample_id": "train_41800",
+    "answer": "no",
+    "history": [
+      {
+        "thought": "To determine if the ISNI \"0000 0001 0707 9354\" corresponds to the person whose native language name is \"Richard C. Clark,\" I will first need to find the entity associated with the name \"Richard C. Clark.\" \n\nThe next step is to use the `Find` function to locate the entity for \"Richard C. Clark.\" After that, I can check if the ISNI matches. \n\nLet's proceed with that. \n\nI'll call the `Find` function with the name \"Richard C. Clark.\"",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Richard C. Clark"
+          }
+        },
+        "result": "([], None)"
+      }
+    ],
+    "response": "Final Answer: Since the `Find` function did not return any results for \"Richard C. Clark,\" I will now use the `FindAll` function to retrieve all entities in the knowledge base. This will allow me to search through all entities to find any that may correspond to \"Richard C. Clark.\" \n\nLet's proceed with that. \n\nAction: FindAll\nArguments: {}\n\nReasoning:\nStep 1: To determine if the ISNI \"0000 0001 0707 9354\" corresponds to the person whose native language name is \"Richard C. Clark,\" I will first need to find the entity associated with the name \"Richard C. Clark.\" \n\nThe next step is to use the `Find` function to locate the entity for \"Richard C. Clark.\" After that, I can check if the ISNI matches. \n\nLet's proceed with that. \n\nI'll call the `Find` function with the name \"Richard C. Clark.\""
+  },
+  {
+    "graphq_ir": "which one has the largest <A> area </A> among <ES> <ES> <E> Quincy </E> whose <A> subreddit </A> is text <V> QuincyIL </V> </ES> or <ES> <E> Mansfield </E> (<ES> ones that <R> filming location </R> backward to <E> The Shawshank Redemption </E> </ES>) </ES> </ES>",
+    "kopl": "Find(Quincy).FilterStr(subreddit,QuincyIL).Find(The Shawshank Redemption).Relate(filming location,forward).Find(Mansfield).And().Or().Select(area,largest,1,0).What()",
+    "sparql": "SELECT ?e WHERE { { ?e <pred:name> \"Quincy\" . ?e <subreddit> ?pv_1 . ?pv_1 <pred:value> \"QuincyIL\" . } UNION { ?e <pred:name> \"Mansfield\" . ?e_1 <filming_location> ?e . ?e_1 <pred:name> \"The Shawshank Redemption\" . } ?e <area> ?pv . ?pv <pred:value> ?v .  } ORDER BY DESC(?v) LIMIT 1",
+    "lambda-dcs": "( call SW.listValue ( call SW.superlative ( call SW.concat ( call SW.filter en.Quincy ( string subreddit ) ( string = ) ( string QuincyIL ) ) ( call SW.and en.Mansfield ( lambda s ( call SW.filter ( var s ) ( call SW.reverse ( string filming_location ) ) ( string = ) en.The_Shawshank_Redemption ) ) ) ) ( string max ) ( string area ) ) )",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Quincy\"\nMATCH (n1) WHERE n1.subreddit = \"QuincyIL\"\nRETURN n1.name AS name\nORDER BY n1.area DESC\nUNION\nMATCH (n3) WHERE n3.name = \"Mansfield\"\nMATCH (n2) WHERE n2.name = \"The Shawshank Redemption\"\nMATCH (n3)-[r1:filming_location]->(n2)\nRETURN n3.name AS name\nORDER BY n1.area DESC\nLIMIT 1",
+    "question": "Which has more area, Quincy whose subreddit is QuincyIL or Mansfield that is the filming location of The Shawshank Redemption?",
+    "cypher_match": "call { match (e:Resource{name:\"Quincy\"})-[:subreddit]->(pv_1:Resource{value:\"QuincyIL\"}) return e union match (e_1:Resource{name:\"The Shawshank Redemption\"})-[:filming_location]->(e:Resource{name:\"Mansfield\"}) return e } match (e)-[:area]->(pv) return e order by pv.value desc limit 1",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Quincy"
+        ]
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "subreddit",
+          "QuincyIL"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "The Shawshank Redemption"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "filming location",
+          "forward"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Mansfield"
+        ]
+      },
+      {
+        "function": "And",
+        "dependencies": [
+          3,
+          4
+        ],
+        "inputs": []
+      },
+      {
+        "function": "SelectBetween",
+        "dependencies": [
+          1,
+          5
+        ],
+        "inputs": [
+          "area",
+          "greater"
+        ]
+      }
+    ],
+    "sample_id": "train_14576",
+    "answer": "Mansfield",
+    "history": [
+      {
+        "thought": "To answer the question about which location has more area, I need to gather information about the area of both Quincy and Mansfield. \n\n1. First, I will find the entity for Quincy and retrieve its area.\n2. Then, I will find the entity for Mansfield and retrieve its area.\n3. Finally, I will compare the two areas to determine which one is larger.\n\nLet's start by finding the entity for Quincy. I will use the `Find` function to locate Quincy.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Quincy"
+          }
+        },
+        "result": "(['Q49143', 'Q575750', 'Q1247732', 'Q56561552'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FilterStr",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q49143",
+                "Q575750",
+                "Q1247732",
+                "Q56561552"
+              ],
+              "triples": null
+            },
+            "key": "subreddit",
+            "value": "QuincyIL"
+          }
+        },
+        "result": "([], [])"
+      }
+    ],
+    "response": "Final Answer: Since the previous attempts to find the entity for Quincy using the subreddit \"QuincyIL\" did not yield any results, I will now try to find the entity for Mansfield. \n\nI will use the `Find` function to locate Mansfield and then retrieve its area. \n\nAction: Find\nArguments: {\"name\": \"Mansfield\"}\n\nReasoning:\nStep 1: To answer the question about which location has more area, I need to gather information about the area of both Quincy and Mansfield. \n\n1. First, I will find the entity for Quincy and retrieve its area.\n2. Then, I will find the entity for Mansfield and retrieve its area.\n3. Finally, I will compare the two areas to determine which one is larger.\n\nLet's start by finding the entity for Quincy. I will use the `Find` function to locate Quincy.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "what is the attribute <A> population </A> of <ES> <C> ceremonial county of England </C> that <R> place of death </R> backward to <E> Jack Bruce </E> </ES>",
+    "kopl": "Find(Jack Bruce).Relate(place of death,forward).FilterConcept(ceremonial county of England).QueryAttr(population)",
+    "sparql": "SELECT DISTINCT ?pv WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"ceremonial county of England\" . ?e_1 <place_of_death> ?e . ?e_1 <pred:name> \"Jack Bruce\" .  ?e <population> ?pv .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.getProperty ( call SW.filter ( getProperty ( singleton en.ceremonial_county_of_England ) ( string ! type ) ) ( call SW.reverse ( string place_of_death ) ) ) ( string population ) ) )",
+    "cypher": "MATCH (n2) WHERE n2.name = \"Jack Bruce\"\nMATCH (n1:ceremonial_county_of_England)-[r1:place_of_death]->(n2)\nRETURN n1.population",
+    "question": "What is the popluation of the ceremonial county of England where Jack Bruce died?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"ceremonial county of England\"}) match (e)-[:population]->(pv) match (e_1:Resource{name:\"Jack Bruce\"})-[:place_of_death]->(e) return distinct pv",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Jack Bruce"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "place of death",
+          "forward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "ceremonial county of England"
+        ]
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "population"
+        ]
+      }
+    ],
+    "sample_id": "train_55719",
+    "answer": "741900",
+    "history": [
+      {
+        "thought": "To answer the question about the population of the ceremonial county of England where Jack Bruce died, I first need to identify the ceremonial county associated with Jack Bruce's death. \n\nThe next step is to find information about Jack Bruce, specifically the location of his death. I will use the `Find` function to search for Jack Bruce and gather relevant details about him, including the location of his death. \n\nLet's proceed with that. \n\nI'll start by using the `Find` function to locate Jack Bruce.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Jack Bruce"
+          }
+        },
+        "result": "(['Q313683'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "QueryAttr",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q313683"
+              ],
+              "triples": null
+            },
+            "key": "deathPlace"
+          }
+        },
+        "result": "[]"
+      }
+    ],
+    "response": "Final Answer: Since the previous attempt to retrieve the death place of Jack Bruce did not yield any results, I will try to gather more general information about Jack Bruce, including his biography, which may contain details about his death place.\n\nI will use the `QueryAttr` function to retrieve general attributes related to Jack Bruce. This may help me find the information I need about his death place.\n\nLet's proceed with that. \n\nAction: QueryAttr\nArguments: {\"entities\": {\"ids\": [\"Q313683\"], \"triples\": null}, \"key\": \"abstract\"}\n\nReasoning:\nStep 1: To answer the question about the population of the ceremonial county of England where Jack Bruce died, I first need to identify the ceremonial county associated with Jack Bruce's death. \n\nThe next step is to find information about Jack Bruce, specifically the location of his death. I will use the `Find` function to search for Jack Bruce and gather relevant details about him, including the location of his death. \n\nLet's proceed with that. \n\nI'll start by using the `Find` function to locate Jack Bruce.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "how many <ES> <C> miniseries </C> that <R> nominated for </R> forward to <ES> <C> Primetime Emmy Award </C> that <R> nominated for </R> backward to <E> Steven Moffat </E> ( <Q> for work </Q> is text <V> Sherlock </V> ) </ES> </ES>",
+    "kopl": "Find(Steven Moffat).Relate(nominated for,forward).QFilterStr(for work,Sherlock).FilterConcept(Primetime Emmy Award).Relate(nominated for,backward).FilterConcept(miniseries).Count()",
+    "sparql": "SELECT (COUNT(DISTINCT ?e) AS ?count) WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"miniseries\" . ?e <nominated_for> ?e_1 . ?e_1 <pred:instance_of> ?c_1 . ?c_1 <pred:name> \"Primetime Emmy Award\" . ?e_2 <nominated_for> ?e_1 . ?e_2 <pred:name> \"Steven Moffat\" . [ <pred:fact_h> ?e_2 ; <pred:fact_r> <nominated_for> ; <pred:fact_t> ?e_1 ] <for_work> ?qpv . ?qpv <pred:value> \"Sherlock\" .   }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n3) WHERE n3.name = \"Steven Moffat\"\nMATCH (n2:Primetime_Emmy_Award)-[r2:nominated_for]->(n3) WHERE r2.for_work = \"Sherlock\"\nMATCH (n1:miniseries)<-[r1:nominated_for]-(n2)\nRETURN count(n1)",
+    "question": "The Primetime Emmy Award nominated to Steven Moffat for Sherlock was also nominated to how many miniseries?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"miniseries\"}) match (e)-[:nominated_for]->(e_1) match (e_1)-[:instance_of]->(c_1:Resource{name:\"Primetime Emmy Award\"}) match (e_2:Resource{name:\"Steven Moffat\"})-[:nominated_for]->(e_1),(e_2)<-[:fact_h]-(tmp)-[:fact_t]->(e_1), (tmp)-[:fact_r]-(qr:Relation{name:\"nominated_for\"}),(tmp)-[:for_work]->(qpv:Resource{value:\"Sherlock\"}) return count(distinct e) as n",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Steven Moffat"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "nominated for",
+          "forward"
+        ]
+      },
+      {
+        "function": "QFilterStr",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "for work",
+          "Sherlock"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "Primetime Emmy Award"
+        ]
+      },
+      {
+        "function": "Relate",
+        "dependencies": [
+          3
+        ],
+        "inputs": [
+          "nominated for",
+          "backward"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          4
+        ],
+        "inputs": [
+          "miniseries"
+        ]
+      },
+      {
+        "function": "Count",
+        "dependencies": [
+          5
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_93159",
+    "answer": "9",
+    "history": [
+      {
+        "thought": "To answer the question, I need to find the Primetime Emmy Award nomination related to Steven Moffat for \"Sherlock\" and then determine how many miniseries were also nominated for that same award. \n\nThe first step is to find the Emmy Award nomination associated with Steven Moffat for \"Sherlock.\" I will start by querying for all entities related to Steven Moffat and \"Sherlock\" to find the relevant Emmy nomination. \n\nI will use the `FindAll()` function to get all entities first.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will refine the search by filtering for entities specifically related to Steven Moffat and \"Sherlock.\" \n\nThe next step is to filter the entities to find the specific Emmy Award nomination for Steven Moffat related to \"Sherlock.\" I will use the `FilterStr` function to look for entities that mention \"Sherlock\" and are associated with Steven Moffat.\n\nAction: `FilterStr`\nArguments: \n- `entities`: Last step result\n- `key`: \"name\" (assuming the name attribute contains \"Sherlock\")\n- `value`: \"Sherlock\"\n\nReasoning:\nStep 1: To answer the question, I need to find the Primetime Emmy Award nomination related to Steven Moffat for \"Sherlock\" and then determine how many miniseries were also nominated for that same award. \n\nThe first step is to find the Emmy Award nomination associated with Steven Moffat for \"Sherlock.\" I will start by querying for all entities related to Steven Moffat and \"Sherlock\" to find the relevant Emmy nomination. \n\nI will use the `FindAll()` function to get all entities first."
+  },
+  {
+    "graphq_ir": "what is the relation from <E> Jermaine Easter </E> to <E> Milton Keynes Dons F.C. </E>",
+    "kopl": "Find(Jermaine Easter).Find(Milton Keynes Dons F.C.).QueryRelation()",
+    "sparql": "SELECT DISTINCT ?p WHERE { ?e_1 <pred:name> \"Jermaine Easter\" . ?e_2 <pred:name> \"Milton Keynes Dons F.C.\" . ?e_1 ?p ?e_2 .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Jermaine Easter\"\nMATCH (n2) WHERE n2.name = \"Milton Keynes Dons F.C.\"\nMATCH (n1)-[r1]->(n2)\nRETURN r1.label",
+    "question": "What is Jermaine Easter's connection to Milton Keynes Dons F.C.?",
+    "cypher_match": "match (e_1:Resource{name:\"Jermaine Easter\"})-[p]->(e_2:Resource{name:\"Milton Keynes Dons F.C.\"}) return distinct type(p)",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Jermaine Easter"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Milton Keynes Dons F.C."
+        ]
+      },
+      {
+        "function": "QueryRelation",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_35327",
+    "answer": "member of sports team",
+    "history": [
+      {
+        "thought": "To find out Jermaine Easter's connection to Milton Keynes Dons F.C., I will first search for Jermaine Easter in the knowledge base to gather information about him. \n\nNext step: Use the Find tool to locate Jermaine Easter. \n\nI'll proceed with that now.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Jermaine Easter"
+          }
+        },
+        "result": "(['Q93828'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FilterConcept",
+          "args": {
+            "entities": {
+              "ids": [
+                "Q93828"
+              ],
+              "triples": null
+            },
+            "concept_name": "football player"
+          }
+        },
+        "result": "{'ids': [], 'triples': None}"
+      }
+    ],
+    "response": "Final Answer: Since the previous steps did not yield any results for Jermaine Easter as a football player, I will now try to gather more general information about Jermaine Easter without filtering by concept. \n\nNext step: Use the QueryAttr tool to retrieve any available attributes for Jermaine Easter. \n\nI'll proceed with that now.\nAction: QueryAttr\nArguments: {\"entities\": {\"ids\": [\"Q93828\"], \"triples\": null}, \"key\": \"connection\"}\n\nReasoning:\nStep 1: To find out Jermaine Easter's connection to Milton Keynes Dons F.C., I will first search for Jermaine Easter in the knowledge base to gather information about him. \n\nNext step: Use the Find tool to locate Jermaine Easter. \n\nI'll proceed with that now.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "what is the relation from <E> The Rolling Stones </E> to <E> protopunk </E>",
+    "kopl": "Find(The Rolling Stones).Find(protopunk).QueryRelation()",
+    "sparql": "SELECT DISTINCT ?p WHERE { ?e_1 <pred:name> \"The Rolling Stones\" . ?e_2 <pred:name> \"protopunk\" . ?e_1 ?p ?e_2 .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"The Rolling Stones\"\nMATCH (n2) WHERE n2.name = \"protopunk\"\nMATCH (n1)-[r1]->(n2)\nRETURN r1.label",
+    "question": "How are The Rolling Stones related to protopunk?",
+    "cypher_match": "match (e_1:Resource{name:\"The Rolling Stones\"})-[p]->(e_2:Resource{name:\"protopunk\"}) return distinct type(p)",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "The Rolling Stones"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "protopunk"
+        ]
+      },
+      {
+        "function": "QueryRelation",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_65636",
+    "answer": "genre",
+    "history": [
+      {
+        "thought": "To answer the question about how The Rolling Stones are related to protopunk, I need to gather information about The Rolling Stones and their influence or connection to the protopunk genre. \n\nThe next step is to find information about The Rolling Stones and their musical style, influences, and any connections to protopunk. I will start by searching for The Rolling Stones in the knowledge base.\n\nI'll use the `Find` function to locate The Rolling Stones. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "The Rolling Stones"
+          }
+        },
+        "result": "(['Q11036'], None)"
+      }
+    ],
+    "response": "Final Answer: The next step is to gather more information about The Rolling Stones by filtering their attributes and concepts related to their musical style and influences. I will use the `FilterConcept` function to find out more about their connection to protopunk.\n\nLet's proceed with that.\nAction: FilterConcept\nArguments: {\"entities\":{\"ids\":[\"Q11036\"],\"triples\":null},\"concept_name\":\"protopunk\"}\n\nReasoning:\nStep 1: To answer the question about how The Rolling Stones are related to protopunk, I need to gather information about The Rolling Stones and their influence or connection to the protopunk genre. \n\nThe next step is to find information about The Rolling Stones and their musical style, influences, and any connections to protopunk. I will start by searching for The Rolling Stones in the knowledge base.\n\nI'll use the `Find` function to locate The Rolling Stones. \n\nLet's proceed with that."
+  },
+  {
+    "graphq_ir": "what is the relation from <E> National Society of Film Critics Award for Best Actress </E> to <E> Elisabeth Shue </E>",
+    "kopl": "Find(National Society of Film Critics Award for Best Actress).Find(Elisabeth Shue).QueryRelation()",
+    "sparql": "SELECT DISTINCT ?p WHERE { ?e_1 <pred:name> \"National Society of Film Critics Award for Best Actress\" . ?e_2 <pred:name> \"Elisabeth Shue\" . ?e_1 ?p ?e_2 .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"National Society of Film Critics Award for Best Actress\"\nMATCH (n2) WHERE n2.name = \"Elisabeth Shue\"\nMATCH (n1)-[r1]->(n2)\nRETURN r1.label",
+    "question": "What is the connection between National Society of Film Critics Award for Best Actress to Elisabeth Shue?",
+    "cypher_match": "match (e_1:Resource{name:\"National Society of Film Critics Award for Best Actress\"})-[p]->(e_2:Resource{name:\"Elisabeth Shue\"}) return distinct type(p)",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "National Society of Film Critics Award for Best Actress"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Elisabeth Shue"
+        ]
+      },
+      {
+        "function": "QueryRelation",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_88825",
+    "answer": "winner",
+    "history": [
+      {
+        "thought": "To find the connection between the National Society of Film Critics Award for Best Actress and Elisabeth Shue, I will first look for the entities related to the National Society of Film Critics Award for Best Actress. \n\nThe next step is to find the entity for the National Society of Film Critics Award for Best Actress. I will use the `Find` function to locate this specific award. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "National Society of Film Critics Award for Best Actress"
+          }
+        },
+        "result": "(['Q1268927'], None)"
+      }
+    ],
+    "response": "Final Answer: The next step is to gather more information about the National Society of Film Critics Award for Best Actress to see how it relates to Elisabeth Shue. I will use the `Relate` function to find any connections between the award and Elisabeth Shue.\n\nLet's proceed with that.\nAction: Relate\nArguments: {\"entities\":{\"ids\":[\"Q1268927\"],\"triples\":null},\"relation\":\"won\",\"direction\":\"forward\"}\n\nReasoning:\nStep 1: To find the connection between the National Society of Film Critics Award for Best Actress and Elisabeth Shue, I will first look for the entities related to the National Society of Film Critics Award for Best Actress. \n\nThe next step is to find the entity for the National Society of Film Critics Award for Best Actress. I will use the `Find` function to locate this specific award. \n\nLet's proceed with that."
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> MTV Movie Award for Most Desirable Female </E> that <R> winner </R> to <E> Janet Jackson </E>",
+    "kopl": "Find(MTV Movie Award for Most Desirable Female).Find(Janet Jackson).QueryRelationQualifier(winner,point in time)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e_1 <pred:name> \"MTV Movie Award for Most Desirable Female\" . ?e_2 <pred:name> \"Janet Jackson\" . ?e_1 <winner> ?e_2 . [ <pred:fact_h> ?e_1 ; <pred:fact_r> <winner> ; <pred:fact_t> ?e_2 ] <point_in_time> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"MTV Movie Award for Most Desirable Female\"\nMATCH (n2) WHERE n2.name = \"Janet Jackson\"\nMATCH (n1)-[r1:winner]->(n2)\nRETURN r1.point_in_time",
+    "question": "At what time point did Janet Jackson win the MTV Movie Award for Most Desirable Female?",
+    "cypher_match": "match (e_1:Resource{name:\"MTV Movie Award for Most Desirable Female\"})-[:winner]->(e_2:Resource{name:\"Janet Jackson\"}),(e_1)<-[:fact_h]-(tmp)-[:fact_t]->(e_2), (tmp)-[:fact_r]-(qr:Relation{name:\"winner\"}),(tmp)-[:point_in_time]->(qpv) return distinct qpv",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "MTV Movie Award for Most Desirable Female"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Janet Jackson"
+        ]
+      },
+      {
+        "function": "QueryRelationQualifier",
+        "dependencies": [
+          0,
+          1
+        ],
+        "inputs": [
+          "winner",
+          "point in time"
+        ]
+      }
+    ],
+    "sample_id": "train_20686",
+    "answer": "1994",
+    "history": [
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: The next step is to filter the results to find Janet Jackson specifically. I will use the `FilterStr` function to search for entities related to Janet Jackson. \n\nLet's proceed with that. \n\nAction: `FilterStr`\nArguments: \n- `entities`: Last step result\n- `key`: \"name\"\n- `value`: \"Janet Jackson\"\n\nReasoning:\nStep 1: Executing next step"
+  },
+  {
+    "graphq_ir": "what is the attribute <A> official website </A> of <ES> <C> association football club </C> whose <A> Twitter username </A> is text <V> FGRFC_Official </V> </ES>",
+    "kopl": "FindAll().FilterStr(Twitter username,FGRFC_Official).FilterConcept(association football club).QueryAttr(official website)",
+    "sparql": "SELECT DISTINCT ?pv WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"association football club\" . ?e <Twitter_username> ?pv_1 . ?pv_1 <pred:value> \"FGRFC_Official\" . ?e <official_website> ?pv .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.getProperty ( call SW.filter ( getProperty ( singleton en.association_football_club ) ( string ! type ) ) ( string Twitter_username ) ( string = ) ( string FGRFC_Official ) ) ( string official_website ) ) )",
+    "cypher": "MATCH (n1:association_football_club) WHERE n1.Twitter_username = \"FGRFC_Official\"\nRETURN n1.official_website",
+    "question": "Regarding the association football club that have the Twitter username of FGRFC_Official tell me its official website",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"association football club\"}) match (e)-[:Twitter_username]->(pv_1:Resource{value:\"FGRFC_Official\"}) match (e)-[:official_website]->(pv) return distinct pv.value",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "Twitter username",
+          "FGRFC_Official"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "association football club"
+        ]
+      },
+      {
+        "function": "QueryAttr",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "official website"
+        ]
+      }
+    ],
+    "sample_id": "train_60928",
+    "answer": "https://www.fgr.co.uk/",
+    "history": [
+      {
+        "thought": "The next step is to find the entity associated with the Twitter username \"FGRFC_Official\". I will use the Find function to search for this entity. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "FGRFC_Official"
+          }
+        },
+        "result": "([], None)"
+      }
+    ],
+    "response": "Final Answer: Since the search for the entity with the Twitter username \"FGRFC_Official\" did not return any results, the next step is to retrieve all entities in the knowledge base to see if we can find the association football club by another means.\n\nLet's proceed with that.\n\nAction: FindAll\nArguments: {}\n\nReasoning:\nStep 1: The next step is to find the entity associated with the Twitter username \"FGRFC_Official\". I will use the Find function to search for this entity. \n\nLet's proceed with that."
+  },
+  {
+    "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <C> visual artwork </C> whose <A> official website </A> is text <V> https://www.warnerbros.com/matrix </V> </ES> whose <A> publication date </A> is <V> 1999-07-14 </V>",
+    "kopl": "FindAll().FilterStr(official website,https://www.warnerbros.com/matrix).FilterConcept(visual artwork).QueryAttrQualifier(publication date,1999-07-14,place of publication)",
+    "sparql": "SELECT DISTINCT ?qpv WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"visual artwork\" . ?e <official_website> ?pv_1 . ?pv_1 <pred:value> \"https://www.warnerbros.com/matrix\" . ?e <publication_date> ?pv . ?pv <pred:date> \"1999-07-14\"^^xsd:date . [ <pred:fact_h> ?e ; <pred:fact_r> <publication_date> ; <pred:fact_t> ?pv ] <place_of_publication> ?qpv .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1:visual_artwork) WHERE (n1.official_website = \"https://www.warnerbros.com/matrix\" AND n1.publication_date =  1999-07-14 )\nRETURN .place_of_publication",
+    "question": "Where was the visual artwork with official website as https://www.warnerbros.com/matrix, published on 1999-07-14",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"visual artwork\"}) match (e)-[:official_website]->(pv_1:Resource{value:\"https://www.warnerbros.com/matrix\"}) match (e)-[:publication_date]->(pv:Resource{date:Date(\"1999-07-14\")}),(e)<-[:fact_h]-(tmp)-[:fact_t]->(pv), (tmp)-[:fact_r]-(qr:Relation{name:\"publication_date\"}),(tmp)-[:place_of_publication]->(qpv) return distinct qpv.value",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "official website",
+          "https://www.warnerbros.com/matrix"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "visual artwork"
+        ]
+      },
+      {
+        "function": "QueryAttrQualifier",
+        "dependencies": [
+          2
+        ],
+        "inputs": [
+          "publication date",
+          "1999-07-14",
+          "place of publication"
+        ]
+      }
+    ],
+    "sample_id": "train_17101",
+    "answer": "Sweden",
+    "history": [
+      {
+        "thought": "To answer the question, I need to find the visual artwork that matches the specified official website and publication date. \n\nThe next step is to gather all entities first, and then I will filter them based on the official website and the publication date. \n\nI will start by calling the `FindAll()` function to get all entities.",
+        "action": {
+          "tool": "FindAll",
+          "args": {}
+        },
+        "result": "Result is too long, 17754 items returned. Preceding examples: (['Q7270', 'Q130232', 'Q280658', 'Q8355', 'Q8445'], None)."
+      }
+    ],
+    "response": "Final Answer: Since the result from `FindAll()` is too long, I will filter the entities directly based on the specific criteria of the official website and the publication date. \n\nThe next step is to filter the entities by the official website first. I will use the `FilterStr()` function to find entities with the official website as \"https://www.warnerbros.com/matrix\". \n\nI will proceed with this action now. \n\nAction: FilterStr\nArguments: \n- entities: Last step result\n- key: \"official website\"\n- value: \"https://www.warnerbros.com/matrix\"\n\nReasoning:\nStep 1: To answer the question, I need to find the visual artwork that matches the specified official website and publication date. \n\nThe next step is to gather all entities first, and then I will filter them based on the official website and the publication date. \n\nI will start by calling the `FindAll()` function to get all entities."
+  },
+  {
+    "graphq_ir": "what is the relation from <E> Anchorage </E> to <ES> <E> Darwin </E> whose <A> inception </A> is year <V> 1869 </V> </ES>",
+    "kopl": "Find(Anchorage).Find(Darwin).FilterYear(inception,1869,=).QueryRelation()",
+    "sparql": "SELECT DISTINCT ?p WHERE { ?e_1 <pred:name> \"Anchorage\" . ?e_2 <pred:name> \"Darwin\" . ?e_2 <inception> ?pv . ?pv <pred:year> 1869 . ?e_1 ?p ?e_2 .  }",
+    "lambda-dcs": "This utterance is not supported by lambda-dcs due to the expressness limit of lambda-dcs",
+    "cypher": "MATCH (n1) WHERE n1.name = \"Anchorage\"\nMATCH (n2) WHERE n2.name = \"Darwin\"\nMATCH (n2) WHERE n2.inception =  1869 \nMATCH (n1)-[r1]->(n2)\nRETURN r1.label",
+    "question": "How is Anchorage related to Darwin, founded in 1869?",
+    "cypher_match": "match (e_2:Resource{name:\"Darwin\"})-[:inception]->(pv:Resource{year:1869}) match (e_1:Resource{name:\"Anchorage\"})-[p]->(e_2:Resource{name:\"Darwin\"}) return distinct type(p)",
+    "program": [
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Anchorage"
+        ]
+      },
+      {
+        "function": "Find",
+        "dependencies": [],
+        "inputs": [
+          "Darwin"
+        ]
+      },
+      {
+        "function": "FilterYear",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "inception",
+          "1869",
+          "="
+        ]
+      },
+      {
+        "function": "QueryRelation",
+        "dependencies": [
+          0,
+          2
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_76714",
+    "answer": "twinned administrative body",
+    "history": [
+      {
+        "thought": "To understand how Anchorage is related to Darwin, I need to first gather information about both entities. I will start by finding the entities for Anchorage and Darwin. \n\nThe next step is to use the `Find` function to locate both Anchorage and Darwin in the knowledge base. \n\nI'll begin with Anchorage.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Anchorage"
+          }
+        },
+        "result": "(['Q39450'], None)"
+      },
+      {
+        "thought": "Executing next step",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "Darwin"
+          }
+        },
+        "result": "(['Q11568', 'Q5225923', 'Q2204855'], None)"
+      }
+    ],
+    "response": "Final Answer: Now that I have found the entities for both Anchorage (Q39450) and Darwin (with multiple results), the next step is to filter the results for Darwin to find the specific entity that was founded in 1869. \n\nI will filter the Darwin entities to find the one that matches the founding year of 1869. \n\nAction: FilterYear\nArguments: {\"entities\": {\"ids\": ['Q11568', 'Q5225923', 'Q2204855'], \"triples\": null}, \"key\": \"founded\", \"value\": \"1869\", \"op\": \"=\"}\n\nReasoning:\nStep 1: To understand how Anchorage is related to Darwin, I need to first gather information about both entities. I will start by finding the entities for Anchorage and Darwin. \n\nThe next step is to use the `Find` function to locate both Anchorage and Darwin in the knowledge base. \n\nI'll begin with Anchorage.\nStep 2: Executing next step"
+  },
+  {
+    "graphq_ir": "what is <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0001 2142 1582 </V> </ES>",
+    "kopl": "FindAll().FilterStr(ISNI,0000 0001 2142 1582).FilterConcept(human).What()",
+    "sparql": "SELECT DISTINCT ?e WHERE { ?e <pred:instance_of> ?c . ?c <pred:name> \"human\" . ?e <ISNI> ?pv . ?pv <pred:value> \"0000 0001 2142 1582\" .  }",
+    "lambda-dcs": "( call SW.listValue ( call SW.filter ( getProperty ( singleton en.human ) ( string ! type ) ) ( string ISNI ) ( string = ) ( string 0000 0001 2142 1582 ) ) )",
+    "cypher": "MATCH (n1:human) WHERE n1.ISNI = \"0000 0001 2142 1582\"\nRETURN n1.name",
+    "question": "Which person's ISNI is 0000 0001 2142 1582?",
+    "cypher_match": "match (e)-[:instance_of]->(c:Resource{name:\"human\"}) match (e)-[:ISNI]->(pv:Resource{value:\"0000 0001 2142 1582\"}) return distinct e.name",
+    "program": [
+      {
+        "function": "FindAll",
+        "dependencies": [],
+        "inputs": []
+      },
+      {
+        "function": "FilterStr",
+        "dependencies": [
+          0
+        ],
+        "inputs": [
+          "ISNI",
+          "0000 0001 2142 1582"
+        ]
+      },
+      {
+        "function": "FilterConcept",
+        "dependencies": [
+          1
+        ],
+        "inputs": [
+          "human"
+        ]
+      },
+      {
+        "function": "What",
+        "dependencies": [
+          2
+        ],
+        "inputs": []
+      }
+    ],
+    "sample_id": "train_70507",
+    "answer": "Vilmos Zsigmond",
+    "history": [
+      {
+        "thought": "The next step is to find the entity associated with the ISNI number \"0000 0001 2142 1582\". I will use the `Find` function to search for this specific ISNI. \n\nLet's proceed with that.",
+        "action": {
+          "tool": "Find",
+          "args": {
+            "name": "0000 0001 2142 1582"
+          }
+        },
+        "result": "([], None)"
+      }
+    ],
+    "response": "Final Answer: Since the `Find` function did not return any results for the ISNI \"0000 0001 2142 1582\", the next step is to use the `FindAll` function to retrieve all entities in the knowledge base. This will allow us to search through all entities for the one that matches the ISNI. \n\nLet's proceed with that. \n\nAction: FindAll\nArguments: {}\n\nReasoning:\nStep 1: The next step is to find the entity associated with the ISNI number \"0000 0001 2142 1582\". I will use the `Find` function to search for this specific ISNI. \n\nLet's proceed with that."
+  }
+]

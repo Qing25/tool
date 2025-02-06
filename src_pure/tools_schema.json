@@ -1,0 +1,1467 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Find",
+      "description": "Find all entities with a specific name in the knowledge base",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "name",
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "FindAll",
+      "description": "Returns all entities in the knowledge base",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "FilterConcept",
+      "description": "Filter entities by a specific concept/type",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "concept_name": {
+            "description": "The name of the concept to filter by",
+            "title": "Concept Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "concept_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "FilterStr",
+      "description": "Filter entities by string attribute value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          },
+          "value": {
+            "description": "value",
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "key",
+          "value"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "FilterNum",
+      "description": "Filter entities by numeric attribute value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          },
+          "value": {
+            "description": "value",
+            "title": "Value",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "key",
+          "value",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "FilterDate",
+      "description": "Filter entities by date attribute value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          },
+          "value": {
+            "description": "value",
+            "title": "Value",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "key",
+          "value",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "FilterYear",
+      "description": "Filter entities by year attribute value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          },
+          "value": {
+            "description": "value",
+            "title": "Value",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "key",
+          "value",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QFilterStr",
+      "description": "Filter entities by string qualifier value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "qkey": {
+            "description": "qkey",
+            "title": "Qkey",
+            "type": "string"
+          },
+          "qvalue": {
+            "description": "qvalue",
+            "title": "Qvalue",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "qkey",
+          "qvalue"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QFilterNum",
+      "description": "Filter entities by numeric qualifier value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "qkey": {
+            "description": "qkey",
+            "title": "Qkey",
+            "type": "string"
+          },
+          "qvalue": {
+            "description": "qvalue",
+            "title": "Qvalue",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "qkey",
+          "qvalue",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QFilterDate",
+      "description": "Filter entities by date qualifier value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "qkey": {
+            "description": "qkey",
+            "title": "Qkey",
+            "type": "string"
+          },
+          "qvalue": {
+            "description": "qvalue",
+            "title": "Qvalue",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "qkey",
+          "qvalue",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QFilterYear",
+      "description": "Filter entities by year qualifier value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "qkey": {
+            "description": "qkey",
+            "title": "Qkey",
+            "type": "string"
+          },
+          "qvalue": {
+            "description": "qvalue",
+            "title": "Qvalue",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "qkey",
+          "qvalue",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QueryAttr",
+      "description": "Query attribute values for given entities",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "key"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QueryAttrQualifier",
+      "description": "Query qualifier values for specific attribute values",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          },
+          "value": {
+            "description": "value",
+            "title": "Value",
+            "type": "string"
+          },
+          "qkey": {
+            "description": "qkey",
+            "title": "Qkey",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "key",
+          "value",
+          "qkey"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QueryAttrUnderCondition",
+      "description": "Query attribute values under specific qualifier conditions",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          },
+          "qkey": {
+            "description": "qkey",
+            "title": "Qkey",
+            "type": "string"
+          },
+          "qvalue": {
+            "description": "qvalue",
+            "title": "Qvalue",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "key",
+          "qkey",
+          "qvalue"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QueryRelation",
+      "description": "Query relations between two sets of entities",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "s_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "t_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          }
+        },
+        "required": [
+          "s_entities",
+          "t_entities"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "QueryRelationQualifier",
+      "description": "Query qualifier values for specific relations",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "s_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "t_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "relation": {
+            "description": "relation",
+            "title": "Relation",
+            "type": "string"
+          },
+          "qkey": {
+            "description": "qkey",
+            "title": "Qkey",
+            "type": "string"
+          }
+        },
+        "required": [
+          "s_entities",
+          "t_entities",
+          "relation",
+          "qkey"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Relate",
+      "description": "Find entities related to input entities by a specific relation",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "relation": {
+            "description": "relation",
+            "title": "Relation",
+            "type": "string"
+          },
+          "direction": {
+            "description": "direction",
+            "title": "Direction",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "relation",
+          "direction"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "SelectAmong",
+      "description": "Select entities with largest/smallest attribute values",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entities",
+          "key",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "SelectBetween",
+      "description": "Compare two entities based on numeric attribute and select one",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "l_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "r_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "key": {
+            "description": "key",
+            "title": "Key",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "l_entities",
+          "r_entities",
+          "key",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "And",
+      "description": "Get the intersection of two entity sets",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "l_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "r_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          }
+        },
+        "required": [
+          "l_entities",
+          "r_entities"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Or",
+      "description": "Get the union of two entity sets",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "l_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          },
+          "r_entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          }
+        },
+        "required": [
+          "l_entities",
+          "r_entities"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Count",
+      "description": "Count the number of entities",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "properties": {
+              "ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ids",
+                "type": "array"
+              },
+              "triples": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Triples"
+              }
+            },
+            "required": [
+              "ids",
+              "triples"
+            ],
+            "title": "EntityTuple",
+            "type": "object"
+          }
+        },
+        "required": [
+          "entities"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "VerifyStr",
+      "description": "Verify string attribute values against a target value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "s_value": {
+            "description": "s_value",
+            "items": {},
+            "title": "S Value",
+            "type": "array"
+          },
+          "t_value": {
+            "description": "t_value",
+            "title": "T Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "s_value",
+          "t_value"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "VerifyNum",
+      "description": "Verify numeric attribute values against a target value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "s_value": {
+            "description": "s_value",
+            "items": {},
+            "title": "S Value",
+            "type": "array"
+          },
+          "t_value": {
+            "description": "t_value",
+            "title": "T Value",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "s_value",
+          "t_value",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "VerifyDate",
+      "description": "Verify date attribute values against a target value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "s_value": {
+            "description": "s_value",
+            "items": {},
+            "title": "S Value",
+            "type": "array"
+          },
+          "t_value": {
+            "description": "t_value",
+            "title": "T Value",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "s_value",
+          "t_value",
+          "op"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "VerifyYear",
+      "description": "Verify year attribute values against a target value",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "s_value": {
+            "description": "s_value",
+            "items": {},
+            "title": "S Value",
+            "type": "array"
+          },
+          "t_value": {
+            "description": "t_value",
+            "title": "T Value",
+            "type": "string"
+          },
+          "op": {
+            "description": "op",
+            "title": "Op",
+            "type": "string"
+          }
+        },
+        "required": [
+          "s_value",
+          "t_value",
+          "op"
+        ]
+      }
+    }
+  }
+]
