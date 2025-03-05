@@ -236,7 +236,7 @@ Final Answer: Hannah Arendt
                 updated_information = f"Stored '{observation_name}' in memory."
             elif observation_type == AgentText: # mostly in current task kgtool
                 if 'ValueClass: ' in observation:
-                    observation = observation.replace('ValueClass: ', '')
+                    # observation = observation.replace('ValueClass: ', '')  # no longer needed since qdls >= 0.1.17
                     observation = eval(observation) 
                     if isinstance(observation, list):       # 应该都是 list
                         result = [ValueClass(**v) for v in observation]
@@ -271,3 +271,91 @@ Final Answer: Hannah Arendt
             return None
 
 
+
+
+
+class RefinedToolCallingAgent(ToolCallingAgent):
+
+    def step(self, memory_step: ActionStep) -> Union[None, Any]:
+        """
+        Perform one step in the ReAct framework: the agent thinks, acts, and observes the result.
+        Returns None if the step is not final.
+        """
+        memory_messages = self.write_memory_to_messages()
+
+        self.input_messages = memory_messages
+
+        # Add new step in logs
+        memory_step.model_input_messages = memory_messages.copy()
+
+        try:
+            model_message: ChatMessage = self.model(
+                memory_messages,
+                tools_to_call_from=list(self.tools.values()),
+                stop_sequences=["Observation:"],
+            )
+            memory_step.model_output_message = model_message
+            if model_message.tool_calls is None or len(model_message.tool_calls) == 0:
+                raise Exception("Model did not call any tools. Call `final_answer` tool to return a final answer.")
+            tool_call = model_message.tool_calls[0]
+            tool_name, tool_call_id = tool_call.function.name, tool_call.id
+            tool_arguments = tool_call.function.arguments
+
+
+        except Exception as e:
+            raise AgentGenerationError(f"Error in generating tool call with model:\n{e}", self.logger) from e
+
+        memory_step.tool_calls = [ToolCall(name=tool_name, arguments=tool_arguments, id=tool_call_id)]
+
+        # Execute
+        self.logger.log(
+            Panel(Text(f"Calling tool: '{tool_name}' with arguments: {tool_arguments}")),
+            level=LogLevel.INFO,
+        )
+        if tool_name == "final_answer":
+            if isinstance(tool_arguments, dict):
+                if "answer" in tool_arguments:
+                    answer = tool_arguments["answer"]
+                else:
+                    answer = tool_arguments
+            else:
+                answer = tool_arguments
+            if (
+                isinstance(answer, str) and answer in self.state.keys()
+            ):  # if the answer is a state variable, return the value
+                final_answer = self.state[answer]
+                self.logger.log(
+                    f"[bold {YELLOW_HEX}]Final answer:[/bold {YELLOW_HEX}] Extracting key '{answer}' from state to return value '{final_answer}'.",
+                    level=LogLevel.INFO,
+                )
+            else:
+                final_answer = answer
+                self.logger.log(
+                    Text(f"Final answer: {final_answer}", style=f"bold {YELLOW_HEX}"),
+                    level=LogLevel.INFO,
+                )
+
+            memory_step.action_output = final_answer
+            return final_answer
+        else:
+            if tool_arguments is None:
+                tool_arguments = {}
+            observation = self.execute_tool_call(tool_name, tool_arguments)
+            observation_type = type(observation)
+            if observation_type in [AgentImage, AgentAudio]:
+                if observation_type == AgentImage:
+                    observation_name = "image.png"
+                elif observation_type == AgentAudio:
+                    observation_name = "audio.mp3"
+                # TODO: observation naming could allow for different names of same type
+
+                self.state[observation_name] = observation
+                updated_information = f"Stored '{observation_name}' in memory."
+            else:
+                updated_information = str(observation).strip()
+            self.logger.log(
+                f"Observations: {updated_information.replace('[', '|')}",  # escape potential rich-tag-like components
+                level=LogLevel.INFO,
+            )
+            memory_step.observations = updated_information
+            return None

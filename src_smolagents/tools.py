@@ -13,6 +13,8 @@ import pickle
 from qdls.data import save_json,load_json
 from loguru import logger   
 from smolagents import tool
+from typing import List, Tuple, Union
+from qdls.kopl.kopl import ValueClass
 
 from qdls.kopl.kopl import KoPLEngine
 
@@ -35,6 +37,8 @@ PICKLE_PATH = "/home/qing/raid/paperwork/kgtool/data/kqa/kb.pkl"
 engine = load_or_create_engine(KB_PATH, PICKLE_PATH)
 
 tools = [] 
+
+EntityTuple = Tuple[List[str], Union[None, List[ValueClass]]]
 
 @tool
 def Find(name: str) -> str:
@@ -59,7 +63,7 @@ def FindAll() -> str:
     return engine.FindAll()
 
 @tool
-def FilterConcept(entities: str, concept_name: str) -> str:
+def FilterConcept(entities: EntityTuple, concept_name: str) -> str:
     """
     Find all entities that belong to a specific concept
 
@@ -70,10 +74,10 @@ def FilterConcept(entities: str, concept_name: str) -> str:
     Returns:
         str: A tuple of two elements, first is intersection of input entity sets, second is None
     """
-    return engine.FilterConcept(eval(entities), concept_name)
+    return engine.FilterConcept(entities, concept_name)
 
 @tool
-def FilterStr(entities: str, key: str, value: str) -> str:
+def FilterStr(entities: EntityTuple, key: str, value: str) -> str:
     """
     Filter entities based on string attribute key-value pairs
 
@@ -85,10 +89,10 @@ def FilterStr(entities: str, key: str, value: str) -> str:
     Returns:
         str: A tuple of two elements, first is entity list, second is triple list
     """
-    return engine.FilterStr(eval(entities), key, value)
+    return engine.FilterStr(entities, key, value)
 
 @tool
-def FilterNum(entities: str, key: str, value: str, op: str) -> str:
+def FilterNum(entities: EntityTuple, key: str, value: str, op: str) -> str:
     """
     Filter entities based on numeric attribute key-value pairs with comparison operator
 
@@ -101,10 +105,10 @@ def FilterNum(entities: str, key: str, value: str, op: str) -> str:
     Returns:
         str: A tuple of two elements, first is entity list, second is triple list
     """
-    return engine.FilterNum(eval(entities), key, value, op)
+    return engine.FilterNum(entities, key, value, op)
 
 @tool
-def FilterYear(entities: str, key: str, value: str, op: str) -> str:
+def FilterYear(entities: EntityTuple, key: str, value: str, op: str) -> str:
     """
     Filter entities based on year attribute key-value pairs with comparison operator
 
@@ -117,10 +121,10 @@ def FilterYear(entities: str, key: str, value: str, op: str) -> str:
     Returns:
         str: A tuple of two elements, first is entity list, second is triple list
     """
-    return engine.FilterYear(eval(entities), key, value, op)
+    return engine.FilterYear(entities, key, value, op)
 
 @tool
-def FilterDate(entities: str, key: str, value: str, op: str) -> str:
+def FilterDate(entities: EntityTuple, key: str, value: str, op: str) -> str:
     """
     Filter entities based on date attribute key-value pairs with comparison operator
 
@@ -133,10 +137,10 @@ def FilterDate(entities: str, key: str, value: str, op: str) -> str:
     Returns:
         str: A tuple of two elements, first is entity list, second is triple list
     """
-    return engine.FilterDate(eval(entities), key, value, op)
+    return engine.FilterDate(entities, key, value, op)
 
 @tool
-def Relate(entities: str, relation: str, direction: str) -> str:
+def Relate(entities: EntityTuple, relation: str, direction: str) -> str:
     """
     Find all entities that have a specific relation with input entities
 
@@ -148,10 +152,10 @@ def Relate(entities: str, relation: str, direction: str) -> str:
     Returns:
         str: A tuple of two elements, first is related entity list, second is triple list
     """
-    return engine.Relate(eval(entities), relation, direction)
+    return engine.Relate(entities, relation, direction)
 
 @tool
-def And(l_entities: str, r_entities: str) -> str:
+def And(l_entities: EntityTuple, r_entities: EntityTuple) -> str:
     """
     Return intersection of two entity sets
 
@@ -162,10 +166,10 @@ def And(l_entities: str, r_entities: str) -> str:
     Returns:
         str: A tuple of two elements, first is intersection of input sets, second is None
     """
-    return engine.And(eval(l_entities), eval(r_entities))
+    return engine.And(l_entities, r_entities)
 
 @tool
-def Or(l_entities: str, r_entities: str) -> str:
+def Or(l_entities: EntityTuple, r_entities: EntityTuple) -> str:
     """
     Return union of two entity sets
 
@@ -176,10 +180,10 @@ def Or(l_entities: str, r_entities: str) -> str:
     Returns:
         str: A tuple of two elements, first is union of input sets, second is None
     """
-    return engine.Or(eval(l_entities), eval(r_entities))
+    return engine.Or(l_entities, r_entities)
 
 @tool
-def QueryName(entities: str) -> str:
+def QueryName(entities: EntityTuple) -> str:
     """
     Query entity names
 
@@ -189,10 +193,10 @@ def QueryName(entities: str) -> str:
     Returns:
         str: A list of strings, each corresponding to an entity name
     """
-    return engine.QueryName(eval(entities))
+    return engine.QueryName(entities)
 
 @tool
-def Count(entities: str) -> str:
+def Count(entities: EntityTuple) -> str:
     """
     Count number of entities in set
 
@@ -202,10 +206,10 @@ def Count(entities: str) -> str:
     Returns:
         str: Integer count of entities
     """
-    return engine.Count(eval(entities))
+    return engine.Count(entities)
 
 @tool
-def SelectBetween(l_entities: str, r_entities: str, key: str, op: str) -> str:
+def SelectBetween(l_entities: EntityTuple, r_entities: EntityTuple, key: str, op: str) -> str:
     """
     Select entity with larger/smaller attribute value between two entities
 
@@ -218,10 +222,10 @@ def SelectBetween(l_entities: str, r_entities: str, key: str, op: str) -> str:
     Returns:
         str: Name of the selected entity
     """
-    return engine.SelectBetween(eval(l_entities), eval(r_entities), key, op)
+    return engine.SelectBetween(l_entities, r_entities, key, op)
 
 @tool
-def SelectAmong(entities: str, key: str, op: str) -> str:
+def SelectAmong(entities: EntityTuple, key: str, op: str) -> str:
     """
     Select entities with smallest/largest attribute value from set
 
@@ -233,10 +237,10 @@ def SelectAmong(entities: str, key: str, op: str) -> str:
     Returns:
         str: List of entity names with min/max value
     """
-    return engine.SelectAmong(eval(entities), key, op)
+    return engine.SelectAmong(entities, key, op)
 
 @tool
-def QueryAttr(entities: str, key: str) -> str:
+def QueryAttr(entities: EntityTuple, key: str) -> str:
     """
     Query attribute values for entities
 
@@ -247,10 +251,10 @@ def QueryAttr(entities: str, key: str) -> str:
     Returns:
         str: List of attribute values
     """
-    return engine.QueryAttr(eval(entities), key)
+    return engine.QueryAttr(entities, key)
 
 @tool
-def QueryAttrUnderCondition(entities: str, key: str, qkey: str, qvalue: str) -> str:
+def QueryAttrUnderCondition(entities: EntityTuple, key: str, qkey: str, qvalue: str) -> str:
     """
     Query attribute values under specific qualifier condition
 
@@ -263,10 +267,10 @@ def QueryAttrUnderCondition(entities: str, key: str, qkey: str, qvalue: str) -> 
     Returns:
         str: List of attribute values meeting the qualifier condition
     """
-    return engine.QueryAttrUnderCondition(eval(entities), key, qkey, qvalue)
+    return engine.QueryAttrUnderCondition(entities, key, qkey, qvalue)
 
 @tool
-def VerifyStr(s_value: str, t_value: str) -> str:
+def VerifyStr(s_value: List[ValueClass], t_value: str) -> str:
     """
     Verify if attribute values equal given string
 
@@ -277,10 +281,10 @@ def VerifyStr(s_value: str, t_value: str) -> str:
     Returns:
         str: "yes", "no", or "not sure" indicating if values match
     """
-    return engine.VerifyStr(eval(s_value), t_value)
+    return engine.VerifyStr(s_value, t_value)
 
 @tool
-def VerifyNum(s_value: str, t_value: str, op: str) -> str:
+def VerifyNum(s_value: List[ValueClass], t_value: str, op: str) -> str:
     """
     Verify if numeric attribute values satisfy comparison
 
@@ -292,10 +296,10 @@ def VerifyNum(s_value: str, t_value: str, op: str) -> str:
     Returns:
         str: "yes", "no", or "not sure" indicating if comparison holds
     """
-    return engine.VerifyNum(eval(s_value), t_value, op)
+    return engine.VerifyNum(s_value, t_value, op)
 
 @tool
-def VerifyYear(s_value: str, t_value: str, op: str) -> str:
+def VerifyYear(s_value: List[ValueClass], t_value: str, op: str) -> str:
     """
     Verify if year attribute values satisfy comparison
 
@@ -307,10 +311,10 @@ def VerifyYear(s_value: str, t_value: str, op: str) -> str:
     Returns:
         str: "yes", "no", or "not sure" indicating if comparison holds
     """
-    return engine.VerifyYear(eval(s_value), t_value, op)
+    return engine.VerifyYear(s_value, t_value, op)
 
 @tool
-def VerifyDate(s_value: str, t_value: str, op: str) -> str:
+def VerifyDate(s_value: List[ValueClass], t_value: str, op: str) -> str:
     """
     Verify if date attribute values satisfy comparison
 
@@ -322,10 +326,10 @@ def VerifyDate(s_value: str, t_value: str, op: str) -> str:
     Returns:
         str: "yes", "no", or "not sure" indicating if comparison holds
     """
-    return engine.VerifyDate(eval(s_value), t_value, op)
+    return engine.VerifyDate(s_value, t_value, op)
 
 @tool
-def QueryRelation(s_entities: str, t_entities: str) -> str:
+def QueryRelation(s_entities: EntityTuple, t_entities: EntityTuple) -> str:
     """
     Query relations between two sets of entities
 
@@ -336,10 +340,10 @@ def QueryRelation(s_entities: str, t_entities: str) -> str:
     Returns:
         str: List of relation labels between the entities
     """
-    return engine.QueryRelation(eval(s_entities), eval(t_entities))
+    return engine.QueryRelation(s_entities, t_entities)
 
 @tool
-def QueryAttrQualifier(entities: str, key: str, value: str, qkey: str) -> str:
+def QueryAttrQualifier(entities: EntityTuple, key: str, value: str, qkey: str) -> str:
     """
     Query qualifier values for specific attribute
 
@@ -352,10 +356,10 @@ def QueryAttrQualifier(entities: str, key: str, value: str, qkey: str) -> str:
     Returns:
         str: List of qualifier values
     """
-    return engine.QueryAttrQualifier(eval(entities), key, value, qkey)
+    return engine.QueryAttrQualifier(entities, key, value, qkey)
 
 @tool
-def QueryRelationQualifier(s_entities: str, t_entities: str, relation: str, qkey: str) -> str:
+def QueryRelationQualifier(s_entities: EntityTuple, t_entities: EntityTuple, relation: str, qkey: str) -> str:
     """
     Query qualifier values for specific relation between entities
 
@@ -368,10 +372,10 @@ def QueryRelationQualifier(s_entities: str, t_entities: str, relation: str, qkey
     Returns:
         str: List of qualifier values
     """
-    return engine.QueryRelationQualifier(eval(s_entities), eval(t_entities), relation, qkey)
+    return engine.QueryRelationQualifier(s_entities, t_entities, relation, qkey)
 
 @tool
-def QFilterStr(entities: str, qkey: str, qvalue: str) -> str:
+def QFilterStr(entities: EntityTuple, qkey: str, qvalue: str) -> str:
     """
     Filter triples based on string qualifier key-value pairs
 
@@ -383,10 +387,10 @@ def QFilterStr(entities: str, qkey: str, qvalue: str) -> str:
     Returns:
         str: A tuple of two elements, first is entity list, second is triple list
     """
-    return engine.QFilterStr(eval(entities), qkey, qvalue)
+    return engine.QFilterStr(entities, qkey, qvalue)
 
 @tool
-def QFilterNum(entities: str, qkey: str, qvalue: str, op: str) -> str:
+def QFilterNum(entities: EntityTuple, qkey: str, qvalue: str, op: str) -> str:
     """
     Filter triples based on numeric qualifier key-value pairs with comparison operator
 
@@ -399,10 +403,10 @@ def QFilterNum(entities: str, qkey: str, qvalue: str, op: str) -> str:
     Returns:
         str: A tuple of two elements, first is entity list, second is triple list
     """
-    return engine.QFilterNum(eval(entities), qkey, qvalue, op)
+    return engine.QFilterNum(entities, qkey, qvalue, op)
 
 @tool
-def QFilterYear(entities: str, qkey: str, qvalue: str, op: str) -> str:
+def QFilterYear(entities: EntityTuple, qkey: str, qvalue: str, op: str) -> str:
     """
     Filter triples based on year qualifier key-value pairs with comparison operator
 
@@ -415,10 +419,10 @@ def QFilterYear(entities: str, qkey: str, qvalue: str, op: str) -> str:
     Returns:
         str: A tuple of two elements, first is entity list, second is triple list
     """
-    return engine.QFilterYear(eval(entities), qkey, qvalue, op)
+    return engine.QFilterYear(entities, qkey, qvalue, op)
 
 @tool
-def QFilterDate(entities: str, qkey: str, qvalue: str, op: str) -> str:
+def QFilterDate(entities: EntityTuple, qkey: str, qvalue: str, op: str) -> str:
     """
     Filter triples based on date qualifier key-value pairs with comparison operator
 
@@ -431,7 +435,7 @@ def QFilterDate(entities: str, qkey: str, qvalue: str, op: str) -> str:
     Returns:
         str: A tuple of two elements, first is entity list, second is triple list
     """
-    return engine.QFilterDate(eval(entities), qkey, qvalue, op)
+    return engine.QFilterDate(entities, qkey, qvalue, op)
 
 tools = [
     Find, FindAll, 
