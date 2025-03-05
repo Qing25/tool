@@ -46,7 +46,8 @@
       }
     ],
     "sample_id": "train_52457",
-    "answer": "Raleigh"
+    "answer": "Raleigh",
+    "python_code": "engine.SelectBetween(engine.FilterNum(engine.Find('Florence'), 'elevation above sea level', '42 metre', '='), engine.Find('Raleigh'), 'population', 'greater')"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <E> San Francisco Bay Area </E> or <E> Seattle metropolitan area </E> </ES>",
@@ -84,7 +85,8 @@
       }
     ],
     "sample_id": "train_76485",
-    "answer": "San Francisco Bay Area"
+    "answer": "San Francisco Bay Area",
+    "python_code": "engine.SelectBetween(engine.Find('San Francisco Bay Area'), engine.Find('Seattle metropolitan area'), 'area', 'greater')"
   },
   {
     "graphq_ir": "what is the attribute <A> area </A> of <E> North Island </E>",
@@ -113,7 +115,8 @@
       }
     ],
     "sample_id": "train_84842",
-    "answer": "113729 square kilometre"
+    "answer": "113729 square kilometre",
+    "python_code": "engine.QueryAttr(engine.Find('North Island'), 'area')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> number of subscribers </Q> of <ES> <C> human </C> whose <A> birth name </A> is text <V> Richard Melville Hall </V> </ES> whose <A> Twitter username </A> is <V> thelittleidiot </V>",
@@ -161,7 +164,8 @@
       }
     ],
     "sample_id": "train_83443",
-    "answer": "1349252"
+    "answer": "1349252",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'birth name', 'Richard Melville Hall'), 'human'), 'Twitter username', 'thelittleidiot', 'number of subscribers')"
   },
   {
     "graphq_ir": "what is the relation from <E> Lille </E> to <ES> <E> Leeds </E> (<ES> ones that <R> located in the administrative territorial entity </R> backward to <E> University of Leeds </E> </ES>) </ES>",
@@ -221,7 +225,8 @@
       }
     ],
     "sample_id": "train_19317",
-    "answer": "twinned administrative body"
+    "answer": "twinned administrative body",
+    "python_code": "engine.QueryRelation(engine.Find('Lille'), engine.And(engine.Relate(engine.Find('University of Leeds'), 'located in the administrative territorial entity', 'forward'), engine.Find('Leeds')))"
   },
   {
     "graphq_ir": "what is the attribute <A> inception </A> of <ES> <C> human settlement </C> whose <A> local dialing code </A> is text <V> 603 </V> </ES>",
@@ -267,7 +272,8 @@
       }
     ],
     "sample_id": "train_37401",
-    "answer": "1638"
+    "answer": "1638",
+    "python_code": "engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'local dialing code', '603'), 'human settlement'), 'inception')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> located in the administrative territorial entity </Q> of <E> Katie Holmes </E> that <R> place of birth </R> to <ES> <E> Toledo </E> (<ES> ones that <R> place of birth </R> backward to <E> Alyson Stoner </E> </ES>) </ES>",
@@ -330,7 +336,8 @@
       }
     ],
     "sample_id": "train_47329",
-    "answer": "Ohio"
+    "answer": "Ohio",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('Katie Holmes'), engine.And(engine.Relate(engine.Find('Alyson Stoner'), 'place of birth', 'forward'), engine.Find('Toledo')), 'place of birth', 'located in the administrative territorial entity')"
   },
   {
     "graphq_ir": "what is <ES> <C> city of the United States </C> whose <A> local dialing code </A> is text <V> 480 602 </V> </ES>",
@@ -374,7 +381,8 @@
       }
     ],
     "sample_id": "train_32553",
-    "answer": "Mesa"
+    "answer": "Mesa",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'local dialing code', '480 602'), 'city of the United States'))"
   },
   {
     "graphq_ir": "what is <ES> <C> war </C> that <R> participant </R> forward to <ES> <E> India </E> (<ES> ones that <R> diplomatic relation </R> backward to <E> European Union </E> </ES>) </ES> </ES>",
@@ -445,7 +453,8 @@
       }
     ],
     "sample_id": "train_46477",
-    "answer": "Indo-Pakistani War of 1971"
+    "answer": "Indo-Pakistani War of 1971",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.And(engine.Relate(engine.Find('European Union'), 'diplomatic relation', 'forward'), engine.Find('India')), 'participant', 'backward'), 'war'))"
   },
   {
     "graphq_ir": "what is the attribute <A> Twitter username </A> of <E> New York Islanders </E>",
@@ -474,7 +483,8 @@
       }
     ],
     "sample_id": "train_2830",
-    "answer": "NYIslanders"
+    "answer": "NYIslanders",
+    "python_code": "engine.QueryAttr(engine.Find('New York Islanders'), 'Twitter username')"
   },
   {
     "graphq_ir": "what is <ES> <C> visual artwork </C> that <R> producer </R> forward to <E> Werner Herzog </E> </ES>",
@@ -520,7 +530,8 @@
       }
     ],
     "sample_id": "train_56711",
-    "answer": "Invincible"
+    "answer": "Invincible",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.Find('Werner Herzog'), 'producer', 'backward'), 'visual artwork'))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <C> visual artwork </C> whose <A> official website </A> is text <V> https://www.warnerbros.com/matrix </V> </ES> whose <A> publication date </A> is <V> 1999-07-14 </V>",
@@ -568,7 +579,8 @@
       }
     ],
     "sample_id": "train_17101",
-    "answer": "Sweden"
+    "answer": "Sweden",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'official website', 'https://www.warnerbros.com/matrix'), 'visual artwork'), 'publication date', '1999-07-14', 'place of publication')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> MTV Movie Award for Most Desirable Female </E> that <R> winner </R> to <E> Janet Jackson </E>",
@@ -606,7 +618,8 @@
       }
     ],
     "sample_id": "train_20686",
-    "answer": "1994"
+    "answer": "1994",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('MTV Movie Award for Most Desirable Female'), engine.Find('Janet Jackson'), 'winner', 'point in time')"
   },
   {
     "graphq_ir": "whether <E> Ingrid Bergman </E> <A> Munzinger IBA </A> is text <V> 00000027205 </V>",
@@ -644,7 +657,8 @@
       }
     ],
     "sample_id": "train_34463",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.Find('Ingrid Bergman'), 'Munzinger IBA'), '00000027205')"
   },
   {
     "graphq_ir": "what is <ES> <C> film festival edition </C> that <R> follows </R> forward to <E> 2010 Sundance Film Festival </E> </ES>",
@@ -690,7 +704,8 @@
       }
     ],
     "sample_id": "train_61044",
-    "answer": "2011 Sundance Film Festival"
+    "answer": "2011 Sundance Film Festival",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.Find('2010 Sundance Film Festival'), 'follows', 'backward'), 'film festival edition'))"
   },
   {
     "graphq_ir": "how many <ES> <C> film character </C> that <R> educated at </R> forward to <E> Boston University School of Law </E> </ES>",
@@ -736,7 +751,8 @@
       }
     ],
     "sample_id": "train_85100",
-    "answer": "0"
+    "answer": "0",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.Find('Boston University School of Law'), 'educated at', 'backward'), 'film character'))"
   },
   {
     "graphq_ir": "what is <ES> <C> visual artwork </C> that <R> followed by </R> backward to <ES> <C> film </C> whose <A> official website </A> is text <V> http://web.archive.org/web/20061116073244/http://saw3.com/ </V> </ES> </ES>",
@@ -799,7 +815,8 @@
       }
     ],
     "sample_id": "train_49504",
-    "answer": "Saw IV"
+    "answer": "Saw IV",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'official website', 'http://web.archive.org/web/20061116073244/http://saw3.com/'), 'film'), 'followed by', 'forward'), 'visual artwork'))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> end time </Q> of <E> Giovani dos Santos </E> that <R> member of sports team </R> to <E> RCD Mallorca </E>",
@@ -837,7 +854,8 @@
       }
     ],
     "sample_id": "train_40533",
-    "answer": "2013-01-01"
+    "answer": "2013-01-01",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('Giovani dos Santos'), engine.Find('RCD Mallorca'), 'member of sports team', 'end time')"
   },
   {
     "graphq_ir": "what is the relation from <E> Notting Hill </E> to <ES> <E> Hugh Grant </E> whose <A> CANTIC-ID </A> is text <V> a11752531 </V> </ES>",
@@ -882,7 +900,8 @@
       }
     ],
     "sample_id": "train_60963",
-    "answer": "cast member"
+    "answer": "cast member",
+    "python_code": "engine.QueryRelation(engine.Find('Notting Hill'), engine.FilterStr(engine.Find('Hugh Grant'), 'CANTIC-ID', 'a11752531'))"
   },
   {
     "graphq_ir": "what is <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0001 2142 1582 </V> </ES>",
@@ -926,7 +945,8 @@
       }
     ],
     "sample_id": "train_70507",
-    "answer": "Vilmos Zsigmond"
+    "answer": "Vilmos Zsigmond",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'ISNI', '0000 0001 2142 1582'), 'human'))"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <E> Jarhead </E> or <ES> <E> Yellow Submarine </E> (<ES> ones that <R> film release region </R> forward to <E> Hungary </E> </ES>) </ES> </ES>",
@@ -989,7 +1009,8 @@
       }
     ],
     "sample_id": "train_511",
-    "answer": "Jarhead"
+    "answer": "Jarhead",
+    "python_code": "engine.SelectBetween(engine.Find('Jarhead'), engine.And(engine.Relate(engine.Find('Hungary'), 'film release region', 'backward'), engine.Find('Yellow Submarine')), 'duration', 'greater')"
   },
   {
     "graphq_ir": "what is the relation from <E> 16 Blocks </E> to <E> Klaus Badelt </E>",
@@ -1024,7 +1045,8 @@
       }
     ],
     "sample_id": "train_48486",
-    "answer": "composer"
+    "answer": "composer",
+    "python_code": "engine.QueryRelation(engine.Find('16 Blocks'), engine.Find('Klaus Badelt'))"
   },
   {
     "graphq_ir": "what is the attribute <A> population </A> of <ES> <C> city </C> that <R> twinned administrative body </R> backward to <E> Tijuana </E> </ES>",
@@ -1072,7 +1094,8 @@
       }
     ],
     "sample_id": "train_14379",
-    "answer": "2141652"
+    "answer": "2141652",
+    "python_code": "engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.Find('Tijuana'), 'twinned administrative body', 'forward'), 'city'), 'population')"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <ES> <E> DeKalb County </E> whose <A> PermID </A> is text <V> 5037043580 </V> </ES> or <E> Boulder County </E> </ES>",
@@ -1120,7 +1143,8 @@
       }
     ],
     "sample_id": "train_51096",
-    "answer": "DeKalb County"
+    "answer": "DeKalb County",
+    "python_code": "engine.SelectBetween(engine.FilterStr(engine.Find('DeKalb County'), 'PermID', '5037043580'), engine.Find('Boulder County'), 'area', 'less')"
   },
   {
     "graphq_ir": "what is the relation from <E> Cinderella Man </E> to <E> Screen Actors Guild Award for Outstanding Performance by a Male Actor in a Leading Role </E>",
@@ -1155,7 +1179,8 @@
       }
     ],
     "sample_id": "train_65803",
-    "answer": "nominated for"
+    "answer": "nominated for",
+    "python_code": "engine.QueryRelation(engine.Find('Cinderella Man'), engine.Find('Screen Actors Guild Award for Outstanding Performance by a Male Actor in a Leading Role'))"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> whose <A> name in native language </A> is text <V> Richard C. Clark </V> </ES> <A> ISNI </A> is text <V> 0000 0001 0707 9354 </V>",
@@ -1210,7 +1235,8 @@
       }
     ],
     "sample_id": "train_41800",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'name in native language', 'Richard C. Clark'), 'human'), 'ISNI'), '0000 0001 0707 9354')"
   },
   {
     "graphq_ir": "what is <ES> <C> television film </C> that <R> cast member </R> forward to <E> Alan Cumming </E> </ES>",
@@ -1256,7 +1282,8 @@
       }
     ],
     "sample_id": "train_79103",
-    "answer": "Annie"
+    "answer": "Annie",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.Find('Alan Cumming'), 'cast member', 'backward'), 'television film'))"
   },
   {
     "graphq_ir": "what is the relation from <E> Delft </E> to <E> The Hague </E>",
@@ -1291,7 +1318,8 @@
       }
     ],
     "sample_id": "train_58240",
-    "answer": "shares border with"
+    "answer": "shares border with",
+    "python_code": "engine.QueryRelation(engine.Find('Delft'), engine.Find('The Hague'))"
   },
   {
     "graphq_ir": "what is the relation from <E> FC Levadia Tallinn </E> to <E> green </E>",
@@ -1326,7 +1354,8 @@
       }
     ],
     "sample_id": "train_32752",
-    "answer": "official color"
+    "answer": "official color",
+    "python_code": "engine.QueryRelation(engine.Find('FC Levadia Tallinn'), engine.Find('green'))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> language of work or name </Q> of <ES> <C> city of the United States </C> whose <A> population </A> is number <V> 67947 </V> ( <Q> point in time </Q> is year <V> 2010 </V> ) </ES> whose <A> official website </A> is <V> http://www.santafenm.gov/ </V>",
@@ -1386,7 +1415,8 @@
       }
     ],
     "sample_id": "train_78009",
-    "answer": "English"
+    "answer": "English",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.QFilterYear(engine.FilterNum(engine.FindAll(), 'population', '67947', '='), 'point in time', '2010', '='), 'city of the United States'), 'official website', 'http://www.santafenm.gov/', 'language of work or name')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <C> visual artwork </C> that <R> director of photography </R> forward to <ES> <E> Harry Stradling </E> whose <A> date of birth </A> is date <V> 1925-01-07 </V> </ES> </ES> whose <A> publication date </A> is <V> 1974-03-07 </V>",
@@ -1447,7 +1477,8 @@
       }
     ],
     "sample_id": "train_80884",
-    "answer": "Germany"
+    "answer": "Germany",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.Relate(engine.FilterDate(engine.Find('Harry Stradling'), 'date of birth', '1925-01-07', '='), 'director of photography', 'backward'), 'visual artwork'), 'publication date', '1974-03-07', 'place of publication')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> number of subscribers </Q> of <E> Sichuan </E> whose <A> subreddit </A> is <V> sichuan </V>",
@@ -1478,7 +1509,8 @@
       }
     ],
     "sample_id": "train_55165",
-    "answer": "17"
+    "answer": "17",
+    "python_code": "engine.QueryAttrQualifier(engine.Find('Sichuan'), 'subreddit', 'sichuan', 'number of subscribers')"
   },
   {
     "graphq_ir": "what is the relation from <E> pop music </E> to <E> Paris Hilton </E>",
@@ -1513,7 +1545,8 @@
       }
     ],
     "sample_id": "train_17951",
-    "answer": "famous people"
+    "answer": "famous people",
+    "python_code": "engine.QueryRelation(engine.Find('pop music'), engine.Find('Paris Hilton'))"
   },
   {
     "graphq_ir": "what is the attribute <A> Instagram username </A> of <E> National Register of Historic Places </E>",
@@ -1542,7 +1575,8 @@
       }
     ],
     "sample_id": "train_1467",
-    "answer": "nationalregisternps"
+    "answer": "nationalregisternps",
+    "python_code": "engine.QueryAttr(engine.Find('National Register of Historic Places'), 'Instagram username')"
   },
   {
     "graphq_ir": "how many <ES> <C> former French region </C> that <R> replaced by </R> forward to <ES> <C> region of France </C> whose <A> SIREN number </A> is text <V> 200053403 </V> </ES> </ES>",
@@ -1605,7 +1639,8 @@
       }
     ],
     "sample_id": "train_28649",
-    "answer": "2"
+    "answer": "2",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'SIREN number', '200053403'), 'region of France'), 'replaced by', 'backward'), 'former French region'))"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <ES> <E> Thomas Hardy </E> whose <A> date of death </A> is date <V> 1805-01-01 </V> </ES>",
@@ -1645,7 +1680,8 @@
       }
     ],
     "sample_id": "train_66424",
-    "answer": "0000 0000 0888 5545"
+    "answer": "0000 0000 0888 5545",
+    "python_code": "engine.QueryAttr(engine.FilterDate(engine.Find('Thomas Hardy'), 'date of death', '1805-01-01', '='), 'ISNI')"
   },
   {
     "graphq_ir": "which one has the largest <A> number of episodes </A> among <ES> <C> comedy </C> that <R> genre </R> forward to <E> situation comedy </E> </ES>",
@@ -1694,7 +1730,8 @@
       }
     ],
     "sample_id": "train_3112",
-    "answer": "The Golden Girls"
+    "answer": "The Golden Girls",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.Relate(engine.Find('situation comedy'), 'genre', 'backward'), 'comedy'), 'number of episodes', 'largest')"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> nominated for </R> forward to <E> Tony Award for Best Actress in a Play </E> ( <Q> point in time </Q> is year <V> 1991 </V> ) </ES> <A> Deutsche Synchronkartei actor-ID </A> is text <V> 71675 </V>",
@@ -1762,7 +1799,8 @@
       }
     ],
     "sample_id": "train_21561",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.QFilterYear(engine.Relate(engine.Find('Tony Award for Best Actress in a Play'), 'nominated for', 'backward'), 'point in time', '1991', '='), 'human'), 'Deutsche Synchronkartei actor-ID'), '71675')"
   },
   {
     "graphq_ir": "whether <ES> <E> Michael Winterbottom </E> (<ES> ones that <R> educated at </R> forward to <E> Dulwich College </E> </ES>) </ES> <A> ISNI </A> is text <V> 0000 0001 2144 6958 </V>",
@@ -1825,7 +1863,8 @@
       }
     ],
     "sample_id": "train_35679",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.And(engine.Relate(engine.Find('Dulwich College'), 'educated at', 'backward'), engine.Find('Michael Winterbottom')), 'ISNI'), '0000 0001 2144 6958')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> sovereign state </C> whose <A> Human Development Index </A> smaller than number <V> 1.0 </V> </ES> or <ES> <C> sovereign state </C> whose <A> area </A> larger than number <V> 45 square versta </V> </ES> </ES>",
@@ -1903,7 +1942,8 @@
       }
     ],
     "sample_id": "train_10863",
-    "answer": "123"
+    "answer": "123",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'Human Development Index', '1.0', '<'), 'sovereign state'), engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'area', '45 square versta', '>'), 'sovereign state')))"
   },
   {
     "graphq_ir": "what is the attribute <A> official website </A> of <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0000 6310 5556 </V> </ES>",
@@ -1949,7 +1989,8 @@
       }
     ],
     "sample_id": "train_70544",
-    "answer": "http://www.gwenstefani.com"
+    "answer": "http://www.gwenstefani.com",
+    "python_code": "engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'ISNI', '0000 0000 6310 5556'), 'human'), 'official website')"
   },
   {
     "graphq_ir": "what is the relation from <E> Jeremy Renner </E> to <E> Modesto </E>",
@@ -1984,7 +2025,8 @@
       }
     ],
     "sample_id": "train_48570",
-    "answer": "place of birth"
+    "answer": "place of birth",
+    "python_code": "engine.QueryRelation(engine.Find('Jeremy Renner'), engine.Find('Modesto'))"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> university </C> whose <A> postal code </A> is text <V> 58202-8193 </V> </ES> or <ES> <C> university </C> whose <A> ISNI </A> is text <V> 0000 0001 2336 6580 </V> </ES> </ES>",
@@ -2060,7 +2102,8 @@
       }
     ],
     "sample_id": "train_82492",
-    "answer": "2"
+    "answer": "2",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'postal code', '58202-8193'), 'university'), engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'ISNI', '0000 0001 2336 6580'), 'university')))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> statement is subject of </Q> of <ES> <E> Days of Thunder </E> (<ES> ones that <R> film release region </R> forward to <E> United States of America </E> </ES>) </ES> that <R> nominated for </R> to <E> Academy Award for Best Sound Mixing </E>",
@@ -2123,7 +2166,8 @@
       }
     ],
     "sample_id": "train_31155",
-    "answer": "63rd Academy Awards"
+    "answer": "63rd Academy Awards",
+    "python_code": "engine.QueryRelationQualifier(engine.And(engine.Relate(engine.Find('United States of America'), 'film release region', 'backward'), engine.Find('Days of Thunder')), engine.Find('Academy Award for Best Sound Mixing'), 'nominated for', 'statement is subject of')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> nominee </Q> of <E> Blade Runner </E> that <R> nominated for </R> to <E> BAFTA Award for Best Editing </E>",
@@ -2161,7 +2205,8 @@
       }
     ],
     "sample_id": "train_81282",
-    "answer": "Terry Rawlings"
+    "answer": "Terry Rawlings",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('Blade Runner'), engine.Find('BAFTA Award for Best Editing'), 'nominated for', 'nominee')"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Michelangelo </E> whose <A> name in native language </A> is text <V> Michelangelo </V> </ES> to <E> ninja </E>",
@@ -2206,7 +2251,8 @@
       }
     ],
     "sample_id": "train_73797",
-    "answer": "occupation"
+    "answer": "occupation",
+    "python_code": "engine.QueryRelation(engine.FilterStr(engine.Find('Michelangelo'), 'name in native language', 'Michelangelo'), engine.Find('ninja'))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> located in the administrative territorial entity </Q> of <ES> <C> pome </C> whose <A> total produced </A> is number <V> 590016000 pound </V> </ES> whose <A> total produced </A> is <V> 280014000 pound </V>",
@@ -2255,7 +2301,8 @@
       }
     ],
     "sample_id": "train_78816",
-    "answer": "California"
+    "answer": "California",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'total produced', '590016000 pound', '='), 'pome'), 'total produced', '280014000 pound', 'located in the administrative territorial entity')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> sovereign state </C> that <R> diplomatic relation </R> backward to <E> Taiwan </E> ( <Q> statement is subject of </Q> is text <V> East Timor–Taiwan relations </V> ) </ES> whose <A> population </A> is <V> 1148958 </V>",
@@ -2315,7 +2362,8 @@
       }
     ],
     "sample_id": "train_7748",
-    "answer": "2012"
+    "answer": "2012",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.QFilterStr(engine.Relate(engine.Find('Taiwan'), 'diplomatic relation', 'forward'), 'statement is subject of', 'East Timor–Taiwan relations'), 'sovereign state'), 'population', '1148958', 'point in time')"
   },
   {
     "graphq_ir": "which one has the smallest <A> duration </A> among <ES> <ES> <E> Speed </E> (<ES> ones that <R> award received </R> forward to <E> Academy Award for Best Sound Mixing </E> </ES>) </ES> or <ES> <E> Star Wars: The Clone Wars </E> (<ES> ones that <R> production company </R> forward to <E> Warner Bros. </E> </ES>) </ES> </ES>",
@@ -2403,7 +2451,8 @@
       }
     ],
     "sample_id": "train_62671",
-    "answer": "Star Wars: The Clone Wars"
+    "answer": "Star Wars: The Clone Wars",
+    "python_code": "engine.SelectBetween(engine.And(engine.Relate(engine.Find('Academy Award for Best Sound Mixing'), 'award received', 'backward'), engine.Find('Speed')), engine.And(engine.Relate(engine.Find('Warner Bros.'), 'production company', 'backward'), engine.Find('Star Wars: The Clone Wars')), 'duration', 'less')"
   },
   {
     "graphq_ir": "what is the relation from <E> Joseph L. Mankiewicz </E> to <E> 23rd Academy Awards </E>",
@@ -2438,7 +2487,8 @@
       }
     ],
     "sample_id": "train_13094",
-    "answer": "award received"
+    "answer": "award received",
+    "python_code": "engine.QueryRelation(engine.Find('Joseph L. Mankiewicz'), engine.Find('23rd Academy Awards'))"
   },
   {
     "graphq_ir": "whether <E> Jake Shimabukuro </E> <A> official website </A> is text <V> http://www.jakeshimabukuro.com/ </V>",
@@ -2476,7 +2526,8 @@
       }
     ],
     "sample_id": "train_58763",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.Find('Jake Shimabukuro'), 'official website'), 'http://www.jakeshimabukuro.com/')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> number of matches played/races/starts </Q> of <E> Chris Nurse </E> that <R> member of sports team </R> to <E> Fort Lauderdale Strikers </E>",
@@ -2514,7 +2565,8 @@
       }
     ],
     "sample_id": "train_64111",
-    "answer": "16"
+    "answer": "16",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('Chris Nurse'), engine.Find('Fort Lauderdale Strikers'), 'member of sports team', 'number of matches played/races/starts')"
   },
   {
     "graphq_ir": "whether <ES> <C> city of the United States </C> that <R> place of death </R> backward to <E> Nathanael Greene </E> </ES> <A> local dialing code </A> is text <V> 912 </V>",
@@ -2571,7 +2623,8 @@
       }
     ],
     "sample_id": "train_33390",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.Find('Nathanael Greene'), 'place of death', 'forward'), 'city of the United States'), 'local dialing code'), '912')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <E> David Foster </E> (<ES> ones that <R> country of citizenship </R> forward to <E> Canada </E> </ES>) </ES> that <R> award received </R> to <E> Grammy Award for Best Musical Theater Album </E>",
@@ -2634,7 +2687,8 @@
       }
     ],
     "sample_id": "train_62528",
-    "answer": "1982"
+    "answer": "1982",
+    "python_code": "engine.QueryRelationQualifier(engine.And(engine.Relate(engine.Find('Canada'), 'country of citizenship', 'backward'), engine.Find('David Foster')), engine.Find('Grammy Award for Best Musical Theater Album'), 'award received', 'point in time')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> start time </Q> of <ES> <E> Chicago </E> whose <A> demonym </A> is text <V> Chicagoan </V> </ES> that <R> twinned administrative body </R> to <E> Belgrade </E>",
@@ -2682,7 +2736,8 @@
       }
     ],
     "sample_id": "train_45379",
-    "answer": "2005-06-01"
+    "answer": "2005-06-01",
+    "python_code": "engine.QueryRelationQualifier(engine.FilterStr(engine.Find('Chicago'), 'demonym', 'Chicagoan'), engine.Find('Belgrade'), 'twinned administrative body', 'start time')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> basketball team </C> whose <A> subreddit </A> is text <V> rockets </V> </ES> or <ES> <C> basketball team </C> that <R> seed team </R> backward to <E> 1993 NCAA Men's Division I Basketball Tournament </E> </ES> </ES>",
@@ -2760,7 +2815,8 @@
       }
     ],
     "sample_id": "train_81012",
-    "answer": "5"
+    "answer": "5",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'subreddit', 'rockets'), 'basketball team'), engine.FilterConcept(engine.Relate(engine.Find('1993 NCAA Men\\'s Division I Basketball Tournament'), 'seed team', 'forward'), 'basketball team')))"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <E> Til Schweiger </E>",
@@ -2789,7 +2845,8 @@
       }
     ],
     "sample_id": "train_43105",
-    "answer": "0000 0001 1497 4293"
+    "answer": "0000 0001 1497 4293",
+    "python_code": "engine.QueryAttr(engine.Find('Til Schweiger'), 'ISNI')"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> martial arts </C> that <R> sport </R> backward to <E> Johnny Yong Bosch </E> </ES> and <ES> <C> martial arts </C> that <R> country </R> forward to <E> Japan </E> </ES> </ES>",
@@ -2869,7 +2926,8 @@
       }
     ],
     "sample_id": "train_84186",
-    "answer": "judo"
+    "answer": "judo",
+    "python_code": "engine.QueryName(engine.And(engine.FilterConcept(engine.Relate(engine.Find('Johnny Yong Bosch'), 'sport', 'forward'), 'martial arts'), engine.FilterConcept(engine.Relate(engine.Find('Japan'), 'country', 'backward'), 'martial arts')))"
   },
   {
     "graphq_ir": "whether <ES> <C> visual artwork </C> whose <A> title </A> is text <V> Born on the Fourth of July </V> </ES> <A> publication date </A> is year <V> 1991 </V> ( <Q> place of publication </Q> is <V> Germany </V> )",
@@ -2927,7 +2985,8 @@
       }
     ],
     "sample_id": "train_29562",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyYear(engine.QueryAttrUnderCondition(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'title', 'Born on the Fourth of July'), 'visual artwork'), 'publication date', 'place of publication', 'Germany'), '1991', '=')"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> human </C> whose <A> work period (start) </A> larger than year <V> 1951 </V> </ES> and <ES> <C> human </C> whose <A> audio recording of the subject's spoken voice </A> is text <V> Dustin hoffman bbc radio4 desert island discs 02 12 2012 b01p314n.flac </V> </ES> </ES>",
@@ -3004,7 +3063,8 @@
       }
     ],
     "sample_id": "train_21671",
-    "answer": "Dustin Hoffman"
+    "answer": "Dustin Hoffman",
+    "python_code": "engine.QueryName(engine.And(engine.FilterConcept(engine.FilterYear(engine.FindAll(), 'work period (start)', '1951', '>'), 'human'), engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'audio recording of the subject\\'s spoken voice', 'Dustin hoffman bbc radio4 desert island discs 02 12 2012 b01p314n.flac'), 'human')))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> city of the United States </C> whose <A> official website </A> is text <V> http://www.romefloyd.com/ </V> </ES> whose <A> population </A> is <V> 34980 </V>",
@@ -3052,7 +3112,8 @@
       }
     ],
     "sample_id": "train_26696",
-    "answer": "2000"
+    "answer": "2000",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'official website', 'http://www.romefloyd.com/'), 'city of the United States'), 'population', '34980', 'point in time')"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <C> county of Washington </C> whose <A> population </A> smaller than number <V> 910000 </V> </ES>",
@@ -3100,7 +3161,8 @@
       }
     ],
     "sample_id": "train_37789",
-    "answer": "Okanogan County"
+    "answer": "Okanogan County",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'population', '910000', '<'), 'county of Washington'), 'area', 'largest')"
   },
   {
     "graphq_ir": "what is <ES> <C> metropolitan borough </C> whose <A> TOID </A> is text <V> 7000000000000018 </V> </ES>",
@@ -3144,7 +3206,8 @@
       }
     ],
     "sample_id": "train_94299",
-    "answer": "Birmingham"
+    "answer": "Birmingham",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'TOID', '7000000000000018'), 'metropolitan borough'))"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <C> city in New Jersey </C> whose <A> inception </A> smaller than year <V> 1863 </V> </ES>",
@@ -3192,7 +3255,8 @@
       }
     ],
     "sample_id": "train_31083",
-    "answer": "Newark"
+    "answer": "Newark",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.FilterYear(engine.FindAll(), 'inception', '1863', '<'), 'city in New Jersey'), 'area', 'largest')"
   },
   {
     "graphq_ir": "which one has the largest <A> population </A> among <ES> <E> French Third Republic </E> or <E> Dutch Republic </E> </ES>",
@@ -3230,7 +3294,8 @@
       }
     ],
     "sample_id": "train_68884",
-    "answer": "French Third Republic"
+    "answer": "French Third Republic",
+    "python_code": "engine.SelectBetween(engine.Find('French Third Republic'), engine.Find('Dutch Republic'), 'population', 'greater')"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <ES> <E> Sullivan County </E> (<ES> ones that <R> shares border with </R> backward to <E> Grafton County </E> </ES>) </ES> or <E> Sandoval County </E> </ES>",
@@ -3293,7 +3358,8 @@
       }
     ],
     "sample_id": "train_31903",
-    "answer": "Sandoval County"
+    "answer": "Sandoval County",
+    "python_code": "engine.SelectBetween(engine.And(engine.Relate(engine.Find('Grafton County'), 'shares border with', 'forward'), engine.Find('Sullivan County')), engine.Find('Sandoval County'), 'area', 'greater')"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <E> Dazed and Confused </E> or <ES> <E> Terminator 3: Rise of the Machines </E> (<ES> ones that <R> composer </R> forward to <E> Marco Beltrami </E> </ES>) </ES> </ES>",
@@ -3356,7 +3422,8 @@
       }
     ],
     "sample_id": "train_46765",
-    "answer": "Terminator 3: Rise of the Machines"
+    "answer": "Terminator 3: Rise of the Machines",
+    "python_code": "engine.SelectBetween(engine.Find('Dazed and Confused'), engine.And(engine.Relate(engine.Find('Marco Beltrami'), 'composer', 'backward'), engine.Find('Terminator 3: Rise of the Machines')), 'duration', 'greater')"
   },
   {
     "graphq_ir": "what is the relation from <E> Batman Beyond </E> to <E> Lauren Tom </E>",
@@ -3391,7 +3458,8 @@
       }
     ],
     "sample_id": "train_51130",
-    "answer": "voice actor"
+    "answer": "voice actor",
+    "python_code": "engine.QueryRelation(engine.Find('Batman Beyond'), engine.Find('Lauren Tom'))"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> ethnic community </C> whose <A> population </A> larger than number <V> 5700000000 </V> </ES> or <ES> <C> ethnic community </C> that <R> part of </R> forward to <E> Irish Americans </E> </ES> </ES>",
@@ -3470,7 +3538,8 @@
       }
     ],
     "sample_id": "train_72664",
-    "answer": "0"
+    "answer": "0",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'population', '5700000000', '>'), 'ethnic community'), engine.FilterConcept(engine.Relate(engine.Find('Irish Americans'), 'part of', 'backward'), 'ethnic community')))"
   },
   {
     "graphq_ir": "how many <ES> <C> literary award </C> that <R> award received </R> backward to <E> Larry Niven </E> </ES>",
@@ -3516,7 +3585,8 @@
       }
     ],
     "sample_id": "train_793",
-    "answer": "5"
+    "answer": "5",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.Find('Larry Niven'), 'award received', 'forward'), 'literary award'))"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0000 7847 8275 </V> </ES> <A> date of birth </A> larger than year <V> 1589 </V>",
@@ -3572,7 +3642,8 @@
       }
     ],
     "sample_id": "train_52015",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyYear(engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'ISNI', '0000 0000 7847 8275'), 'human'), 'date of birth'), '1589', '>')"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <E> Michael Haneke </E>",
@@ -3601,7 +3672,8 @@
       }
     ],
     "sample_id": "train_70966",
-    "answer": "0000 0001 2125 4091"
+    "answer": "0000 0001 2125 4091",
+    "python_code": "engine.QueryAttr(engine.Find('Michael Haneke'), 'ISNI')"
   },
   {
     "graphq_ir": "what is the attribute <A> official website </A> of <E> Dwight Yoakam </E>",
@@ -3630,7 +3702,8 @@
       }
     ],
     "sample_id": "train_7486",
-    "answer": "http://www.dwightyoakam.com/"
+    "answer": "http://www.dwightyoakam.com/",
+    "python_code": "engine.QueryAttr(engine.Find('Dwight Yoakam'), 'official website')"
   },
   {
     "graphq_ir": "whether <ES> <C> legislative term </C> that <R> follows </R> backward to <E> 19th United States Congress </E> </ES> <A> start time </A> is not year <V> 1990 </V>",
@@ -3688,7 +3761,8 @@
       }
     ],
     "sample_id": "train_81046",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyYear(engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.Find('19th United States Congress'), 'follows', 'forward'), 'legislative term'), 'start time'), '1990', '!=')"
   },
   {
     "graphq_ir": "which one has the smallest <A> number of children </A> among <ES> <E> Laura Innes </E> or <E> J. K. Rowling </E> </ES>",
@@ -3726,7 +3800,8 @@
       }
     ],
     "sample_id": "train_42011",
-    "answer": "Laura Innes"
+    "answer": "Laura Innes",
+    "python_code": "engine.SelectBetween(engine.Find('Laura Innes'), engine.Find('J. K. Rowling'), 'number of children', 'less')"
   },
   {
     "graphq_ir": "whether <ES> <E> John Hughes </E> (<ES> ones that <R> member of sports team </R> forward to <E> Sunderland A.F.C. </E> </ES>) </ES> <A> date of birth </A> smaller than year <V> 1969 </V>",
@@ -3790,7 +3865,8 @@
       }
     ],
     "sample_id": "train_13198",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyYear(engine.QueryAttr(engine.And(engine.Relate(engine.Find('Sunderland A.F.C.'), 'member of sports team', 'backward'), engine.Find('John Hughes')), 'date of birth'), '1969', '<')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> Charleston County </E> whose <A> population </A> is <V> 389262 </V>",
@@ -3821,7 +3897,8 @@
       }
     ],
     "sample_id": "train_14468",
-    "answer": "2015-01-01"
+    "answer": "2015-01-01",
+    "python_code": "engine.QueryAttrQualifier(engine.Find('Charleston County'), 'population', '389262', 'point in time')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> higher education institution </C> that <R> educated at </R> backward to <E> Jerome Kern </E> </ES> whose <A> students count </A> is <V> 30787 </V>",
@@ -3871,7 +3948,8 @@
       }
     ],
     "sample_id": "train_29297",
-    "answer": "2016-12-01"
+    "answer": "2016-12-01",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.Relate(engine.Find('Jerome Kern'), 'educated at', 'forward'), 'higher education institution'), 'students count', '30787', 'point in time')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> political party </C> that <R> official color </R> forward to <E> red </E> </ES> and <ES> <C> political party </C> that <R> parent organization </R> backward to <E> Liberation Tigers of Tamil Eelam </E> </ES> </ES>",
@@ -3951,7 +4029,8 @@
       }
     ],
     "sample_id": "train_16412",
-    "answer": "0"
+    "answer": "0",
+    "python_code": "engine.Count(engine.And(engine.FilterConcept(engine.Relate(engine.Find('red'), 'official color', 'backward'), 'political party'), engine.FilterConcept(engine.Relate(engine.Find('Liberation Tigers of Tamil Eelam'), 'parent organization', 'forward'), 'political party')))"
   },
   {
     "graphq_ir": "what is the attribute <A> start time </A> of <E> 1980 Winter Olympics </E>",
@@ -3980,7 +4059,8 @@
       }
     ],
     "sample_id": "train_20362",
-    "answer": "1980-02-14"
+    "answer": "1980-02-14",
+    "python_code": "engine.QueryAttr(engine.Find('1980 Winter Olympics'), 'start time')"
   },
   {
     "graphq_ir": "what is the attribute <A> publication date </A> of <ES> <E> Transformers: Dark of the Moon </E> (<ES> ones that <R> platform </R> forward to <E> Wii </E> </ES>) </ES>",
@@ -4034,7 +4114,8 @@
       }
     ],
     "sample_id": "train_29520",
-    "answer": "2011-06-14"
+    "answer": "2011-06-14",
+    "python_code": "engine.QueryAttr(engine.And(engine.Relate(engine.Find('Wii'), 'platform', 'backward'), engine.Find('Transformers: Dark of the Moon')), 'publication date')"
   },
   {
     "graphq_ir": "what is the attribute <A> official website </A> of <ES> <C> association football club </C> whose <A> Twitter username </A> is text <V> FGRFC_Official </V> </ES>",
@@ -4080,7 +4161,8 @@
       }
     ],
     "sample_id": "train_60928",
-    "answer": "https://www.fgr.co.uk/"
+    "answer": "https://www.fgr.co.uk/",
+    "python_code": "engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'Twitter username', 'FGRFC_Official'), 'association football club'), 'official website')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> Walmart </E> whose <A> total revenue </A> is <V> 446509000000 United States dollar </V>",
@@ -4111,7 +4193,8 @@
       }
     ],
     "sample_id": "train_34724",
-    "answer": "2012"
+    "answer": "2012",
+    "python_code": "engine.QueryAttrQualifier(engine.Find('Walmart'), 'total revenue', '446509000000 United States dollar', 'point in time')"
   },
   {
     "graphq_ir": "whether <E> Peter Capaldi </E> <A> height </A> larger than number <V> 1.7 metre </V>",
@@ -4150,7 +4233,8 @@
       }
     ],
     "sample_id": "train_76703",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyNum(engine.QueryAttr(engine.Find('Peter Capaldi'), 'height'), '1.7 metre', '>')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> miniseries </C> that <R> after a work by </R> forward to <E> Charles Dickens </E> </ES> or <ES> <C> miniseries </C> that <R> main subject </R> forward to <E> World War II </E> </ES> </ES>",
@@ -4230,7 +4314,8 @@
       }
     ],
     "sample_id": "train_20884",
-    "answer": "6"
+    "answer": "6",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.Relate(engine.Find('Charles Dickens'), 'after a work by', 'backward'), 'miniseries'), engine.FilterConcept(engine.Relate(engine.Find('World War II'), 'main subject', 'backward'), 'miniseries')))"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> form of government </C> whose <A> pronunciation audio </A> is text <V> Lb-Italien.ogg </V> </ES> and <ES> <C> form of government </C> whose <A> nominal GDP </A> larger than number <V> 14000000000000 Russian ruble </V> </ES> </ES>",
@@ -4307,7 +4392,8 @@
       }
     ],
     "sample_id": "train_68234",
-    "answer": "0"
+    "answer": "0",
+    "python_code": "engine.Count(engine.And(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'pronunciation audio', 'Lb-Italien.ogg'), 'form of government'), engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'nominal GDP', '14000000000000 Russian ruble', '>'), 'form of government')))"
   },
   {
     "graphq_ir": "what is the attribute <A> IPTC Newscode </A> of <E> mountain biking </E>",
@@ -4336,7 +4422,8 @@
       }
     ],
     "sample_id": "train_16272",
-    "answer": "mediatopic/20000903"
+    "answer": "mediatopic/20000903",
+    "python_code": "engine.QueryAttr(engine.Find('mountain biking'), 'IPTC Newscode')"
   },
   {
     "graphq_ir": "what is <ES> <C> human </C> that <R> creator </R> backward to <ES> <C> television series </C> that <R> cast member </R> forward to <E> Kathleen Quinlan </E> </ES> </ES>",
@@ -4401,7 +4488,8 @@
       }
     ],
     "sample_id": "train_79203",
-    "answer": "David Shore"
+    "answer": "David Shore",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.FilterConcept(engine.Relate(engine.Find('Kathleen Quinlan'), 'cast member', 'backward'), 'television series'), 'creator', 'forward'), 'human'))"
   },
   {
     "graphq_ir": "whether <ES> <C> free software copyleft license </C> whose <A> short name </A> is text <V> GNU GPL </V> </ES> <A> full work available at </A> is text <V> https://www.gnu.org/licenses/gpl.html </V>",
@@ -4456,7 +4544,8 @@
       }
     ],
     "sample_id": "train_55769",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'short name', 'GNU GPL'), 'free software copyleft license'), 'full work available at'), 'https://www.gnu.org/licenses/gpl.html')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> end time </Q> of <E> Nancy Pelosi </E> that <R> residence </R> to <ES> <E> New York </E> (<ES> ones that <R> located in the administrative territorial entity </R> backward to <E> Nassau County </E> </ES>) </ES>",
@@ -4519,7 +4608,8 @@
       }
     ],
     "sample_id": "train_20718",
-    "answer": "1969"
+    "answer": "1969",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('Nancy Pelosi'), engine.And(engine.Relate(engine.Find('Nassau County'), 'located in the administrative territorial entity', 'forward'), engine.Find('New York')), 'residence', 'end time')"
   },
   {
     "graphq_ir": "what is the attribute <A> population </A> of <ES> <C> ceremonial county of England </C> that <R> place of death </R> backward to <E> Jack Bruce </E> </ES>",
@@ -4567,7 +4657,8 @@
       }
     ],
     "sample_id": "train_55719",
-    "answer": "741900"
+    "answer": "741900",
+    "python_code": "engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.Find('Jack Bruce'), 'place of death', 'forward'), 'ceremonial county of England'), 'population')"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Jon Stewart </E> (<ES> ones that <R> member of sports team </R> forward to <E> Weymouth F.C. </E> </ES>) </ES> to <E> Burnley F.C. </E>",
@@ -4627,7 +4718,8 @@
       }
     ],
     "sample_id": "train_54098",
-    "answer": "member of sports team"
+    "answer": "member of sports team",
+    "python_code": "engine.QueryRelation(engine.And(engine.Relate(engine.Find('Weymouth F.C.'), 'member of sports team', 'backward'), engine.Find('Jon Stewart')), engine.Find('Burnley F.C.'))"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Melbourne </E> whose <A> official website </A> is text <V> http://www.melbourneflorida.org </V> </ES> to <ES> <E> Melbourne </E> (<ES> ones that <R> place of birth </R> backward to <E> Scott McDonald </E> </ES>) </ES>",
@@ -4697,7 +4789,8 @@
       }
     ],
     "sample_id": "train_56859",
-    "answer": "named after"
+    "answer": "named after",
+    "python_code": "engine.QueryRelation(engine.FilterStr(engine.Find('Melbourne'), 'official website', 'http://www.melbourneflorida.org'), engine.And(engine.Relate(engine.Find('Scott McDonald'), 'place of birth', 'forward'), engine.Find('Melbourne')))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> character role </Q> of <ES> <E> The Lord of the Rings: The Fellowship of the Ring </E> (<ES> ones that <R> nominated for </R> forward to <E> BAFTA Award for Best Editing </E> </ES>) </ES> that <R> cast member </R> to <ES> <E> Billy Boyd </E> (<ES> ones that <R> winner </R> backward to <E> Broadcast Film Critics Association Award for Best Cast </E> </ES>) </ES>",
@@ -4785,7 +4878,8 @@
       }
     ],
     "sample_id": "train_49398",
-    "answer": "Peregrin Took"
+    "answer": "Peregrin Took",
+    "python_code": "engine.QueryRelationQualifier(engine.And(engine.Relate(engine.Find('BAFTA Award for Best Editing'), 'nominated for', 'backward'), engine.Find('The Lord of the Rings: The Fellowship of the Ring')), engine.And(engine.Relate(engine.Find('Broadcast Film Critics Association Award for Best Cast'), 'winner', 'forward'), engine.Find('Billy Boyd')), 'cast member', 'character role')"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> composer </R> backward to <ES> <E> The Phantom of the Opera </E> (<ES> ones that <R> original language of film or TV show </R> forward to <E> Italian </E> </ES>) </ES> </ES> <A> CANTIC-ID </A> is text <V> a10445444 </V>",
@@ -4867,7 +4961,8 @@
       }
     ],
     "sample_id": "train_58598",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.And(engine.Relate(engine.Find('Italian'), 'original language of film or TV show', 'backward'), engine.Find('The Phantom of the Opera')), 'composer', 'forward'), 'human'), 'CANTIC-ID'), 'a10445444')"
   },
   {
     "graphq_ir": "what is the relation from <E> National Society of Film Critics Award for Best Actress </E> to <E> Elisabeth Shue </E>",
@@ -4902,7 +4997,8 @@
       }
     ],
     "sample_id": "train_88825",
-    "answer": "winner"
+    "answer": "winner",
+    "python_code": "engine.QueryRelation(engine.Find('National Society of Film Critics Award for Best Actress'), engine.Find('Elisabeth Shue'))"
   },
   {
     "graphq_ir": "what is <ES> <C> higher education institution </C> that <R> educated at </R> backward to <E> Shirley Knight </E> </ES>",
@@ -4948,7 +5044,8 @@
       }
     ],
     "sample_id": "train_28828",
-    "answer": "Wichita State University"
+    "answer": "Wichita State University",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.Find('Shirley Knight'), 'educated at', 'forward'), 'higher education institution'))"
   },
   {
     "graphq_ir": "which one has the largest <A> real gross domestic product growth rate </A> among <ES> <E> Colombia </E> or <ES> <E> Georgia </E> (<ES> ones that <R> diplomatic relation </R> backward to <E> Vietnam </E> </ES>) </ES> </ES>",
@@ -5011,7 +5108,8 @@
       }
     ],
     "sample_id": "train_35296",
-    "answer": "Georgia"
+    "answer": "Georgia",
+    "python_code": "engine.SelectBetween(engine.Find('Colombia'), engine.And(engine.Relate(engine.Find('Vietnam'), 'diplomatic relation', 'forward'), engine.Find('Georgia')), 'real gross domestic product growth rate', 'greater')"
   },
   {
     "graphq_ir": "how many <ES> <C> medal </C> that <R> country </R> forward to <ES> <C> sovereign state </C> that <R> country </R> forward to <ES> <E> Republic of the Congo </E> whose <A> life expectancy </A> is number <V> 64.625 year </V> </ES> </ES> </ES>",
@@ -5087,7 +5185,8 @@
       }
     ],
     "sample_id": "train_75162",
-    "answer": "0"
+    "answer": "0",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.FilterConcept(engine.Relate(engine.FilterNum(engine.Find('Republic of the Congo'), 'life expectancy', '64.625 year', '='), 'country', 'backward'), 'sovereign state'), 'country', 'backward'), 'medal'))"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> agent </C> whose <A> ISNI </A> is text <V> 0000 0001 2159 0079 </V> </ES> and <ES> <C> agent </C> whose <A> inception </A> is not year <V> 1799 </V> </ES> </ES>",
@@ -5164,7 +5263,8 @@
       }
     ],
     "sample_id": "train_88037",
-    "answer": "Organisation for Economic Co-operation and Development"
+    "answer": "Organisation for Economic Co-operation and Development",
+    "python_code": "engine.QueryName(engine.And(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'ISNI', '0000 0001 2159 0079'), 'agent'), engine.FilterConcept(engine.FilterYear(engine.FindAll(), 'inception', '1799', '!='), 'agent')))"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <C> county of Texas </C> whose <A> inception </A> smaller than year <V> 1849 </V> </ES>",
@@ -5212,7 +5312,8 @@
       }
     ],
     "sample_id": "train_27541",
-    "answer": "Harris County"
+    "answer": "Harris County",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.FilterYear(engine.FindAll(), 'inception', '1849', '<'), 'county of Texas'), 'area', 'largest')"
   },
   {
     "graphq_ir": "whether <ES> <C> cemetery </C> that <R> country </R> forward to <E> France </E> </ES> <A> inception </A> is not year <V> 1818 </V>",
@@ -5270,7 +5371,8 @@
       }
     ],
     "sample_id": "train_41836",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyYear(engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.Find('France'), 'country', 'backward'), 'cemetery'), 'inception'), '1818', '!=')"
   },
   {
     "graphq_ir": "which one has the largest <A> mass </A> among <ES> <E> linoleic acid </E> or <E> arachidonic acid </E> </ES>",
@@ -5308,7 +5410,8 @@
       }
     ],
     "sample_id": "train_86776",
-    "answer": "arachidonic acid"
+    "answer": "arachidonic acid",
+    "python_code": "engine.SelectBetween(engine.Find('linoleic acid'), engine.Find('arachidonic acid'), 'mass', 'greater')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <E> Monroe County </E> whose <A> FIPS 6-4 (US counties) </A> is text <V> 18105 </V> </ES> whose <A> population </A> is <V> 140305 </V>",
@@ -5349,7 +5452,8 @@
       }
     ],
     "sample_id": "train_4974",
-    "answer": "2011-07-01"
+    "answer": "2011-07-01",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterStr(engine.Find('Monroe County'), 'FIPS 6-4 (US counties)', '18105'), 'population', '140305', 'point in time')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> character role </Q> of <E> The Bourne Legacy </E> that <R> cast member </R> to <E> Joan Allen </E>",
@@ -5387,7 +5491,8 @@
       }
     ],
     "sample_id": "train_3266",
-    "answer": "Pamela Landy"
+    "answer": "Pamela Landy",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('The Bourne Legacy'), engine.Find('Joan Allen'), 'cast member', 'character role')"
   },
   {
     "graphq_ir": "how many <ES> <C> hip hop music </C> that <R> famous people </R> forward to <E> Lil Jon </E> </ES>",
@@ -5433,7 +5538,8 @@
       }
     ],
     "sample_id": "train_74242",
-    "answer": "4"
+    "answer": "4",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.Find('Lil Jon'), 'famous people', 'backward'), 'hip hop music'))"
   },
   {
     "graphq_ir": "what is the attribute <A> date of birth </A> of <E> Richard Kind </E>",
@@ -5462,7 +5568,8 @@
       }
     ],
     "sample_id": "train_75193",
-    "answer": "1956-11-22"
+    "answer": "1956-11-22",
+    "python_code": "engine.QueryAttr(engine.Find('Richard Kind'), 'date of birth')"
   },
   {
     "graphq_ir": "whether <ES> <C> big city </C> whose <A> WOEID </A> is text <V> 673361 </V> </ES> <A> official website </A> is text <V> http://www.miramax.com/movie/life-is-beautiful </V>",
@@ -5517,7 +5624,8 @@
       }
     ],
     "sample_id": "train_73069",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'WOEID', '673361'), 'big city'), 'official website'), 'http://www.miramax.com/movie/life-is-beautiful')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> county of Indiana </C> that <R> contains administrative territorial entity </R> forward to <ES> <E> Anderson </E> whose <A> official website </A> is text <V> http://www.cityofanderson.com/ </V> </ES> </ES> or <ES> <C> county of Indiana </C> that <R> located in the administrative territorial entity </R> forward to <E> Indiana </E> </ES> </ES>",
@@ -5607,7 +5715,8 @@
       }
     ],
     "sample_id": "train_37405",
-    "answer": "13"
+    "answer": "13",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.Relate(engine.FilterStr(engine.Find('Anderson'), 'official website', 'http://www.cityofanderson.com/'), 'contains administrative territorial entity', 'backward'), 'county of Indiana'), engine.FilterConcept(engine.Relate(engine.Find('Indiana'), 'located in the administrative territorial entity', 'backward'), 'county of Indiana')))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> Sex, Lies, and Videotape </E> that <R> award received </R> to <E> National Film Registry </E>",
@@ -5645,7 +5754,8 @@
       }
     ],
     "sample_id": "train_29333",
-    "answer": "2006-01-01"
+    "answer": "2006-01-01",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('Sex, Lies, and Videotape'), engine.Find('National Film Registry'), 'award received', 'point in time')"
   },
   {
     "graphq_ir": "what is the relation from <E> A Simple Life </E> to <E> Italy </E>",
@@ -5680,7 +5790,8 @@
       }
     ],
     "sample_id": "train_57476",
-    "answer": "film release region"
+    "answer": "film release region",
+    "python_code": "engine.QueryRelation(engine.Find('A Simple Life'), engine.Find('Italy'))"
   },
   {
     "graphq_ir": "how many <ES> <C> album </C> that <R> derivative work </R> forward to <ES> <E> Tommy </E> (<ES> ones that <R> distributor </R> forward to <E> Columbia Pictures </E> </ES>) </ES> </ES>",
@@ -5751,7 +5862,8 @@
       }
     ],
     "sample_id": "train_86929",
-    "answer": "1"
+    "answer": "1",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.And(engine.Relate(engine.Find('Columbia Pictures'), 'distributor', 'backward'), engine.Find('Tommy')), 'derivative work', 'backward'), 'album'))"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <E> Date Night </E> or <E> Face/Off </E> </ES>",
@@ -5789,7 +5901,8 @@
       }
     ],
     "sample_id": "train_7375",
-    "answer": "Face/Off"
+    "answer": "Face/Off",
+    "python_code": "engine.SelectBetween(engine.Find('Date Night'), engine.Find('Face/Off'), 'duration', 'greater')"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> film </C> whose <A> title </A> is text <V> Hercules </V> </ES> and <ES> <C> film </C> whose <A> duration </A> smaller than number <V> 220 minute </V> </ES> </ES>",
@@ -5866,7 +5979,8 @@
       }
     ],
     "sample_id": "train_21823",
-    "answer": "Hercules"
+    "answer": "Hercules",
+    "python_code": "engine.QueryName(engine.And(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'title', 'Hercules'), 'film'), engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'duration', '220 minute', '<'), 'film')))"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Batman Forever </E> (<ES> ones that <R> game mode </R> forward to <E> single-player video game </E> </ES>) </ES> to <E> action game </E>",
@@ -5926,7 +6040,8 @@
       }
     ],
     "sample_id": "train_773",
-    "answer": "genre"
+    "answer": "genre",
+    "python_code": "engine.QueryRelation(engine.And(engine.Relate(engine.Find('single-player video game'), 'game mode', 'backward'), engine.Find('Batman Forever')), engine.Find('action game'))"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Law & Order </E> (<ES> ones that <R> nominated for </R> forward to <E> Screen Actors Guild Award for Outstanding Performance by an Ensemble in a Drama Series </E> </ES>) </ES> to <E> police procedural </E>",
@@ -5986,7 +6101,8 @@
       }
     ],
     "sample_id": "train_34245",
-    "answer": "genre"
+    "answer": "genre",
+    "python_code": "engine.QueryRelation(engine.And(engine.Relate(engine.Find('Screen Actors Guild Award for Outstanding Performance by an Ensemble in a Drama Series'), 'nominated for', 'backward'), engine.Find('Law & Order')), engine.Find('police procedural'))"
   },
   {
     "graphq_ir": "what is the attribute <A> date of death </A> of <ES> <C> human </C> that <R> nominated for </R> forward to <E> Academy Award for Best Animated Short Film </E> ( <Q> for work </Q> is text <V> For Scent-imental Reasons </V> ) </ES>",
@@ -6044,7 +6160,8 @@
       }
     ],
     "sample_id": "train_39288",
-    "answer": "1970-02-22"
+    "answer": "1970-02-22",
+    "python_code": "engine.QueryAttr(engine.FilterConcept(engine.QFilterStr(engine.Relate(engine.Find('Academy Award for Best Animated Short Film'), 'nominated for', 'backward'), 'for work', 'For Scent-imental Reasons'), 'human'), 'date of death')"
   },
   {
     "graphq_ir": "which one has the smallest <A> number of episodes </A> among <ES> <E> Thirtysomething </E> or <E> Brothers & Sisters </E> </ES>",
@@ -6082,7 +6199,8 @@
       }
     ],
     "sample_id": "train_16939",
-    "answer": "Thirtysomething"
+    "answer": "Thirtysomething",
+    "python_code": "engine.SelectBetween(engine.Find('Thirtysomething'), engine.Find('Brothers & Sisters'), 'number of episodes', 'less')"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <ES> <E> Lawrence </E> whose <A> official name </A> is text <V> Lawrence </V> </ES> or <ES> <E> Hastings </E> whose <A> area </A> is number <V> 28.794686 square kilometre </V> </ES> </ES>",
@@ -6141,7 +6259,8 @@
       }
     ],
     "sample_id": "train_25041",
-    "answer": "Lawrence"
+    "answer": "Lawrence",
+    "python_code": "engine.SelectBetween(engine.FilterStr(engine.Find('Lawrence'), 'official name', 'Lawrence'), engine.FilterNum(engine.Find('Hastings'), 'area', '28.794686 square kilometre', '='), 'area', 'less')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> language of work or name </Q> of <ES> <C> television channel </C> whose <A> inception </A> is year <V> 2008 </V> </ES> whose <A> official website </A> is <V> http://www.metvnetwork.com </V>",
@@ -6190,7 +6309,8 @@
       }
     ],
     "sample_id": "train_27934",
-    "answer": "English"
+    "answer": "English",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.FilterYear(engine.FindAll(), 'inception', '2008', '='), 'television channel'), 'official website', 'http://www.metvnetwork.com', 'language of work or name')"
   },
   {
     "graphq_ir": "what is <ES> <C> film </C> that <R> award received </R> forward to <E> Academy Award for Best Actress </E> ( <Q> statement is subject of </Q> is text <V> 26th Academy Awards </V> ) </ES>",
@@ -6246,7 +6366,8 @@
       }
     ],
     "sample_id": "train_64636",
-    "answer": "Roman Holiday"
+    "answer": "Roman Holiday",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.QFilterStr(engine.Relate(engine.Find('Academy Award for Best Actress'), 'award received', 'backward'), 'statement is subject of', '26th Academy Awards'), 'film'))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> applies to part </Q> of <ES> <E> Aachen </E> whose <A> postal code </A> is text <V> 52062 </V> </ES> whose <A> elevation above sea level </A> is <V> 173 metre </V>",
@@ -6287,7 +6408,8 @@
       }
     ],
     "sample_id": "train_27005",
-    "answer": "city hall"
+    "answer": "city hall",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterStr(engine.Find('Aachen'), 'postal code', '52062'), 'elevation above sea level', '173 metre', 'applies to part')"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Aude </E> whose <A> ISNI </A> is text <V> 0000 0000 7408 0673 </V> </ES> to <E> Montreal </E>",
@@ -6332,7 +6454,8 @@
       }
     ],
     "sample_id": "train_9662",
-    "answer": "place of birth"
+    "answer": "place of birth",
+    "python_code": "engine.QueryRelation(engine.FilterStr(engine.Find('Aude'), 'ISNI', '0000 0000 7408 0673'), engine.Find('Montreal'))"
   },
   {
     "graphq_ir": "what is <ES> <C> activity </C> that <R> sports season of league or competition </R> backward to <E> 1997 NCAA Men's Division I Basketball Tournament </E> </ES>",
@@ -6378,7 +6501,8 @@
       }
     ],
     "sample_id": "train_80984",
-    "answer": "NCAA Men's Division I Basketball Championship"
+    "answer": "NCAA Men's Division I Basketball Championship",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.Find('1997 NCAA Men\\'s Division I Basketball Tournament'), 'sports season of league or competition', 'forward'), 'activity'))"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <C> county of New York </C> whose <A> inception </A> larger than year <V> 1791 </V> </ES>",
@@ -6426,7 +6550,8 @@
       }
     ],
     "sample_id": "train_75902",
-    "answer": "St. Lawrence County"
+    "answer": "St. Lawrence County",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.FilterYear(engine.FindAll(), 'inception', '1791', '>'), 'county of New York'), 'area', 'largest')"
   },
   {
     "graphq_ir": "whether <ES> <C> association football club </C> that <R> headquarters location </R> forward to <ES> <E> Veracruz </E> (<ES> ones that <R> twinned administrative body </R> backward to <E> San Jose </E> </ES>) </ES> </ES> <A> inception </A> is not year <V> 1777 </V>",
@@ -6509,7 +6634,8 @@
       }
     ],
     "sample_id": "train_31569",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyYear(engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.And(engine.Relate(engine.Find('San Jose'), 'twinned administrative body', 'forward'), engine.Find('Veracruz')), 'headquarters location', 'backward'), 'association football club'), 'inception'), '1777', '!=')"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <ES> <E> Ludwig van Beethoven </E> (<ES> ones that <R> place of death </R> forward to <E> Bonn </E> </ES>) </ES>",
@@ -6563,7 +6689,8 @@
       }
     ],
     "sample_id": "train_51586",
-    "answer": "0000 0000 5768 271X"
+    "answer": "0000 0000 5768 271X",
+    "python_code": "engine.QueryAttr(engine.And(engine.Relate(engine.Find('Bonn'), 'place of death', 'backward'), engine.Find('Ludwig van Beethoven')), 'ISNI')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> comune of Italy </C> that <R> twinned administrative body </R> forward to <E> Sarasota </E> </ES> or <ES> <C> comune of Italy </C> whose <A> UN/LOCODE </A> is text <V> ITMAN </V> </ES> </ES>",
@@ -6641,7 +6768,8 @@
       }
     ],
     "sample_id": "train_30640",
-    "answer": "2"
+    "answer": "2",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.Relate(engine.Find('Sarasota'), 'twinned administrative body', 'backward'), 'comune of Italy'), engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'UN/LOCODE', 'ITMAN'), 'comune of Italy')))"
   },
   {
     "graphq_ir": "what is the relation from <E> Jermaine Easter </E> to <E> Milton Keynes Dons F.C. </E>",
@@ -6676,7 +6804,8 @@
       }
     ],
     "sample_id": "train_35327",
-    "answer": "member of sports team"
+    "answer": "member of sports team",
+    "python_code": "engine.QueryRelation(engine.Find('Jermaine Easter'), engine.Find('Milton Keynes Dons F.C.'))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> city </C> whose <A> Statistics Canada Geographic code </A> is text <V> 3510010 </V> </ES> whose <A> population </A> is <V> 123798 </V>",
@@ -6724,7 +6853,8 @@
       }
     ],
     "sample_id": "train_57900",
-    "answer": "2016"
+    "answer": "2016",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'Statistics Canada Geographic code', '3510010'), 'city'), 'population', '123798', 'point in time')"
   },
   {
     "graphq_ir": "what is the relation from <E> Aidan Gillen </E> to <E> Dublin </E>",
@@ -6759,7 +6889,8 @@
       }
     ],
     "sample_id": "train_76947",
-    "answer": "place of birth"
+    "answer": "place of birth",
+    "python_code": "engine.QueryRelation(engine.Find('Aidan Gillen'), engine.Find('Dublin'))"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Cher </E> whose <A> Instagram username </A> is text <V> cher </V> </ES> to <E> MCA Records </E>",
@@ -6804,7 +6935,8 @@
       }
     ],
     "sample_id": "train_79147",
-    "answer": "record label"
+    "answer": "record label",
+    "python_code": "engine.QueryRelation(engine.FilterStr(engine.Find('Cher'), 'Instagram username', 'cher'), engine.Find('MCA Records'))"
   },
   {
     "graphq_ir": "whether <ES> <C> film </C> whose <A> title </A> is text <V> The Fisher King </V> </ES> <A> publication date </A> smaller than year <V> 1920 </V> ( <Q> place of publication </Q> is <V> Germany </V> )",
@@ -6862,7 +6994,8 @@
       }
     ],
     "sample_id": "train_85978",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyYear(engine.QueryAttrUnderCondition(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'title', 'The Fisher King'), 'film'), 'publication date', 'place of publication', 'Germany'), '1920', '<')"
   },
   {
     "graphq_ir": "whether <E> Bruce Dern </E> <A> work period (start) </A> is not year <V> 1963 </V>",
@@ -6901,7 +7034,8 @@
       }
     ],
     "sample_id": "train_92572",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyYear(engine.QueryAttr(engine.Find('Bruce Dern'), 'work period (start)'), '1963', '!=')"
   },
   {
     "graphq_ir": "whether <ES> <C> city of the United States </C> whose <A> WOEID </A> is text <V> 2406008 </V> </ES> <A> area </A> larger than number <V> 50 square kilometre </V>",
@@ -6957,7 +7091,8 @@
       }
     ],
     "sample_id": "train_43176",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyNum(engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'WOEID', '2406008'), 'city of the United States'), 'area'), '50 square kilometre', '>')"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <ES> <E> Shelby County </E> whose <A> population </A> is number <V> 42274 </V> </ES> or <ES> <E> Linn County </E> whose <A> population </A> is number <V> 211226 </V> </ES> </ES>",
@@ -7017,7 +7152,8 @@
       }
     ],
     "sample_id": "train_11269",
-    "answer": "Shelby County"
+    "answer": "Shelby County",
+    "python_code": "engine.SelectBetween(engine.FilterNum(engine.Find('Shelby County'), 'population', '42274', '='), engine.FilterNum(engine.Find('Linn County'), 'population', '211226', '='), 'area', 'less')"
   },
   {
     "graphq_ir": "whether <ES> <C> college of the University of Oxford </C> whose <A> IPv4 routing prefix </A> is text <V> 129.67.60.0/22 </V> </ES> <A> inception </A> is date <V> 1989-08-01 </V>",
@@ -7073,7 +7209,8 @@
       }
     ],
     "sample_id": "train_12977",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyDate(engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'IPv4 routing prefix', '129.67.60.0/22'), 'college of the University of Oxford'), 'inception'), '1989-08-01', '=')"
   },
   {
     "graphq_ir": "which one has the largest <A> number of episodes </A> among <ES> <ES> <E> Joan of Arc </E> (<ES> ones that <R> cast member </R> forward to <E> Shirley MacLaine </E> </ES>) </ES> or <ES> <E> Savannah </E> whose <A> number of episodes </A> is number <V> 34 </V> </ES> </ES>",
@@ -7147,7 +7284,8 @@
       }
     ],
     "sample_id": "train_39983",
-    "answer": "Savannah"
+    "answer": "Savannah",
+    "python_code": "engine.SelectBetween(engine.And(engine.Relate(engine.Find('Shirley MacLaine'), 'cast member', 'backward'), engine.Find('Joan of Arc')), engine.FilterNum(engine.Find('Savannah'), 'number of episodes', '34', '='), 'number of episodes', 'greater')"
   },
   {
     "graphq_ir": "what is the relation from <E> The Social Network </E> to <ES> <E> Egypt </E> whose <A> inflation rate </A> is number <V> 14.0 percentage </V> </ES>",
@@ -7193,7 +7331,8 @@
       }
     ],
     "sample_id": "train_46733",
-    "answer": "film release region"
+    "answer": "film release region",
+    "python_code": "engine.QueryRelation(engine.Find('The Social Network'), engine.FilterNum(engine.Find('Egypt'), 'inflation rate', '14.0 percentage', '='))"
   },
   {
     "graphq_ir": "which one has the smallest <A> elevation above sea level </A> among <ES> <E> Laval </E> or <E> Vilnius </E> </ES>",
@@ -7231,7 +7370,8 @@
       }
     ],
     "sample_id": "train_58759",
-    "answer": "Laval"
+    "answer": "Laval",
+    "python_code": "engine.SelectBetween(engine.Find('Laval'), engine.Find('Vilnius'), 'elevation above sea level', 'less')"
   },
   {
     "graphq_ir": "what is the relation from <E> The Bourne Supremacy </E> to <E> Central Intelligence Agency </E>",
@@ -7266,7 +7406,8 @@
       }
     ],
     "sample_id": "train_41666",
-    "answer": "main subject"
+    "answer": "main subject",
+    "python_code": "engine.QueryRelation(engine.Find('The Bourne Supremacy'), engine.Find('Central Intelligence Agency'))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> determination method </Q> of <ES> <C> national association football team </C> that <R> country </R> forward to <E> Cameroon </E> </ES> whose <A> ranking </A> is <V> 60 </V>",
@@ -7316,7 +7457,8 @@
       }
     ],
     "sample_id": "train_35764",
-    "answer": "FIFA World Rankings"
+    "answer": "FIFA World Rankings",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.Relate(engine.Find('Cameroon'), 'country', 'backward'), 'national association football team'), 'ranking', '60', 'determination method')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> statement is subject of </Q> of <ES> <E> Romania </E> (<ES> ones that <R> diplomatic relation </R> forward to <E> Ukraine </E> </ES>) </ES> that <R> shares border with </R> to <E> Moldova </E>",
@@ -7379,7 +7521,8 @@
       }
     ],
     "sample_id": "train_44723",
-    "answer": "Moldova–Romania border"
+    "answer": "Moldova–Romania border",
+    "python_code": "engine.QueryRelationQualifier(engine.And(engine.Relate(engine.Find('Ukraine'), 'diplomatic relation', 'backward'), engine.Find('Romania')), engine.Find('Moldova'), 'shares border with', 'statement is subject of')"
   },
   {
     "graphq_ir": "which one has the smallest <A> duration </A> among <ES> <E> Lost Highway </E> or <E> Legends of the Fall </E> </ES>",
@@ -7417,7 +7560,8 @@
       }
     ],
     "sample_id": "train_13135",
-    "answer": "Legends of the Fall"
+    "answer": "Legends of the Fall",
+    "python_code": "engine.SelectBetween(engine.Find('Lost Highway'), engine.Find('Legends of the Fall'), 'duration', 'less')"
   },
   {
     "graphq_ir": "whether <ES> <C> organization </C> that <R> production company </R> backward to <E> Dragon Ball Z: Dead Zone </E> </ES> <A> Corporate Number (Japan) </A> is text <V> 6010001034866 </V>",
@@ -7474,7 +7618,8 @@
       }
     ],
     "sample_id": "train_61488",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.Find('Dragon Ball Z: Dead Zone'), 'production company', 'forward'), 'organization'), 'Corporate Number (Japan)'), '6010001034866')"
   },
   {
     "graphq_ir": "whether <ES> <E> Max Weber </E> whose <A> date of birth </A> is date <V> 1897-08-02 </V> </ES> <A> date of death </A> is year <V> 1842 </V>",
@@ -7524,7 +7669,8 @@
       }
     ],
     "sample_id": "train_77017",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyYear(engine.QueryAttr(engine.FilterDate(engine.Find('Max Weber'), 'date of birth', '1897-08-02', '='), 'date of death'), '1842', '=')"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Victoria </E> whose <A> publication date </A> is date <V> 2015-06-11 </V> </ES> to <E> German </E>",
@@ -7570,7 +7716,8 @@
       }
     ],
     "sample_id": "train_61285",
-    "answer": "original language of film or TV show"
+    "answer": "original language of film or TV show",
+    "python_code": "engine.QueryRelation(engine.FilterDate(engine.Find('Victoria'), 'publication date', '2015-06-11', '='), engine.Find('German'))"
   },
   {
     "graphq_ir": "what is <ES> <C> human </C> whose <A> ISNI </A> is text <V> 0000 0001 1483 0433 </V> </ES>",
@@ -7614,7 +7761,8 @@
       }
     ],
     "sample_id": "train_73068",
-    "answer": "Doug Savant"
+    "answer": "Doug Savant",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'ISNI', '0000 0001 1483 0433'), 'human'))"
   },
   {
     "graphq_ir": "what is the attribute <A> inception </A> of <ES> <C> British Academy Film Awards </C> that <R> winner </R> forward to <E> Anne V. Coates </E> ( <Q> point in time </Q> is year <V> 2007 </V> ) </ES>",
@@ -7673,7 +7821,8 @@
       }
     ],
     "sample_id": "train_25058",
-    "answer": "1971"
+    "answer": "1971",
+    "python_code": "engine.QueryAttr(engine.FilterConcept(engine.QFilterYear(engine.Relate(engine.Find('Anne V. Coates'), 'winner', 'backward'), 'point in time', '2007', '='), 'British Academy Film Awards'), 'inception')"
   },
   {
     "graphq_ir": "which one has the largest <A> area </A> among <ES> <ES> <E> Quincy </E> whose <A> subreddit </A> is text <V> QuincyIL </V> </ES> or <ES> <E> Mansfield </E> (<ES> ones that <R> filming location </R> backward to <E> The Shawshank Redemption </E> </ES>) </ES> </ES>",
@@ -7746,7 +7895,8 @@
       }
     ],
     "sample_id": "train_14576",
-    "answer": "Mansfield"
+    "answer": "Mansfield",
+    "python_code": "engine.SelectBetween(engine.FilterStr(engine.Find('Quincy'), 'subreddit', 'QuincyIL'), engine.And(engine.Relate(engine.Find('The Shawshank Redemption'), 'filming location', 'forward'), engine.Find('Mansfield')), 'area', 'greater')"
   },
   {
     "graphq_ir": "what is the attribute <A> inception </A> of <ES> <C> public office </C> that <R> position held </R> backward to <ES> <E> John Davis </E> whose <A> British Museum person-institution </A> is text <V> 203983 </V> </ES> ( <Q> start time </Q> is year <V> 1834 </V> ) </ES>",
@@ -7815,7 +7965,8 @@
       }
     ],
     "sample_id": "train_81715",
-    "answer": "1780-10-25"
+    "answer": "1780-10-25",
+    "python_code": "engine.QueryAttr(engine.FilterConcept(engine.QFilterYear(engine.Relate(engine.FilterStr(engine.Find('John Davis'), 'British Museum person-institution', '203983'), 'position held', 'forward'), 'start time', '1834', '='), 'public office'), 'inception')"
   },
   {
     "graphq_ir": "what is the attribute <A> title </A> of <E> Tucker: The Man and His Dream </E>",
@@ -7844,7 +7995,8 @@
       }
     ],
     "sample_id": "train_68219",
-    "answer": "Tucker: The Man and His Dream"
+    "answer": "Tucker: The Man and His Dream",
+    "python_code": "engine.QueryAttr(engine.Find('Tucker: The Man and His Dream'), 'title')"
   },
   {
     "graphq_ir": "which one has the smallest <A> elevation above sea level </A> among <ES> <C> city in New Jersey </C> whose <A> population </A> smaller than number <V> 43000 </V> </ES>",
@@ -7892,7 +8044,8 @@
       }
     ],
     "sample_id": "train_83659",
-    "answer": "Atlantic City"
+    "answer": "Atlantic City",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'population', '43000', '<'), 'city in New Jersey'), 'elevation above sea level', 'smallest')"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <C> non-metropolitan district </C> that <R> located in the administrative territorial entity </R> forward to <ES> <E> Surrey </E> whose <A> NUTS code </A> is text <V> UKJ23 </V> </ES> </ES>",
@@ -7951,7 +8104,8 @@
       }
     ],
     "sample_id": "train_65219",
-    "answer": "Woking"
+    "answer": "Woking",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.Relate(engine.FilterStr(engine.Find('Surrey'), 'NUTS code', 'UKJ23'), 'located in the administrative territorial entity', 'backward'), 'non-metropolitan district'), 'area', 'smallest')"
   },
   {
     "graphq_ir": "which one has the largest <A> cost </A> among <ES> <ES> <E> Die Another Day </E> whose <A> title </A> is text <V> Die Another Day </V> </ES> or <ES> <E> Halloween </E> (<ES> ones that <R> film release region </R> forward to <E> Italy </E> </ES>) </ES> </ES>",
@@ -8024,7 +8178,8 @@
       }
     ],
     "sample_id": "train_19945",
-    "answer": "Die Another Day"
+    "answer": "Die Another Day",
+    "python_code": "engine.SelectBetween(engine.FilterStr(engine.Find('Die Another Day'), 'title', 'Die Another Day'), engine.And(engine.Relate(engine.Find('Italy'), 'film release region', 'backward'), engine.Find('Halloween')), 'cost', 'greater')"
   },
   {
     "graphq_ir": "which one has the largest <A> elevation above sea level </A> among <ES> <C> human settlement </C> whose <A> local dialing code </A> is text <V> 973 </V> </ES>",
@@ -8071,7 +8226,8 @@
       }
     ],
     "sample_id": "train_49783",
-    "answer": "West Orange"
+    "answer": "West Orange",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'local dialing code', '973'), 'human settlement'), 'elevation above sea level', 'largest')"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <ES> <E> Robert Guillaume </E> (<ES> ones that <R> award received </R> forward to <E> Primetime Emmy Award for Outstanding Supporting Actor in a Comedy Series </E> </ES>) </ES>",
@@ -8125,7 +8281,8 @@
       }
     ],
     "sample_id": "train_27664",
-    "answer": "0000 0001 1468 1570"
+    "answer": "0000 0001 1468 1570",
+    "python_code": "engine.QueryAttr(engine.And(engine.Relate(engine.Find('Primetime Emmy Award for Outstanding Supporting Actor in a Comedy Series'), 'award received', 'backward'), engine.Find('Robert Guillaume')), 'ISNI')"
   },
   {
     "graphq_ir": "what is <ES> <ES> <C> city of Pennsylvania </C> that <R> located in the administrative territorial entity </R> backward to <E> University of Pennsylvania </E> </ES> and <ES> <C> city of Pennsylvania </C> whose <A> population </A> is not number <V> 250000000 </V> ( <Q> point in time </Q> is year <V> 1820 </V> ) </ES> </ES>",
@@ -8215,7 +8372,8 @@
       }
     ],
     "sample_id": "train_26252",
-    "answer": "Philadelphia"
+    "answer": "Philadelphia",
+    "python_code": "engine.QueryName(engine.And(engine.FilterConcept(engine.Relate(engine.Find('University of Pennsylvania'), 'located in the administrative territorial entity', 'forward'), 'city of Pennsylvania'), engine.FilterConcept(engine.QFilterYear(engine.FilterNum(engine.FindAll(), 'population', '250000000', '!='), 'point in time', '1820', '='), 'city of Pennsylvania')))"
   },
   {
     "graphq_ir": "how many <ES> <C> miniseries </C> that <R> nominated for </R> forward to <ES> <C> Primetime Emmy Award </C> that <R> nominated for </R> backward to <E> Steven Moffat </E> ( <Q> for work </Q> is text <V> Sherlock </V> ) </ES> </ES>",
@@ -8290,7 +8448,8 @@
       }
     ],
     "sample_id": "train_93159",
-    "answer": "9"
+    "answer": "9",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.FilterConcept(engine.QFilterStr(engine.Relate(engine.Find('Steven Moffat'), 'nominated for', 'forward'), 'for work', 'Sherlock'), 'Primetime Emmy Award'), 'nominated for', 'backward'), 'miniseries'))"
   },
   {
     "graphq_ir": "how many <ES> <C> cable channel </C> whose <A> official website </A> is text <V> https://www.international.tbs.com/ </V> </ES>",
@@ -8334,7 +8493,8 @@
       }
     ],
     "sample_id": "train_21075",
-    "answer": "1"
+    "answer": "1",
+    "python_code": "engine.Count(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'official website', 'https://www.international.tbs.com/'), 'cable channel'))"
   },
   {
     "graphq_ir": "what is the attribute <A> ISNI </A> of <E> Capcom </E>",
@@ -8363,7 +8523,8 @@
       }
     ],
     "sample_id": "train_1726",
-    "answer": "0000 0001 1703 8185"
+    "answer": "0000 0001 1703 8185",
+    "python_code": "engine.QueryAttr(engine.Find('Capcom'), 'ISNI')"
   },
   {
     "graphq_ir": "what is <ES> <C> visual artwork </C> that <R> followed by </R> backward to <ES> <E> The Chronicles of Narnia: Prince Caspian </E> whose <A> duration </A> is number <V> 140 minute </V> </ES> </ES>",
@@ -8420,7 +8581,8 @@
       }
     ],
     "sample_id": "train_19297",
-    "answer": "The Chronicles of Narnia: The Voyage of the Dawn Treader"
+    "answer": "The Chronicles of Narnia: The Voyage of the Dawn Treader",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.Relate(engine.FilterNum(engine.Find('The Chronicles of Narnia: Prince Caspian'), 'duration', '140 minute', '='), 'followed by', 'forward'), 'visual artwork'))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> language of work or name </Q> of <ES> <C> higher education institution </C> whose <A> located at street address (DEPRECATED) </A> is text <V> 1011 South Dr 201 Sutton Hall, Indiana, PA, 15705-1098 </V> </ES> whose <A> official website </A> is <V> http://www.iup.edu </V>",
@@ -8468,7 +8630,8 @@
       }
     ],
     "sample_id": "train_31738",
-    "answer": "English"
+    "answer": "English",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'located at street address (DEPRECATED)', '1011 South Dr 201 Sutton Hall, Indiana, PA, 15705-1098'), 'higher education institution'), 'official website', 'http://www.iup.edu', 'language of work or name')"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> American Idol </E> (<ES> ones that <R> creator </R> forward to <E> Simon Fuller </E> </ES>) </ES> to <E> Ryan Seacrest </E>",
@@ -8528,7 +8691,8 @@
       }
     ],
     "sample_id": "train_5251",
-    "answer": "presenter"
+    "answer": "presenter",
+    "python_code": "engine.QueryRelation(engine.And(engine.Relate(engine.Find('Simon Fuller'), 'creator', 'backward'), engine.Find('American Idol')), engine.Find('Ryan Seacrest'))"
   },
   {
     "graphq_ir": "what is the relation from <E> Jermaine Easter </E> to <E> Wolverhampton Wanderers F.C. </E>",
@@ -8563,7 +8727,8 @@
       }
     ],
     "sample_id": "train_91808",
-    "answer": "member of sports team"
+    "answer": "member of sports team",
+    "python_code": "engine.QueryRelation(engine.Find('Jermaine Easter'), engine.Find('Wolverhampton Wanderers F.C.'))"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <C> big city </C> whose <A> annual number of weddings </A> smaller than number <V> 1000 </V> </ES>",
@@ -8611,7 +8776,8 @@
       }
     ],
     "sample_id": "train_1356",
-    "answer": "Leuven"
+    "answer": "Leuven",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.FilterNum(engine.FindAll(), 'annual number of weddings', '1000', '<'), 'big city'), 'area', 'smallest')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> death metal </C> that <R> country of origin </R> forward to <E> Finland </E> </ES> or <ES> <C> death metal </C> whose <A> inception </A> smaller than year <V> 1990 </V> </ES> </ES>",
@@ -8690,7 +8856,8 @@
       }
     ],
     "sample_id": "train_91904",
-    "answer": "3"
+    "answer": "3",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.Relate(engine.Find('Finland'), 'country of origin', 'backward'), 'death metal'), engine.FilterConcept(engine.FilterYear(engine.FindAll(), 'inception', '1990', '<'), 'death metal')))"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> profession </C> whose <A> OSM tag or key </A> is text <V> Tag:shop=hairdresser </V> </ES> or <ES> <C> profession </C> whose <A> SBC-2010 occupation code </A> is text <V> 610405 </V> </ES> </ES>",
@@ -8766,7 +8933,8 @@
       }
     ],
     "sample_id": "train_26633",
-    "answer": "2"
+    "answer": "2",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'OSM tag or key', 'Tag:shop=hairdresser'), 'profession'), engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'SBC-2010 occupation code', '610405'), 'profession')))"
   },
   {
     "graphq_ir": "how many <ES> <C> capital </C> that <R> film release region </R> backward to <ES> <C> visual artwork </C> whose <A> title </A> is text <V> جدایی نادر از سیمین </V> </ES> </ES>",
@@ -8829,7 +8997,8 @@
       }
     ],
     "sample_id": "train_70865",
-    "answer": "1"
+    "answer": "1",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'title', 'جدایی نادر از سیمین'), 'visual artwork'), 'film release region', 'forward'), 'capital'))"
   },
   {
     "graphq_ir": "which one has the smallest <A> height </A> among <ES> <ES> <E> Stephen Graham </E> whose <A> mass </A> is number <V> 98 kilogram </V> </ES> or <E> Jermaine Easter </E> </ES>",
@@ -8878,7 +9047,8 @@
       }
     ],
     "sample_id": "train_82193",
-    "answer": "Jermaine Easter"
+    "answer": "Jermaine Easter",
+    "python_code": "engine.SelectBetween(engine.FilterNum(engine.Find('Stephen Graham'), 'mass', '98 kilogram', '='), engine.Find('Jermaine Easter'), 'height', 'less')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> bowed string instrument </C> whose <A> Hornbostel-Sachs classification </A> is text <V> 321.322-71 </V> </ES> or <ES> <C> bowed string instrument </C> that <R> instrument </R> backward to <E> John Hartford </E> </ES> </ES>",
@@ -8956,7 +9126,8 @@
       }
     ],
     "sample_id": "train_81502",
-    "answer": "4"
+    "answer": "4",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'Hornbostel-Sachs classification', '321.322-71'), 'bowed string instrument'), engine.FilterConcept(engine.Relate(engine.Find('John Hartford'), 'instrument', 'forward'), 'bowed string instrument')))"
   },
   {
     "graphq_ir": "what is the attribute <A> title </A> of <ES> <E> Cobra </E> (<ES> ones that <R> producer </R> forward to <E> Menahem Golan </E> </ES>) </ES>",
@@ -9010,7 +9181,8 @@
       }
     ],
     "sample_id": "train_62213",
-    "answer": "Cobra"
+    "answer": "Cobra",
+    "python_code": "engine.QueryAttr(engine.And(engine.Relate(engine.Find('Menahem Golan'), 'producer', 'backward'), engine.Find('Cobra')), 'title')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <ES> <C> county of North Carolina </C> that <R> named after </R> forward to <ES> <E> James Madison </E> (<ES> ones that <R> member of political party </R> forward to <E> Democratic-Republican Party </E> </ES>) </ES> </ES> whose <A> population </A> is <V> 21022 </V>",
@@ -9085,7 +9257,8 @@
       }
     ],
     "sample_id": "train_17604",
-    "answer": "2013-07-01"
+    "answer": "2013-07-01",
+    "python_code": "engine.QueryAttrQualifier(engine.FilterConcept(engine.Relate(engine.And(engine.Relate(engine.Find('Democratic-Republican Party'), 'member of political party', 'backward'), engine.Find('James Madison')), 'named after', 'backward'), 'county of North Carolina'), 'population', '21022', 'point in time')"
   },
   {
     "graphq_ir": "which one has the smallest <A> area </A> among <ES> <E> Fort Wayne </E> or <ES> <E> Fontana </E> whose <A> postal code </A> is text <V> 92331, 92334–92337 </V> </ES> </ES>",
@@ -9133,7 +9306,8 @@
       }
     ],
     "sample_id": "train_17763",
-    "answer": "Fontana"
+    "answer": "Fontana",
+    "python_code": "engine.SelectBetween(engine.Find('Fort Wayne'), engine.FilterStr(engine.Find('Fontana'), 'postal code', '92331, 92334–92337'), 'area', 'less')"
   },
   {
     "graphq_ir": "which one has the largest <A> number of children </A> among <ES> <ES> <E> Mark Williams </E> (<ES> ones that <R> winner </R> backward to <E> Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture </E> </ES>) </ES> or <ES> <E> Jon Favreau </E> (<ES> ones that <R> occupation </R> forward to <E> screenwriter </E> </ES>) </ES> </ES>",
@@ -9221,7 +9395,8 @@
       }
     ],
     "sample_id": "train_79231",
-    "answer": "Jon Favreau"
+    "answer": "Jon Favreau",
+    "python_code": "engine.SelectBetween(engine.And(engine.Relate(engine.Find('Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture'), 'winner', 'forward'), engine.Find('Mark Williams')), engine.And(engine.Relate(engine.Find('screenwriter'), 'occupation', 'backward'), engine.Find('Jon Favreau')), 'number of children', 'greater')"
   },
   {
     "graphq_ir": "what is the relation from <E> Anchorage </E> to <ES> <E> Darwin </E> whose <A> inception </A> is year <V> 1869 </V> </ES>",
@@ -9267,7 +9442,8 @@
       }
     ],
     "sample_id": "train_76714",
-    "answer": "twinned administrative body"
+    "answer": "twinned administrative body",
+    "python_code": "engine.QueryRelation(engine.Find('Anchorage'), engine.FilterYear(engine.Find('Darwin'), 'inception', '1869', '='))"
   },
   {
     "graphq_ir": "what is the relation from <ES> <E> Perth Airport </E> whose <A> patronage </A> is number <V> 3202023 </V> </ES> to <ES> <E> Australia </E> (<ES> ones that <R> named after </R> backward to <E> South Australia </E> </ES>) </ES>",
@@ -9338,7 +9514,8 @@
       }
     ],
     "sample_id": "train_68103",
-    "answer": "continent"
+    "answer": "continent",
+    "python_code": "engine.QueryRelation(engine.FilterNum(engine.Find('Perth Airport'), 'patronage', '3202023', '='), engine.And(engine.Relate(engine.Find('South Australia'), 'named after', 'forward'), engine.Find('Australia')))"
   },
   {
     "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <E> X-Men Origins: Wolverine </E> (<ES> ones that <R> film release region </R> forward to <E> Eindhoven </E> </ES>) </ES> whose <A> publication date </A> is <V> 2009-04-30 </V>",
@@ -9394,7 +9571,8 @@
       }
     ],
     "sample_id": "train_42396",
-    "answer": "Hungary"
+    "answer": "Hungary",
+    "python_code": "engine.QueryAttrQualifier(engine.And(engine.Relate(engine.Find('Eindhoven'), 'film release region', 'backward'), engine.Find('X-Men Origins: Wolverine')), 'publication date', '2009-04-30', 'place of publication')"
   },
   {
     "graphq_ir": "what is <ES> <C> association football club </C> that <R> member of sports team </R> backward to <ES> <C> human </C> whose <A> McCune-Reischauer romanization </A> is text <V> Chŏng Sŏngnyong </V> </ES> ( <Q> start time </Q> is year <V> 2011 </V> ) </ES>",
@@ -9468,7 +9646,8 @@
       }
     ],
     "sample_id": "train_80882",
-    "answer": "Suwon Samsung Bluewings"
+    "answer": "Suwon Samsung Bluewings",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.QFilterYear(engine.Relate(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'McCune-Reischauer romanization', 'Chŏng Sŏngnyong'), 'human'), 'member of sports team', 'forward'), 'start time', '2011', '='), 'association football club'))"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <C> television film </C> that <R> color </R> forward to <E> black-and-white </E> </ES>",
@@ -9517,7 +9696,8 @@
       }
     ],
     "sample_id": "train_40567",
-    "answer": "Germany in Autumn"
+    "answer": "Germany in Autumn",
+    "python_code": "engine.SelectAmong(engine.FilterConcept(engine.Relate(engine.Find('black-and-white'), 'color', 'backward'), 'television film'), 'duration', 'largest')"
   },
   {
     "graphq_ir": "which one has the largest <A> number of episodes </A> among <ES> <ES> <E> Las Vegas </E> whose <A> official website </A> is text <V> http://www.nbc.com/Las_Vegas/ </V> </ES> or <E> Degrassi: The Next Generation </E> </ES>",
@@ -9565,7 +9745,8 @@
       }
     ],
     "sample_id": "train_38973",
-    "answer": "Degrassi: The Next Generation"
+    "answer": "Degrassi: The Next Generation",
+    "python_code": "engine.SelectBetween(engine.FilterStr(engine.Find('Las Vegas'), 'official website', 'http://www.nbc.com/Las_Vegas/'), engine.Find('Degrassi: The Next Generation'), 'number of episodes', 'greater')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> point in time </Q> of <E> BAFTA Award for Best Direction </E> that <R> winner </R> to <ES> <E> Robert Altman </E> (<ES> ones that <R> director </R> backward to <E> Gosford Park </E> </ES>) </ES>",
@@ -9628,7 +9809,8 @@
       }
     ],
     "sample_id": "train_58124",
-    "answer": "1993"
+    "answer": "1993",
+    "python_code": "engine.QueryRelationQualifier(engine.Find('BAFTA Award for Best Direction'), engine.And(engine.Relate(engine.Find('Gosford Park'), 'director', 'forward'), engine.Find('Robert Altman')), 'winner', 'point in time')"
   },
   {
     "graphq_ir": "which one has the largest <A> GDP (PPP) </A> among <ES> <ES> <E> Israel </E> whose <A> area </A> is number <V> 20770 square kilometre </V> </ES> or <E> East Timor </E> </ES>",
@@ -9677,7 +9859,8 @@
       }
     ],
     "sample_id": "train_42754",
-    "answer": "Israel"
+    "answer": "Israel",
+    "python_code": "engine.SelectBetween(engine.FilterNum(engine.Find('Israel'), 'area', '20770 square kilometre', '='), engine.Find('East Timor'), 'GDP (PPP)', 'greater')"
   },
   {
     "graphq_ir": "what is <ES> <C> legislative term </C> whose <A> end time </A> is date <V> 1839-03-04 </V> </ES>",
@@ -9722,7 +9905,8 @@
       }
     ],
     "sample_id": "train_92081",
-    "answer": "25th United States Congress"
+    "answer": "25th United States Congress",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.FilterDate(engine.FindAll(), 'end time', '1839-03-04', '='), 'legislative term'))"
   },
   {
     "graphq_ir": "which one has the largest <A> population </A> among <ES> <E> County Antrim </E> or <E> United States Virgin Islands </E> </ES>",
@@ -9760,7 +9944,8 @@
       }
     ],
     "sample_id": "train_31694",
-    "answer": "County Antrim"
+    "answer": "County Antrim",
+    "python_code": "engine.SelectBetween(engine.Find('County Antrim'), engine.Find('United States Virgin Islands'), 'population', 'greater')"
   },
   {
     "graphq_ir": "what is <ES> <C> university </C> whose <A> official website </A> is text <V> http://www.sfu.ca/ </V> </ES>",
@@ -9804,7 +9989,8 @@
       }
     ],
     "sample_id": "train_62755",
-    "answer": "Simon Fraser University"
+    "answer": "Simon Fraser University",
+    "python_code": "engine.QueryName(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'official website', 'http://www.sfu.ca/'), 'university'))"
   },
   {
     "graphq_ir": "which one has the largest <A> duration </A> among <ES> <ES> <E> Rock of Ages </E> whose <A> publication date </A> is date <V> 2012-06-14 </V> </ES> or <E> A Prophet </E> </ES>",
@@ -9853,7 +10039,8 @@
       }
     ],
     "sample_id": "train_32280",
-    "answer": "A Prophet"
+    "answer": "A Prophet",
+    "python_code": "engine.SelectBetween(engine.FilterDate(engine.Find('Rock of Ages'), 'publication date', '2012-06-14', '='), engine.Find('A Prophet'), 'duration', 'greater')"
   },
   {
     "graphq_ir": "whether <ES> <C> city of the United States </C> whose <A> official website </A> is text <V> http://www.cityofspartanburg.org </V> </ES> <A> population </A> larger than number <V> 580000 </V>",
@@ -9909,7 +10096,8 @@
       }
     ],
     "sample_id": "train_16089",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyNum(engine.QueryAttr(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'official website', 'http://www.cityofspartanburg.org'), 'city of the United States'), 'population'), '580000', '>')"
   },
   {
     "graphq_ir": "which one has the smallest <A> cost </A> among <ES> <ES> <E> The Lord of the Rings: The Fellowship of the Ring </E> (<ES> ones that <R> nominated for </R> forward to <E> Academy Award for Best Makeup and Hairstyling </E> </ES>) </ES> or <E> J. Edgar </E> </ES>",
@@ -9972,7 +10160,8 @@
       }
     ],
     "sample_id": "train_88215",
-    "answer": "J. Edgar"
+    "answer": "J. Edgar",
+    "python_code": "engine.SelectBetween(engine.And(engine.Relate(engine.Find('Academy Award for Best Makeup and Hairstyling'), 'nominated for', 'backward'), engine.Find('The Lord of the Rings: The Fellowship of the Ring')), engine.Find('J. Edgar'), 'cost', 'less')"
   },
   {
     "graphq_ir": "how many <ES> <C> film production company </C> that <R> producer </R> backward to <ES> <C> visual artwork </C> whose <A> title </A> is text <V> To Kill a Mockingbird </V> </ES> </ES>",
@@ -10035,7 +10224,8 @@
       }
     ],
     "sample_id": "train_58200",
-    "answer": "1"
+    "answer": "1",
+    "python_code": "engine.Count(engine.FilterConcept(engine.Relate(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'title', 'To Kill a Mockingbird'), 'visual artwork'), 'producer', 'forward'), 'film production company'))"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> nominated for </R> forward to <E> Academy Award for Best Supporting Actress </E> ( <Q> for work </Q> is text <V> Ragtime </V> ) </ES> <A> ISNI </A> is text <V> 0000 0001 0306 6927 </V>",
@@ -10102,7 +10292,8 @@
       }
     ],
     "sample_id": "train_48852",
-    "answer": "no"
+    "answer": "no",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.QFilterStr(engine.Relate(engine.Find('Academy Award for Best Supporting Actress'), 'nominated for', 'backward'), 'for work', 'Ragtime'), 'human'), 'ISNI'), '0000 0001 0306 6927')"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> cast member </R> backward to <ES> <E> Some Like It Hot </E> (<ES> ones that <R> distributor </R> forward to <E> Paramount Pictures </E> </ES>) </ES> </ES> <A> CANTIC-ID </A> is text <V> a11051796 </V>",
@@ -10184,7 +10375,8 @@
       }
     ],
     "sample_id": "train_82950",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyStr(engine.QueryAttr(engine.FilterConcept(engine.Relate(engine.And(engine.Relate(engine.Find('Paramount Pictures'), 'distributor', 'backward'), engine.Find('Some Like It Hot')), 'cast member', 'forward'), 'human'), 'CANTIC-ID'), 'a11051796')"
   },
   {
     "graphq_ir": "how many <ES> <ES> <C> religion </C> whose <A> Universal Decimal Classification </A> is text <V> 141.45 </V> </ES> or <ES> <C> religion </C> whose <A> ISNI </A> is text <V> 0000 0004 0508 6616 </V> </ES> </ES>",
@@ -10260,7 +10452,8 @@
       }
     ],
     "sample_id": "train_35266",
-    "answer": "2"
+    "answer": "2",
+    "python_code": "engine.Count(engine.Or(engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'Universal Decimal Classification', '141.45'), 'religion'), engine.FilterConcept(engine.FilterStr(engine.FindAll(), 'ISNI', '0000 0004 0508 6616'), 'religion')))"
   },
   {
     "graphq_ir": "whether <ES> <C> human </C> that <R> nominated for </R> forward to <E> Nobel Prize in Chemistry </E> ( <Q> point in time </Q> is date <V> 1955-01-01 </V> ) </ES> <A> Erdős number </A> is not number <V> 3.1 </V>",
@@ -10329,7 +10522,8 @@
       }
     ],
     "sample_id": "train_45018",
-    "answer": "yes"
+    "answer": "yes",
+    "python_code": "engine.VerifyNum(engine.QueryAttr(engine.FilterConcept(engine.QFilterDate(engine.Relate(engine.Find('Nobel Prize in Chemistry'), 'nominated for', 'backward'), 'point in time', '1955-01-01', '='), 'human'), 'Erdős number'), '3.1', '!=')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> end time </Q> of <ES> <E> Hulk </E> (<ES> ones that <R> sport </R> forward to <E> association football </E> </ES>) </ES> that <R> member of sports team </R> to <E> F.C. Zenit St. Petersburg </E>",
@@ -10392,7 +10586,8 @@
       }
     ],
     "sample_id": "train_69453",
-    "answer": "2016"
+    "answer": "2016",
+    "python_code": "engine.QueryRelationQualifier(engine.And(engine.Relate(engine.Find('association football'), 'sport', 'backward'), engine.Find('Hulk')), engine.Find('F.C. Zenit St. Petersburg'), 'member of sports team', 'end time')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> character role </Q> of <ES> <E> Harry Potter and the Chamber of Secrets </E> whose <A> publication date </A> is date <V> 2002-11-14 </V> </ES> that <R> cast member </R> to <E> Toby Jones </E>",
@@ -10441,7 +10636,8 @@
       }
     ],
     "sample_id": "train_81357",
-    "answer": "Dobby"
+    "answer": "Dobby",
+    "python_code": "engine.QueryRelationQualifier(engine.FilterDate(engine.Find('Harry Potter and the Chamber of Secrets'), 'publication date', '2002-11-14', '='), engine.Find('Toby Jones'), 'cast member', 'character role')"
   },
   {
     "graphq_ir": "which one has the largest <A> population </A> among <ES> <E> Wheaton </E> or <E> Henderson </E> </ES>",
@@ -10479,7 +10675,8 @@
       }
     ],
     "sample_id": "train_2914",
-    "answer": "Henderson"
+    "answer": "Henderson",
+    "python_code": "engine.SelectBetween(engine.Find('Wheaton'), engine.Find('Henderson'), 'population', 'greater')"
   },
   {
     "graphq_ir": "what is the relation from <E> The Rolling Stones </E> to <E> protopunk </E>",
@@ -10514,7 +10711,8 @@
       }
     ],
     "sample_id": "train_65636",
-    "answer": "genre"
+    "answer": "genre",
+    "python_code": "engine.QueryRelation(engine.Find('The Rolling Stones'), engine.Find('protopunk'))"
   },
   {
     "graphq_ir": "what is the attribute <A> official website </A> of <ES> <E> Concord </E> (<ES> ones that <R> place of birth </R> backward to <E> Tom Hanks </E> </ES>) </ES>",
@@ -10568,7 +10766,8 @@
       }
     ],
     "sample_id": "train_89623",
-    "answer": "http://www.ci.concord.ca.us"
+    "answer": "http://www.ci.concord.ca.us",
+    "python_code": "engine.QueryAttr(engine.And(engine.Relate(engine.Find('Tom Hanks'), 'place of birth', 'forward'), engine.Find('Concord')), 'official website')"
   },
   {
     "graphq_ir": "what is the qualifier <Q> place of publication </Q> of <ES> <E> Taxi Driver </E> (<ES> ones that <R> nominated for </R> forward to <E> Golden Globe Award for Best Screenplay </E> </ES>) </ES> whose <A> publication date </A> is <V> 1977-03-12 </V>",
@@ -10624,6 +10823,7 @@
       }
     ],
     "sample_id": "train_91683",
-    "answer": "Sweden"
+    "answer": "Sweden",
+    "python_code": "engine.QueryAttrQualifier(engine.And(engine.Relate(engine.Find('Golden Globe Award for Best Screenplay'), 'nominated for', 'backward'), engine.Find('Taxi Driver')), 'publication date', '1977-03-12', 'place of publication')"
   }
 ]
